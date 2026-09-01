@@ -1,0 +1,46 @@
+/* Case-study project pages. */
+
+.project h1 {
+  font-size: var(--type-3xl);
+}
+
+.project-intro {
+  max-width: 75ch;
+}
+
+.project-notes {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: calc(-1 * var(--space-xs));
+}
+
+.project-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin: var(--space-lg) 0;
+}
+
+.project-columns h2 {
+  font-size: var(--type-lg);
+  color: var(--accent);
+}
+
+@media (max-width: 767px) {
+  .project-columns {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-sm);
+}
+
+.gallery-item {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}

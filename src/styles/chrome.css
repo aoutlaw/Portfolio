@@ -1,0 +1,112 @@
+/* Nav bar, mobile drawer, footer. Shared by every page. */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg-page);
+  border-bottom: 1px solid rgba(31, 58, 95, 0.1);
+}
+
+.nav-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-wordmark {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--type-lg);
+  text-decoration: none;
+  color: var(--text-h1);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--accent-hover);
+}
+
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-h1);
+}
+
+.mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: var(--bg-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-drawer[hidden] { display: none; }
+
+.mobile-drawer nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.drawer-link {
+  text-decoration: none;
+  color: var(--text-body-inverse);
+  font-family: var(--font-heading);
+  font-size: var(--type-xl);
+}
+
+@media (max-width: 767px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+}
+
+.site-footer {
+  background: var(--bg-page);
+  color: var(--text-body);
+  text-align: center;
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: var(--space-md);
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.back-link:hover { color: var(--accent-hover); }
