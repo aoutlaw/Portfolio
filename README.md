@@ -102,15 +102,19 @@ DNS" order firefighterpfister's README recommends.
 ## Contact form
 
 The live Sites version ran its contact form through Figma's own backend, which goes
-away with the migration. This rebuild posts to [Formspree](https://formspree.io)
-instead — no server to run, generous free tier for a portfolio's traffic.
+away with the migration. This rebuild posts to a Google Apps Script web app instead
+— same pattern as firefighterpfister's contact form: it appends each message to a
+Sheet in your Drive and emails it to you, no server to run and no third-party form
+service account to create.
 
-**Setup required:** create a form at formspree.io, then replace
-`FORMSPREE_ENDPOINT` in `build.py` with your real endpoint URL before deploying.
-It currently points at a placeholder and will not send anything until that's done.
+**Setup required:** follow `design/apps-script/README.md` (five minutes, once),
+then replace `CONTACT_FORM_ENDPOINT` in `build.py` with your deployed Apps Script
+URL before deploying. It currently points at a placeholder — the site still builds
+and the form still renders, but submitting it shows a "not connected yet" message
+instead of silently swallowing the message.
 
 ## Open items
 
-- Formspree endpoint needs to be created and wired in (see above).
+- Apps Script contact-form endpoint needs to be deployed and wired in (see above).
 - This is the faithful-port pass. Design/interaction refinement is deliberately
   deferred to a follow-up pass once the migration itself is confirmed working.

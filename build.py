@@ -21,9 +21,13 @@ DIST = ROOT / "dist"
 SITE_URL = "https://www.designoutlaw.com"
 GA_MEASUREMENT_ID = "G-Q2X1WJ7ZW9"
 
-# Formspree endpoint for the contact form. Static hosting has no server to
-# receive a POST, so the form submits here instead -- see README for setup.
-FORMSPREE_ENDPOINT = "https://formspree.io/f/PLACEHOLDER"
+# Google Apps Script web app endpoint for the contact form (appends to a
+# Sheet, emails the message on). Static hosting has no server of its own to
+# receive a POST, so the form submits here instead -- see
+# design/apps-script/README.md for setup. Left as a placeholder, the
+# frontend (src/scripts/contact-form.js) detects it and shows a
+# "not connected yet" message instead of silently swallowing submissions.
+CONTACT_FORM_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_URL_HERE"
 
 SITE = json.loads((ROOT / "content" / "site.json").read_text(encoding="utf-8"))
 MANIFEST = json.loads(
@@ -191,13 +195,17 @@ def render_home():
         <h2>{esc(home["contact"]["heading"])}</h2>
         {paragraphs_html(home["contact"]["paragraphs"], "contact-paragraph")}
       </div>
-      <form class="contact-form" action="{esc(FORMSPREE_ENDPOINT)}" method="POST">
+      <form class="contact-form" action="{esc(CONTACT_FORM_ENDPOINT)}" method="POST">
         <label class="visually-hidden" for="name">Your Name</label>
         <input id="name" name="name" type="text" placeholder="Your Name" required />
         <label class="visually-hidden" for="email">Your Email</label>
         <input id="email" name="email" type="email" placeholder="Your Email" required />
         <label class="visually-hidden" for="message">What do you want to talk about?</label>
         <textarea id="message" name="message" placeholder="What do you want to talk about?" rows="4" required></textarea>
+        <div class="visually-hidden" aria-hidden="true">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+        </div>
         <button type="submit" class="button-primary">Send It</button>
         <p class="form-status" data-form-status hidden></p>
       </form>
