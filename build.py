@@ -27,7 +27,7 @@ GA_MEASUREMENT_ID = "G-Q2X1WJ7ZW9"
 # design/apps-script/README.md for setup. Left as a placeholder, the
 # frontend (src/scripts/contact-form.js) detects it and shows a
 # "not connected yet" message instead of silently swallowing submissions.
-CONTACT_FORM_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_URL_HERE"
+CONTACT_FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycby7-yunqJZTOfhBPakWaN-VWJ99yxFlPbp-DpsXxcAwP1mqdSZBx0kSoWJfvk2zX0I/exec"
 
 SITE = json.loads((ROOT / "content" / "site.json").read_text(encoding="utf-8"))
 MANIFEST = json.loads(

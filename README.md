@@ -107,14 +107,13 @@ away with the migration. This rebuild posts to a Google Apps Script web app inst
 Sheet in your Drive and emails it to you, no server to run and no third-party form
 service account to create.
 
-**Setup required:** follow `design/apps-script/README.md` (five minutes, once),
-then replace `CONTACT_FORM_ENDPOINT` in `build.py` with your deployed Apps Script
-URL before deploying. It currently points at a placeholder — the site still builds
-and the form still renders, but submitting it shows a "not connected yet" message
-instead of silently swallowing the message.
+Setup is in `design/apps-script/README.md`; `CONTACT_FORM_ENDPOINT` in `build.py` is
+now wired to the deployed endpoint and verified end-to-end (row appended to the
+Sheet, notification email sent). If it's ever redeployed as a fresh deployment
+(rather than a new version of the same one), Apps Script issues a new `/exec` URL —
+update `CONTACT_FORM_ENDPOINT` to match.
 
 ## Open items
 
-- Apps Script contact-form endpoint needs to be deployed and wired in (see above).
 - This is the faithful-port pass. Design/interaction refinement is deliberately
   deferred to a follow-up pass once the migration itself is confirmed working.
