@@ -41,12 +41,19 @@ live edit in Figma, fetch `https://www.designoutlaw.com/_json/2075e7b5-06d4-494b
 for `_index` (home) and each of the five project slugs above, and overwrite the
 matching file in `research/raw/`.
 
-**Known gap:** three short process videos embedded in the Spaceabet page (plus one
-each on Y Conference and Generali Travel Insurance) are uploaded Figma video assets,
-not served from the same static `/_assets/v11/<hash>.<ext>` path as images — fetching
-them 404s. `download_images.py` skips them and falls back to nothing (Spaceabet,
-whose gallery has other images) or the poster frame where one downloaded. Tracked as
-a follow-up, not blocking the migration.
+**Known gap:** short process videos embedded in the Spaceabet, Y Conference, and
+Generali Travel Insurance pages are uploaded Figma video assets, not served from the
+same static `/_assets/v11/<hash>.<ext>` path as images — fetching them 404s.
+`download_images.py` skips them and falls back to the poster frame where one
+downloaded, otherwise nothing.
+
+Spaceabet's three clips (the "shared videos of the process on my personal social
+media" mentioned in that page's copy) were recovered by having Angelo supply the
+original files directly; `research/import_videos.py` wires them in — copies each
+into `public/images/`, extracts a poster frame with PyAV, and adds both to
+`manifest.json` under the ref hashes `content/site.json` already points at, so
+`build.py` needed no changes. One Y Conference clip and one Generali Travel
+Insurance clip are still missing; same fix if the source files turn up.
 
 ## Design tokens
 
@@ -106,6 +113,7 @@ It currently points at a placeholder and will not send anything until that's don
 ## Open items
 
 - Formspree endpoint needs to be created and wired in (see above).
-- Three process videos not yet portable (see "Known gap" above).
+- One Y Conference and one Generali Travel Insurance process video are still
+  missing (see "Known gap" above) — Spaceabet's three are resolved.
 - This is the faithful-port pass. Design/interaction refinement is deliberately
   deferred to a follow-up pass once the migration itself is confirmed working.
