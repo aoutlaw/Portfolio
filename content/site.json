@@ -6,124 +6,119 @@
   },
   "home": {
     "name": "Angelo Outlaw",
-    "tagline": "Designer • Teacher • Pilot",
-    "nav": [
-      "About",
-      "Experience",
-      "Work",
-      "Contact"
-    ],
+    "tagline": "Designer • Teacher • Pilot",
     "about": {
-      "heading": "About",
-      "paragraphs": [
-        "I'm a digital designer, front-end developer, and educator with a unique blend of creative sensibility and technical ability. After designing for print in my early career, I transitioned to digital design and have pushed pixels and written code ever since. Nowadays, I've been focused on leading the teams that tie it all together. This path, combined with endless curiosity and too many hobbies, has given me an eclectic and wide-ranging set of skills. Also, yes, that really is my last name!"
-      ]
+      "paragraph": "I'm a digital designer, front-end developer, and educator with a unique blend of creative sensibility and technical ability. After designing for print in my early career, I transitioned to digital design and have pushed pixels and written code ever since. Nowadays, I've been focused on leading the teams that tie it all together. This path, combined with endless curiosity and too many hobbies, has given me an eclectic and wide-ranging set of skills. Also, yes,",
+      "highlight": "that really is my last name!"
     },
-    "experience": {
-      "heading": "Experience",
-      "jobs": [
-        {
-          "company": "Generali Global Assistance",
-          "title": "Vice President of User Experience",
-          "dates": "May 2022 - Present",
-          "expanded": true,
-          "description": "I focus on making sure our website experiences are easy, useful, and enjoyable for people—and that this quality drives the success of what we make. To accomplish this, I partner with the executive team and product owners to provide strategic oversight for a range of responsibilities including product owners, design, development, content, accessibility, and quality assurance."
-        },
-        {
-          "company": "Point Loma Nazarene University",
-          "title": "Adjunct Professor - Art Department",
-          "dates": "May 2023 - May 2026",
-          "expanded": false,
-          "description": "I crafted and taught a curriculum built to be accessible to students with no digital design experience. This curriculum used a human-centered approach that referenced real-world scenarios intended build comfort levels among students. By the end of the course, students were confident working in digital environments and comfortable articulating their decisions using industry-standard language and best practices."
-        },
-        {
-          "company": "Generali Global Assistance",
-          "title": "UX Manager",
-          "dates": "Sept 2019 - May 2022",
-          "expanded": false,
-          "description": "I directly managed a talented multidisciplinary team with subject matter experts including UX/UI design, development, content, accessibility, and quality assurance. Within this context, I grew the team by 20% and was directly involved in the company’s web-based response to the COVID-19 pandemic (while social distancing of course), improvements to site accessibility, and the release of numerous partner-specific microsites and purchase applications."
-        },
-        {
-          "company": "AIGA San Diego",
-          "title": "Website Director → Treasurer → President → Advisory Board",
-          "dates": "June 2014 - May 2022",
-          "expanded": false,
-          "description": "It all started when I went to an industry conference and felt like I didn’t know anyone. I signed up for a calligraphy class and during the class, someone from the AIGA board of directors invited me to an open board meeting. I attended, and what followed was explosive personal growth driven my a newfound love and understanding of how important community is in the creative industry. I served on the AIGA board in various capacities and was eventually elected as President of the San Diego chapter. I held the President position for the full length of a term between 2018 - 2020."
-        },
-        {
-          "company": "Mitchell International",
-          "title": "Senior Digital Designer and Developer",
-          "dates": "Oct 2018 - Sept 2019",
-          "expanded": false,
-          "description": "Using my previous experience with digital and interactive design, email marketing, and web development, I did exactly those things for Mitchell International. The thing that made this position different is that it became clear I was ready to break into more of a leadership role. The experience I gained at Mitchell gave me the confidence to make that leap."
-        },
-        {
-          "company": "Verimatrix",
-          "title": "Senior Interactive Designer and Developer",
-          "dates": "April 2016 - Sept 2018",
-          "expanded": false,
-          "description": "I designed and developed web pages, email templates, and landing pages that supported marketing campaigns targeting the video security industry. I was responsible for managing the CMS of the website, and I also created a company-wide PowerPoint template (I KNOW...don’t tell anyone) and produced and recorded training videos to support the internal effort."
-        },
-        {
-          "company": "Bayside Networks",
-          "title": "Web Design / IT Operations",
-          "dates": "Sept 2012 - July 2015",
-          "expanded": false,
-          "description": "I was responsible for ad hoc DevOps tasks for a wide variety of small to medium size clients. In addition, I performed limited web design support for those clients in situations where they wanted to combine that expertise with their other requests."
-        },
-        {
-          "company": "CSA Travel Protection",
-          "title": "Web Designer and Developer",
-          "dates": "Sept 2003 - April 2016",
-          "expanded": false,
-          "description": "+ Senior Graphic Designer + Graphic Designer\nThis was my first “real” job after college. I started as a very entry level designer, and worked my way up through various roles over my time with the company. This experience was formative, as I was exposed a wide variety of design challenges. These challenges were often paired with equally challenging business requirements and/or restrictions that both guided and limited the design process. I started as a strictly print-based designer, and leaned more toward web design as my personal preferences changed and the needs of the business provided opportunities."
-        },
-        {
-          "company": "SDSU - Aztec Shops",
-          "title": "Graphic Design Assistant",
-          "dates": "Sept 2000 - April 2003",
-          "expanded": false,
-          "description": "This is where it all started. A career in design went from dream to reality. However, it certainly wasn’t based on my skills...at first. I met the hiring manager while I worked at the bookstore as a cashier. She later told me that they knew I had very little experience (I wasn’t even in the major yet) and that they took a chance because they could use me as a model, and then let me go if I couldn’t deliver on the design aspects of the job. Luckily, I did. I designed and produced vast quantities of course materials, book covers, POP signage, price labels, product labels, event flyers, and so on."
-        },
-        {
-          "company": "Vans",
-          "title": "Third Key Manager",
-          "dates": "Sept 1996 - May 1999",
-          "expanded": false,
-          "description": "I sold shoes! As the Third Key Manager, I was the senior shoe salesperson during my shifts, which really means I was the first to arrive and the first to leave but did not actually manage anyone. This job taught me a lot about being service-minded, working with money, and how to interact with customers directly. It was a fun environment full of youthful exuberance, loud music, and cool shoes. Lots of shoes."
+    "jobs": [
+      {
+        "company": "Generali Global Assistance",
+        "title": "Vice President of User Experience",
+        "dates": "May 2022 - Present",
+        "description": "I focus on making sure our website experiences are easy, useful, and enjoyable for people—and that this quality drives the success of what we make. To accomplish this, I partner with the executive team and product owners to provide strategic oversight for a range of responsibilities including product owners, design, development, content, accessibility, and quality assurance."
+      },
+      {
+        "company": "Point Loma Nazarene University",
+        "title": "Adjunct Professor - Art Department",
+        "dates": "May 2023 - May 2026",
+        "description": "I crafted and taught a curriculum built to be accessible to students with no digital design experience. This curriculum used a human-centered approach that referenced real-world scenarios intended build comfort levels among students. By the end of the course, students were confident working in digital environments and comfortable articulating their decisions using industry-standard language and best practices."
+      },
+      {
+        "company": "Generali Global Assistance",
+        "title": "UX Manager",
+        "dates": "Sept 2019 - May 2022",
+        "description": "I directly managed a talented multidisciplinary team with subject matter experts including UX/UI design, development, content, accessibility, and quality assurance. Within this context, I grew the team by 20% and was directly involved in the company’s web-based response to the COVID-19 pandemic (while social distancing of course), improvements to site accessibility, and the release of numerous partner-specific microsites and purchase applications."
+      },
+      {
+        "company": "AIGA San Diego",
+        "title": "Website Director → Treasurer → President → Advisory Board",
+        "dates": "June 2014 - May 2022",
+        "description": "It all started when I went to an industry conference and felt like I didn’t know anyone. I signed up for a calligraphy class and during the class, someone from the AIGA board of directors invited me to an open board meeting. I attended, and what followed was explosive personal growth driven my a newfound love and understanding of how important community is in the creative industry. I served on the AIGA board in various capacities and was eventually elected as President of the San Diego chapter. I held the President position for the full length of a term between 2018 - 2020."
+      },
+      {
+        "company": "Mitchell International",
+        "title": "Senior Digital Designer and Developer",
+        "dates": "Oct 2018 - Sept 2019",
+        "description": "Using my previous experience with digital and interactive design, email marketing, and web development, I did exactly those things for Mitchell International. The thing that made this position different is that it became clear I was ready to break into more of a leadership role. The experience I gained at Mitchell gave me the confidence to make that leap."
+      },
+      {
+        "company": "Verimatrix",
+        "title": "Senior Interactive Designer and Developer",
+        "dates": "April 2016 - Sept 2018",
+        "description": "I designed and developed web pages, email templates, and landing pages that supported marketing campaigns targeting the video security industry. I was responsible for managing the CMS of the website, and I also created a company-wide PowerPoint template (I KNOW...don’t tell anyone) and produced and recorded training videos to support the internal effort."
+      },
+      {
+        "company": "Bayside Networks",
+        "title": "Web Design / IT Operations",
+        "dates": "Sept 2012 - July 2015",
+        "description": "I was responsible for ad hoc DevOps tasks for a wide variety of small to medium size clients. In addition, I performed limited web design support for those clients in situations where they wanted to combine that expertise with their other requests."
+      },
+      {
+        "company": "CSA Travel Protection",
+        "title": "Web Designer and Developer",
+        "dates": "Sept 2003 - April 2016",
+        "description": "+ Senior Graphic Designer + Graphic Designer\nThis was my first “real” job after college. I started as a very entry level designer, and worked my way up through various roles over my time with the company. This experience was formative, as I was exposed a wide variety of design challenges. These challenges were often paired with equally challenging business requirements and/or restrictions that both guided and limited the design process. I started as a strictly print-based designer, and leaned more toward web design as my personal preferences changed and the needs of the business provided opportunities."
+      },
+      {
+        "company": "SDSU - Aztec Shops",
+        "title": "Graphic Design Assistant",
+        "dates": "Sept 2000 - April 2003",
+        "description": "This is where it all started. A career in design went from dream to reality. However, it certainly wasn’t based on my skills...at first. I met the hiring manager while I worked at the bookstore as a cashier. She later told me that they knew I had very little experience (I wasn’t even in the major yet) and that they took a chance because they could use me as a model, and then let me go if I couldn’t deliver on the design aspects of the job. Luckily, I did. I designed and produced vast quantities of course materials, book covers, POP signage, price labels, product labels, event flyers, and so on."
+      },
+      {
+        "company": "Vans",
+        "title": "Third Key Manager",
+        "dates": "Sept 1996 - May 1999",
+        "description": "I sold shoes! As the Third Key Manager, I was the senior shoe salesperson during my shifts, which really means I was the first to arrive and the first to leave but did not actually manage anyone. This job taught me a lot about being service-minded, working with money, and how to interact with customers directly. It was a fun environment full of youthful exuberance, loud music, and cool shoes. Lots of shoes."
+      }
+    ],
+    "jobs_visible": 4,
+    "work": [
+      {
+        "slug": "firefighter-pfister",
+        "src": "/_assets/v11/554f41fdbdb84968c55a3111803dc6729e7bf39e.png",
+        "alt": "Firefighter Pfister",
+        "box": "1280/1117",
+        "crop": null
+      },
+      {
+        "slug": "y-conference",
+        "src": "/_assets/v11/5f640fb125acb36b6265ac06b746c3d527c8a775.png",
+        "alt": "Y21 Distill",
+        "box": "800/698",
+        "crop": {
+          "height": "1031.81%",
+          "top": "-7.31%"
         }
-      ]
-    },
-    "work": {
-      "heading": "Work",
-      "items": [
-        {
-          "slug": "firefighter-pfister",
-          "image_ref": "554f41fdbdb84968c55a3111803dc6729e7bf39e"
-        },
-        {
-          "slug": "y-conference",
-          "image_ref": "5f640fb125acb36b6265ac06b746c3d527c8a775"
-        },
-        {
-          "slug": "spaceabet",
-          "image_ref": "64c6d4154d6ebfdc38f4d5dc9d5d742a1b59f606"
-        },
-        {
-          "slug": "travelcover",
-          "image_ref": "774c80de08300b712dadadcbad63c5669e0db2b8"
-        },
-        {
-          "slug": "generalitravelinsurance",
-          "image_ref": "7d76be65f157d202d38c18e7715b40b52bce1121"
+      },
+      {
+        "slug": "spaceabet",
+        "src": "/_assets/v11/64c6d4154d6ebfdc38f4d5dc9d5d742a1b59f606.png",
+        "alt": "Spaceabet",
+        "box": "811/600",
+        "crop": null
+      },
+      {
+        "slug": "generalitravelinsurance",
+        "src": "/_assets/v11/7d76be65f157d202d38c18e7715b40b52bce1121.png",
+        "alt": "Generalitravelinsurance Website",
+        "box": "2878/2382",
+        "crop": null
+      },
+      {
+        "slug": "travelcover",
+        "src": "/_assets/v11/774c80de08300b712dadadcbad63c5669e0db2b8.png",
+        "alt": "TravelCover Website",
+        "box": "624/639",
+        "crop": {
+          "height": "324.41%",
+          "top": "0%"
         }
-      ]
-    },
+      }
+    ],
     "contact": {
-      "heading": "Contact",
-      "paragraphs": [
-        "I’d love to hear from you. Reach out and let’s talk about anything you want. Except spiders. I don’t want to talk about spiders."
-      ]
+      "paragraph": "I’d love to hear from you. Reach out and let’s talk about anything you want. Except spiders. I don’t want to talk about spiders."
     },
     "footer": "© Angelo Outlaw 2026"
   },
@@ -131,192 +126,298 @@
     {
       "slug": "spaceabet",
       "title": "Spaceabet",
-      "intro": [
-        "This was a personal project that started when I sketched a single letter. A friend challenged me to do the entire alphabet, and Spaceabet was born. It evolved into an exercise in patience and passion, starting with hand-drawn illustrations in a dot-grid sketchbook to full vector art, poster, and then font. The pencil before pixels approach was a welcome return to the things that make me excited about design to begin with."
+      "heading": "Spaceabet",
+      "intro": "This was a personal project that started when I sketched a single letter. A friend challenged me to do the entire alphabet, and Spaceabet was born. It evolved into an exercise in patience and passion, starting with hand-drawn illustrations in a dot-grid sketchbook to full vector art, poster, and then font. The pencil before pixels approach was a welcome return to the things that make me excited about design to begin with.",
+      "sections": [
+        {
+          "heading": "Challenge",
+          "body": "Patience was critical for this project. Each letter took 1-3 hours depending on how complicated it was. I took it slow and allowed myself to enjoy the process without focusing a timeline."
+        },
+        {
+          "heading": "Solution",
+          "body": "As I finished each letter, I shared videos of the process on my personal social media. This was my first time doing such a thing, and it was a validating experience to share the process with people I care about. After completing the sketches, I vectorized each letter."
+        },
+        {
+          "heading": "Results",
+          "body": "After completing the letters, I created a posted which is still available on Etsy, and a font that was more of an exercise to see if I could more than to actually sell. This poster gave me the confidence - and inventory - to create the Etsy shop, and I got some shares on social media that again validated the path from doodle to passion project."
+        }
       ],
-      "challenge": [
-        "Patience was critical for this project. Each letter took 1-3 hours depending on how complicated it was. I took it slow and allowed myself to enjoy the process without focusing a timeline."
-      ],
-      "solution": [
-        "As I finished each letter, I shared videos of the process on my personal social media. This was my first time doing such a thing, and it was a validating experience to share the process with people I care about. After completing the sketches, I vectorized each letter."
-      ],
-      "results": [
-        "After completing the letters, I created a posted which is still available on Etsy, and a font that was more of an exercise to see if I could more than to actually sell. This poster gave me the confidence - and inventory - to create the Etsy shop, and I got some shares on social media that again validated the path from doodle to passion project."
-      ],
-      "extra_notes": [],
+      "cta": {
+        "label": "See it on Etsy",
+        "href": "https://www.etsy.com/listing/620736915/space-alphabet-poster"
+      },
       "gallery": [
         {
-          "type": "video",
-          "ref": "5634e1b050c155d05eb5520e761b9dad080f8cd6",
-          "poster_ref": "2140fceec68560db4b0d64babfde6a925a2f83b2"
+          "height": "300px",
+          "items": [
+            {
+              "type": "video",
+              "aspect": "1080/1920"
+            },
+            {
+              "type": "video",
+              "aspect": "1080/1920"
+            },
+            {
+              "type": "video",
+              "aspect": "1080/1920"
+            }
+          ]
         },
         {
-          "type": "video",
-          "ref": "b6a14ea1d01aac778c78d2ebb4942ea7f34411fc",
-          "poster_ref": "be3c283ebbfc2af59ce64435d16b49c7c45d8d35"
+          "height": "403.846px",
+          "items": [
+            {
+              "type": "image",
+              "src": "/_assets/v11/cb6744f97112b7690f6e7d04efd05b873e3cdf96.png",
+              "alt": "Hand sketched letter",
+              "aspect": "3024/4032"
+            },
+            {
+              "type": "image",
+              "src": "/_assets/v11/976525f90205d023740a1796c3e52cfa4511dd35.png",
+              "alt": "Sketchbook page showing several hand drawn Spaceabet letters",
+              "aspect": "3024/4032"
+            }
+          ]
         },
         {
-          "type": "video",
-          "ref": "12b6847d1c6ec05a03d51a50ee8c4f02dd06656a",
-          "poster_ref": "e5adcb6f2dc2ff88bee55afa3720e87d059025a3"
+          "height": "403.846px",
+          "items": [
+            {
+              "type": "image",
+              "src": "/_assets/v11/2b6992776eb248a0b46163a2af7a24125129df28.png",
+              "alt": "Close-up of the letter A, Spaceabet style",
+              "aspect": "420/403.846160888672"
+            },
+            {
+              "type": "image",
+              "src": "/_assets/v11/99dd261f7955bbf963a45afab7787a2d4e15f3ae.png",
+              "alt": "Example of the vectorizing process",
+              "aspect": "624/956"
+            }
+          ]
         },
         {
-          "type": "image",
-          "ref": "976525f90205d023740a1796c3e52cfa4511dd35"
-        },
-        {
-          "type": "image",
-          "ref": "cb6744f97112b7690f6e7d04efd05b873e3cdf96"
-        },
-        {
-          "type": "image",
-          "ref": "99dd261f7955bbf963a45afab7787a2d4e15f3ae"
-        },
-        {
-          "type": "image",
-          "ref": "2b6992776eb248a0b46163a2af7a24125129df28"
-        },
-        {
-          "type": "image",
-          "ref": "786d9f38e967f6480674603cad772cc0014468c2"
-        },
-        {
-          "type": "image",
-          "ref": "aa815e37c41124ce28339c9f1c27ca37f47fb847"
+          "height": "403.846px",
+          "items": [
+            {
+              "type": "image",
+              "src": "/_assets/v11/786d9f38e967f6480674603cad772cc0014468c2.png",
+              "alt": "Close-up of finished Spaceabet",
+              "aspect": "624/832"
+            },
+            {
+              "type": "image",
+              "src": "/_assets/v11/aa815e37c41124ce28339c9f1c27ca37f47fb847.png",
+              "alt": "Finished Spaceabet framed and mounted on a wall",
+              "aspect": "420/403.846160888672"
+            }
+          ]
         }
       ]
     },
     {
       "slug": "y-conference",
       "title": "Y Conference",
-      "intro": [
-        "Each year until 2025, AIGA San Diego held one of the most respected design conferences in the southwestern US. The theme and visual identity of the conference change each time, with a few guidepost elements in place for consistency. Mainly, 7-foot tall Ys in serif and sans-serif font. Let me tell you, they were not easy to move. For 25 years, speakers from all corners of the creative industry, and sometimes others, came together with 350 attendees and challenged us to ask...why!"
+      "heading": "Y Conference",
+      "intro": "Each year until 2025, AIGA San Diego held one of the most respected design conferences in the southwestern US. The theme and visual identity of the conference change each time, with a few guidepost elements in place for consistency. Mainly, 7-foot tall Ys in serif and sans-serif font. Let me tell you, they were not easy to move. For 25 years, speakers from all corners of the creative industry, and sometimes others, came together with 350 attendees and challenged us to ask...why!",
+      "sections": [
+        {
+          "heading": "Challenge",
+          "body": "The theme for each Y Conference started with a single word, and challenged the community to explore its essence. For Y21, the word was “distill”. As a design team, we needed to explore how a solution would fit together in both digital and environmental spaces."
+        },
+        {
+          "heading": "Solution",
+          "body": "After numerous sessions, many post-its placed on walls, some passionate discussion, and many emotional support drinks, the team decided to apply the idea of distilling to the shapes that were used in the design. This meant distilling the shapes back to down to their most basic forms. I used the ideas we generated to create hand-drawn wireframes of each page type of the site, and moved into digital wireframes and mockups. After review and approval at each step, I moved forward with creating the website in Webflow."
+        },
+        {
+          "heading": "Results",
+          "body": "The site launched on time was well received by the audience, receiving the typical and fully expected array of reviews ranging from bewilderment to full advocacy. The site was available at desktop and mobile sizes. This was the first year that mobile usage eclipsed desktop usage according to analytics."
+        }
       ],
-      "challenge": [
-        "The theme for each Y Conference started with a single word, and challenged the community to explore its essence. For Y21, the word was “distill”. As a design team, we needed to explore how a solution would fit together in both digital and environmental spaces."
-      ],
-      "solution": [
-        "After numerous sessions, many post-its placed on walls, some passionate discussion, and many emotional support drinks, the team decided to apply the idea of distilling to the shapes that were used in the design. This meant distilling the shapes back to down to their most basic forms. I used the ideas we generated to create hand-drawn wireframes of each page type of the site, and moved into digital wireframes and mockups. After review and approval at each step, I moved forward with creating the website in Webflow."
-      ],
-      "results": [
-        "The site launched on time was well received by the audience, receiving the typical and fully expected array of reviews ranging from bewilderment to full advocacy. The site was available at desktop and mobile sizes. This was the first year that mobile usage eclipsed desktop usage according to analytics."
-      ],
-      "extra_notes": [],
+      "cta": {
+        "label": "See it Live",
+        "href": "https://designoutlaw.com/portfolio/samples/y21/"
+      },
       "gallery": [
         {
-          "type": "video",
-          "ref": "c01bc3f9d7e31269b7edc5bae7fded2f7e2ac9fa",
-          "poster_ref": "6a97653961e92b004a80e09f88bfaf7582666534"
+          "height": null,
+          "items": [
+            {
+              "type": "video",
+              "aspect": "640/464"
+            },
+            {
+              "type": "image",
+              "src": "/_assets/v11/0dfc17124f6f056da9e0c956273f722696372b89.png",
+              "alt": "View of my sketchbook from an angle showing the UI sketches I made",
+              "aspect": "3264/2448"
+            }
+          ]
         },
         {
-          "type": "image",
-          "ref": "0dfc17124f6f056da9e0c956273f722696372b89"
-        },
-        {
-          "type": "image",
-          "ref": "d84b65ccd7beacc065aa9b6a82a8f55bd55b3077"
-        },
-        {
-          "type": "image",
-          "ref": "f9ec528b4da4fb83c73296d49262bc7cdd63e9d3"
+          "height": "1700px",
+          "items": [
+            {
+              "type": "image",
+              "src": "/_assets/v11/f9ec528b4da4fb83c73296d49262bc7cdd63e9d3.png",
+              "alt": "Zoomed view of one of the page sketches I made",
+              "aspect": "1178/3264"
+            },
+            {
+              "type": "video",
+              "aspect": "653/4096"
+            }
+          ]
         }
       ]
     },
     {
       "slug": "firefighter-pfister",
       "title": "Firefighter Pfister",
-      "intro": [
-        "I had an idea to preserve and share audio recordings from my father-in-law about his time serving as a Captain on the San Diego Fire Department. They ranged from heart-breaking personal tragedies and accidents to hilarious and silly moments. I have always admired the ability of firefighters to operate within the crossroads of human experience with such humility and compassion. His stories are a reflection of that."
+      "heading": "Firefighter Pfister",
+      "intro": "I had an idea to preserve and share audio recordings from my father-in-law about his time serving as a Captain on the San Diego Fire Department. They ranged from heart-breaking personal tragedies and accidents to hilarious and silly moments. I have always admired the ability of firefighters to operate within the crossroads of human experience with such humility and compassion. His stories are a reflection of that.",
+      "sections": [
+        {
+          "heading": "Challenge",
+          "body": "The audio files were poor quality due to the tapes beginning to degrade. They required a lot of manipulation to be properly listened to. There also were not a lot of contemporary pictures to work with. Firefighters tended to not carry cameras around!"
+        },
+        {
+          "heading": "Solution",
+          "body": "I transcribed all of the audio files and lightly edited them for editorial clarity and to remove tangents. This allowed me to share the stories in written and audio formats. Luckily, some of the images I did have to work with were really good. They became the marquee pictures for the site and were supported by the rest. Some compromises had to be made with the design at the time, as Figma had just released it’s Sites tool, but I was determined to use it."
+        },
+        {
+          "heading": "Results",
+          "body": "Anyone can listen to, or read the shared history and stories of Firefighter Pfister!"
+        }
       ],
-      "challenge": [
-        "The audio files were poor quality due to the tapes beginning to degrade. They required a lot of manipulation to be properly listened to. There also were not a lot of contemporary pictures to work with. Firefighters tended to not carry cameras around!"
-      ],
-      "solution": [
-        "I transcribed all of the audio files and lightly edited them for editorial clarity and to remove tangents. This allowed me to share the stories in written and audio formats. Luckily, some of the images I did have to work with were really good. They became the marquee pictures for the site and were supported by the rest. Some compromises had to be made with the design at the time, as Figma had just released it’s Sites tool, but I was determined to use it."
-      ],
-      "results": [
-        "Anyone can listen to, or read the shared history and stories of Firefighter Pfister!"
-      ],
-      "extra_notes": [],
+      "cta": {
+        "label": "See it Live",
+        "href": "https://www.firefighterpfister.com"
+      },
       "gallery": [
         {
-          "type": "image",
-          "ref": "6a7ce3fba6cc82499fa52579db1c77d8f0793f6f"
-        },
-        {
-          "type": "image",
-          "ref": "609f988feb9d6760cac0fad8ee8be1e6a4e498e4"
-        },
-        {
-          "type": "image",
-          "ref": "0d86ab53aa82f7ef86b3dc9874851b72a927778e"
+          "height": null,
+          "items": [
+            {
+              "type": "image",
+              "src": "/_assets/v11/6a7ce3fba6cc82499fa52579db1c77d8f0793f6f.png",
+              "alt": "Screenshot of the home page of the Firefighter Pfister site",
+              "aspect": "624/600"
+            },
+            {
+              "type": "image",
+              "src": "/_assets/v11/609f988feb9d6760cac0fad8ee8be1e6a4e498e4.png",
+              "alt": "Screenshot of the about page of the Firefighter Pfister site",
+              "aspect": "1280/1193"
+            },
+            {
+              "type": "image",
+              "src": "/_assets/v11/0d86ab53aa82f7ef86b3dc9874851b72a927778e.png",
+              "alt": "Screenshot of one of the story pages from the Firefighter Pfister site",
+              "aspect": "1280/1695"
+            }
+          ]
         }
       ]
     },
     {
       "slug": "travelcover",
       "title": "Travel Cover",
-      "intro": [
-        "Our team’s task for this project was to replace a partner-facing legacy site that had been declining in effectiveness for years, and was becoming a liability. It was never brand-correct to begin with, and had become multi-branded with many of the features no longer working. Naturally, there was a lot of anticipation once the project finally had the support needed to move forward.",
-        "My role was to understand the challenge and ensure that the solution was successfully deployed, with oversight of the design, UX/UI, and partner experience as the site was developed.",
-        "Visual designs by Enia Amlashi"
+      "heading": "Travel Cover",
+      "intro": "",
+      "sections": [
+        {
+          "heading": "Challenge",
+          "body": "I needed to understand which features of the legacy site were actually useful to our partners, and then find ways to build them in a way that would satisfy our internal team as well as the partners themselves."
+        },
+        {
+          "heading": "Solution",
+          "body": "We walked through an full redesign process, beginning with wireframes, through full mockups, and into corresponding development. After reviewing the features with our internal stakeholders, we focused on a more streamlined approach that created a “share quote” funnel for agents to quickly generate quotes for clients to use for purchasing."
+        },
+        {
+          "heading": "Results",
+          "body": "The new site is faster, better looking, aligned with the brand, faster and purpose-built. Our clients were happier and more invested in working together. Removing the legacy site also relieved another team from having to maintain it due to their “tribal knowledge” of the old legacy site."
+        },
+        {
+          "heading": "After",
+          "body": "© Angelo Outlaw 2026"
+        }
       ],
-      "challenge": [
-        "I needed to understand which features of the legacy site were actually useful to our partners, and then find ways to build them in a way that would satisfy our internal team as well as the partners themselves."
-      ],
-      "solution": [
-        "We walked through an full redesign process, beginning with wireframes, through full mockups, and into corresponding development. After reviewing the features with our internal stakeholders, we focused on a more streamlined approach that created a “share quote” funnel for agents to quickly generate quotes for clients to use for purchasing."
-      ],
-      "results": [
-        "The new site is faster, better looking, aligned with the brand, faster and purpose-built. Our clients were happier and more invested in working together. Removing the legacy site also relieved another team from having to maintain it due to their “tribal knowledge” of the old legacy site."
-      ],
-      "extra_notes": [
-        "Before",
-        "Wireframes",
-        "After"
-      ],
+      "cta": {
+        "label": "See it Live",
+        "href": "https://www.generalipartner.com/travelcover"
+      },
       "gallery": [
         {
-          "type": "image",
-          "ref": "681c1643133c2352c8e03ca45f436b9ee9aae586"
+          "height": null,
+          "items": [
+            {
+              "type": "image",
+              "src": "/_assets/v11/681c1643133c2352c8e03ca45f436b9ee9aae586.png",
+              "alt": "Example of what the site looked like before. Off-brand green and yellow colors with confusing brand marks",
+              "aspect": "808/694"
+            }
+          ]
         },
         {
-          "type": "image",
-          "ref": "dc392e451e6cd4582bde1f89b1ae89c90458e01c"
-        },
-        {
-          "type": "image",
-          "ref": "32320eb00a60762509ec8d05ed8abe7a61ef5884"
-        },
-        {
-          "type": "image",
-          "ref": "774c80de08300b712dadadcbad63c5669e0db2b8"
+          "height": null,
+          "items": [
+            {
+              "type": "image",
+              "src": "/_assets/v11/32320eb00a60762509ec8d05ed8abe7a61ef5884.png",
+              "alt": "Wireframe showing the policy details page",
+              "aspect": "1440/1024"
+            },
+            {
+              "type": "image",
+              "src": "/_assets/v11/dc392e451e6cd4582bde1f89b1ae89c90458e01c.png",
+              "alt": "Wireframe showing the purchase success page",
+              "aspect": "1440/1024"
+            },
+            {
+              "type": "image",
+              "src": "/_assets/v11/774c80de08300b712dadadcbad63c5669e0db2b8.png",
+              "alt": "Results image which shows the correct use of brand elements, colors, and updated layout",
+              "aspect": "1280/1099"
+            }
+          ]
         }
       ]
     },
     {
       "slug": "generalitravelinsurance",
       "title": "Generali Travel Insurance",
-      "intro": [
-        "Generali Travel Insurance (GTI) is a big-revenue site ($30M+ annually) where even small changes in conversion rate can positively or negatively impact revenue by millions of dollars. Our team was tasked with updating the design, accessibility, and speed of the site without disrupting that revenue.",
-        "My role within this context was to provide direction at a leadership level and remove obstacles so that the rest of the team can work smoothly.",
-        "Visual designs by Enia Amlashi"
+      "heading": "Generali Travel Insurance",
+      "intro": "",
+      "sections": [
+        {
+          "heading": "Challenge",
+          "body": "This was an example of incremental improvement being better than wholesale reinvention. Additional care was required to make updates without disrupting the revenue the site currently generates."
+        },
+        {
+          "heading": "Solution",
+          "body": "Working with the relevant business owners, we created a milestones map that outlined an iterative approach, with built in pauses to allow for A/B testing and design validation."
+        },
+        {
+          "heading": "Results",
+          "body": "Still in progress as I write this! But so far, the iterative approach has been successful. Some A/B tests had been successful, and some have required a rollback to the previous design. The net result has been a series of improvements over time."
+        }
       ],
-      "challenge": [
-        "This was an example of incremental improvement being better than wholesale reinvention. Additional care was required to make updates without disrupting the revenue the site currently generates."
-      ],
-      "solution": [
-        "Working with the relevant business owners, we created a milestones map that outlined an iterative approach, with built in pauses to allow for A/B testing and design validation."
-      ],
-      "results": [
-        "Still in progress as I write this! But so far, the iterative approach has been successful. Some A/B tests had been successful, and some have required a rollback to the previous design. The net result has been a series of improvements over time."
-      ],
-      "extra_notes": [],
+      "cta": {
+        "label": "See it Live",
+        "href": "https://www.generalitravelinsurance.com"
+      },
       "gallery": [
         {
-          "type": "video",
-          "ref": "83e595ec6a7b7b79e5a50ca93c7e88365134bb62",
-          "poster_ref": "f8954bd82b5ef92b74b4268c7e2c16c418d24b4b"
+          "height": null,
+          "items": [
+            {
+              "type": "video",
+              "aspect": "640/552"
+            }
+          ]
         }
       ]
     }

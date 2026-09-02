@@ -1,39 +1,35 @@
 /*
  * Contact form.
  *
- * Posts to a Google Apps Script web app, which appends a row to a Sheet and
- * emails the message (see design/apps-script/). The body is sent as
+ * Posts to a Google Apps Script web app, which appends a row to a Sheet
+ * and emails the message (see design/apps-script/). The body goes as
  * URL-encoded form data on purpose: that's a "simple" request, so the
- * browser skips the CORS preflight, which Apps Script does not answer.
- * Sending JSON here would trigger an OPTIONS request and fail.
+ * browser skips the CORS preflight, which Apps Script doesn't answer.
  *
- * The form works without this script — it's a real <form> with a real
- * action, so submitting it unenhanced posts normally. This only upgrades
- * the experience to stay on the page.
+ * The confirmation copy is the live site's, word for word — it used a
+ * plain alert() and so does this, rather than inventing new wording.
  */
 (function () {
-  var form = document.querySelector(".contact-form");
+  var form = document.querySelector(".form");
   if (!form) return;
 
-  var status = form.querySelector("[data-form-status]");
   var submit = form.querySelector('button[type="submit"]');
   var endpoint = form.getAttribute("action");
-  var configured = endpoint && endpoint.indexOf("PASTE_YOUR") === -1;
+  var label = submit.textContent;
 
   form.addEventListener("submit", function (event) {
-    // Always intercept. Without a real endpoint the browser would
-    // otherwise navigate to the placeholder and lose whatever was typed.
     event.preventDefault();
-    status.hidden = false;
 
-    if (!configured) {
-      status.textContent =
-        "The form isn't connected yet — email angelo.outlaw@gmail.com directly.";
+    var name = form.querySelector("#name").value.trim();
+    var email = form.querySelector("#email").value.trim();
+    var message = form.querySelector("#message").value.trim();
+    if (!name || !email || !message) {
+      alert("Please fill in all fields");
       return;
     }
 
     submit.disabled = true;
-    status.textContent = "Sending…";
+    submit.textContent = "Sending...";
 
     fetch(endpoint, {
       method: "POST",
@@ -41,22 +37,23 @@
     })
       .then(function (response) {
         return response.json().catch(function () {
-          // A readable JSON body is a bonus, not a guarantee; a 2xx is
-          // enough to treat as success either way.
+          // A readable JSON body is a bonus, not a guarantee.
           return { ok: response.ok };
         });
       })
       .then(function (result) {
         if (!result.ok) throw new Error(result.error || "Send failed");
-        status.textContent = "Thanks — I'll get back to you soon.";
+        alert("Success! I look forward to talking with you.");
         form.reset();
       })
-      .catch(function (err) {
-        status.textContent =
-          (err && err.message) || "Something went wrong. Please try again.";
+      .catch(function () {
+        alert(
+          "Weird...there was an error submitting your message. Please try again."
+        );
       })
       .finally(function () {
         submit.disabled = false;
+        submit.textContent = label;
       });
   });
 })();

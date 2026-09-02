@@ -1,98 +1,242 @@
-/* Reset + typography defaults. Shared by every page. */
+/*
+ * designoutlaw.com — base layer.
+ *
+ * Every value here is measured off the live Figma Sites build (see
+ * research/extract_live.py). It pins three hard breakpoints, matching the
+ * live site exactly rather than interpolating between them:
+ *
+ *   mobile   < 768px      (375px design frame)
+ *   tablet   768–999px    (768px design frame)
+ *   desktop  >= 1000px    (1000px design frame)
+ *
+ * Figma Sites sets no root font-size, so its "unsized" text renders at the
+ * browser default 16px — nav links, job rows and the See More button all
+ * rely on that. Keeping 16px here is deliberate, not an oversight.
+ */
+
+:root {
+  --cream: #fff8ec;
+  --navy: #1f3a5f;
+  --teal: #7dc9be;
+  --salmon: #df6951;
+  --lemon: #efbb23;
+  --white: #fff;
+  --black: #000;
+
+  /* Fallbacks deliberately mirror the live build's (plain sans-serif), so
+     layout stays put in the moment before the webfonts land. Gelasio is
+     the exception: it's Georgia-metric, so Georgia is a far closer stand-in
+     than the sans-serif the live site falls back to. */
+  --font-heading: "Gelasio", Georgia, "Times New Roman", serif;
+  --font-body: "Poppins", sans-serif;
+  --font-script: "Yesteryear", cursive;
+
+  /* Section padding and rhythm, per breakpoint. */
+  --pad-x: 16px;
+  --pad-y: 32px;
+  --nav-pad: 16px;
+  --gap: 16px;
+  --container: 1280px;
+}
+
+@media (min-width: 768px) {
+  :root { --pad-x: 32px; --pad-y: 32px; --nav-pad: 24px 32px; --gap: 24px; }
+}
+
+@media (min-width: 1000px) {
+  :root { --pad-x: 64px; --pad-y: 64px; --nav-pad: 32px 64px; --gap: 32px; }
+}
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html {
-  color-scheme: light;
-}
+html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--bg-page);
-  color: var(--text-body);
+  background: var(--white);
+  color: var(--black);
   font-family: var(--font-body);
-  font-size: var(--type-md);
-  line-height: var(--lh-body);
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
-  font-family: var(--font-heading);
-  color: var(--text-h1);
-  line-height: var(--lh-heading);
-  margin: 0 0 var(--space-sm);
-}
-
-h2 { font-size: var(--type-xl); }
-
-p { margin: 0 0 var(--space-sm); }
-
-a { color: inherit; }
-
-img { max-width: 100%; height: auto; display: block; }
-
-button { font-family: inherit; }
+h1, h2, h3, p { margin: 0; font-size: inherit; font-weight: inherit; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
 
 .visually-hidden {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
-.section-inner {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: var(--space-xl) var(--space-md);
-}
+/* ---------- Section headings (Gelasio) ---------- */
 
-.section {
-  background: var(--bg-page);
-  color: var(--text-body);
-}
-
-.section-inverse {
-  background: var(--bg-inverse);
-  color: var(--text-body-inverse);
-}
-
-.section-inverse h2 {
-  color: var(--text-h1-inverse);
-}
-
-.button-primary {
-  display: inline-block;
-  border: none;
-  border-radius: 4px;
-  background: var(--accent);
-  color: var(--white);
-  font-weight: 600;
-  font-size: var(--type-md);
-  padding: var(--space-xs) var(--space-md);
-  cursor: pointer;
-  transition: background-color 0.15s ease;
-}
-
-.button-primary:hover,
-.button-primary:focus-visible {
-  background: var(--accent-hover);
-}
-
-input, textarea {
+.heading {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 48px;
   width: 100%;
-  font: inherit;
-  padding: var(--space-xs) var(--space-sm);
-  border: 1px solid var(--kingfisher);
-  border-radius: 4px;
-  background: var(--white);
-  color: var(--kingfisher);
-  margin-bottom: var(--space-sm);
+}
+.heading--teal { color: var(--teal); }
+.heading--navy { color: var(--navy); }
+
+@media (min-width: 768px)  { .heading { font-size: 64px; line-height: 64px; } }
+@media (min-width: 1000px) { .heading { font-size: 96px; line-height: 96px; } }
+
+/* ---------- Nav ---------- */
+
+/* Below desktop the bar is a fixed 68px tall with its contents hung from
+   the top; at desktop its height comes from the padding instead. */
+.nav {
+  position: relative;
+  z-index: 6;
+  height: 68px;
+  background: var(--cream);
 }
 
-input:focus, textarea:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
+@media (min-width: 1000px) { .nav { height: auto; } }
+
+.nav__inner {
+  max-width: calc(var(--container) + 2 * var(--pad-x));
+  margin: 0 auto;
+  padding: var(--nav-pad);
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 32px;
 }
+
+@media (min-width: 1000px) { .nav__inner { align-items: center; } }
+
+.nav--split .nav__inner { justify-content: space-between; }
+
+.nav__wordmark {
+  font-family: var(--font-script);
+  font-size: 24px;
+  line-height: 24px;
+  color: var(--teal);
+}
+
+.nav__links { display: flex; align-items: center; gap: 32px; }
+
+.nav__link,
+.nav__menu a {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: var(--salmon);
+  white-space: nowrap;
+  padding: 8px;
+}
+
+.nav__link:hover, .nav__menu a:hover { color: var(--teal); }
+
+.nav__toggle { display: none; width: 26px; height: 26px; }
+.nav__toggle svg { width: 26px; height: 26px; }
+
+/* Mobile: hamburger opens a 261px panel pinned under the bar, its items
+   separated by the same lemon hairline the live site uses. */
+.nav__menu {
+  position: absolute;
+  top: 100%;
+  right: var(--pad-x);
+  width: 261px;
+  background: var(--cream);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  box-shadow: 0 8px 24px rgb(31 58 95 / 12%);
+}
+.nav__menu[hidden] { display: none; }
+.nav__menu a { width: 100%; padding: 4px; text-align: left; }
+.nav__menu a + a { border-top: 1px solid var(--lemon); }
+
+@media (max-width: 767px) {
+  .nav__inner { justify-content: flex-end; }
+  .nav--split .nav__inner { justify-content: space-between; }
+  .nav__links { display: none; }
+  .nav__toggle { display: block; }
+}
+
+@media (min-width: 768px) {
+  .nav__menu { display: none !important; }
+  .nav__wordmark { font-size: 36px; line-height: 36px; }
+}
+
+/* ---------- Text button (See More / Back to Work) ---------- */
+
+.textbutton {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: var(--salmon);
+}
+.textbutton:hover { color: var(--teal); }
+.textbutton__arrow { width: 20px; height: 20px; flex: none; }
+.textbutton:hover .textbutton__arrow path { stroke: var(--teal); }
+
+@media (min-width: 1000px) { .textbutton { line-height: 26px; } }
+
+.textbutton--back { font-size: 16px; line-height: 24px; }
+@media (min-width: 768px)  { .textbutton--back { font-size: 18px; line-height: 24px; } }
+@media (min-width: 1000px) { .textbutton--back { font-size: 20px; line-height: 26px; } }
+
+/* ---------- Solid button (Send It / project CTA) ---------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: flex-start;
+  background: var(--salmon);
+  color: var(--white);
+  border-radius: 6px;
+  padding: 16px 32px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: normal;
+  text-transform: uppercase;
+  white-space: nowrap;
+  filter: drop-shadow(0 0 17.5px rgb(0 0 0 / 15%));
+  transition: background-color .15s ease;
+}
+.button:hover { background: var(--lemon); }
+.button:disabled { opacity: .5; }
+.button svg { width: 20px; height: 20px; flex: none; }
+
+@media (max-width: 767px) {
+  .button { width: 100%; height: 56px; padding: 16px 32px; }
+}
+
+/* ---------- Footer ---------- */
+
+.footer { background: var(--cream); }
+
+.footer__inner {
+  max-width: calc(var(--container) + 2 * var(--pad-x));
+  margin: 0 auto;
+  padding: var(--nav-pad);
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--black);
+}
+
+@media (min-width: 768px)  { .footer__inner { font-size: 18px; } }
+@media (min-width: 1000px) { .footer__inner { font-size: 20px; line-height: 26px; } }

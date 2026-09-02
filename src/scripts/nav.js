@@ -1,20 +1,31 @@
-// Mobile nav drawer: toggle open/closed, close on link click or Escape.
+/*
+ * Mobile nav: the hamburger opens a panel pinned under the bar. Closes on
+ * a link, on Escape, and on a click outside it.
+ */
 (function () {
-  const button = document.getElementById("nav-hamburger");
-  const drawer = document.getElementById("mobile-drawer");
-  if (!button || !drawer) return;
+  var button = document.getElementById("nav-toggle");
+  var menu = document.getElementById("nav-menu");
+  if (!button || !menu) return;
 
   function setOpen(open) {
-    drawer.hidden = !open;
+    menu.hidden = !open;
     button.setAttribute("aria-expanded", String(open));
-    document.body.style.overflow = open ? "hidden" : "";
   }
 
-  button.addEventListener("click", () => setOpen(drawer.hidden));
-  drawer.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => setOpen(false))
-  );
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !drawer.hidden) setOpen(false);
+  button.addEventListener("click", function (e) {
+    e.stopPropagation();
+    setOpen(menu.hidden);
+  });
+
+  menu.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function () { setOpen(false); });
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !menu.hidden) setOpen(false);
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!menu.hidden && !menu.contains(e.target)) setOpen(false);
   });
 })();

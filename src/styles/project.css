@@ -1,46 +1,101 @@
-/* Case-study project pages. */
+/* Case-study pages: navy intro block, cream body, image gallery. */
 
-.project h1 {
-  font-size: var(--type-3xl);
+.case__head { background: var(--navy); }
+
+.case__head-inner {
+  max-width: calc(var(--container) + 2 * var(--pad-x));
+  margin: 0 auto;
+  padding: var(--pad-y) var(--pad-x);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.project-intro {
-  max-width: 75ch;
+.case__intro { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.case__intro p { font-size: 18px; line-height: 28px; color: var(--cream); }
+
+@media (min-width: 768px) {
+  .case__head-inner { padding: 32px; gap: 48px; }
+  .case__intro p { font-size: 20px; line-height: 28px; }
 }
 
-.project-notes {
-  font-size: 0.85rem;
-  opacity: 0.7;
-  margin-top: calc(-1 * var(--space-xs));
+@media (min-width: 1000px) {
+  .case__head-inner { padding: 32px 64px; gap: 64px; }
+  .case__intro p { font-size: 24px; line-height: 36px; }
 }
 
-.project-columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
-  margin: var(--space-lg) 0;
+/* ---------- Body sections ---------- */
+
+.case__body { background: var(--cream); }
+
+.case__body-inner {
+  max-width: calc(var(--container) + 2 * var(--pad-x));
+  margin: 0 auto;
+  padding: var(--pad-y) var(--pad-x);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
 }
 
-.project-columns h2 {
-  font-size: var(--type-lg);
-  color: var(--accent);
+.case__section { display: flex; flex-direction: column; gap: 16px; }
+
+.case__section h2 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--teal);
 }
 
-@media (max-width: 767px) {
-  .project-columns {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
+.case__section p { font-size: 16px; line-height: 24px; color: var(--navy); }
+
+@media (min-width: 768px) {
+  .case__body-inner { padding: 32px; }
+  .case__section h2 { font-size: 28px; line-height: 28px; }
+  .case__section p { font-size: 18px; line-height: 24px; }
 }
 
-.project-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-sm);
+@media (min-width: 1000px) {
+  .case__body-inner { padding: 32px 64px; gap: 32px; }
+  .case__section h2 { font-size: 36px; line-height: 36px; }
+  .case__section p { font-size: 20px; line-height: 26px; }
 }
 
-.gallery-item {
+/* ---------- Gallery ---------- */
+
+.gallery { background: var(--cream); }
+
+.gallery__inner {
+  max-width: calc(var(--container) + 2 * var(--pad-x));
+  margin: 0 auto;
+  padding: 0 var(--pad-x) var(--pad-y);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.gallery__row { display: flex; flex-direction: column; gap: var(--gap); }
+
+/* Photographs keep their source proportions (aspect-ratio set inline from
+   the live page). Video cells don't: the live build gives them a fixed
+   height and crops the clip to fill it, which is what keeps a row of
+   portrait phone clips from towering over the rest of the page. */
+.shot { position: relative; width: 100%; overflow: hidden; }
+.shot img, .shot video {
   width: 100%;
-  border-radius: 6px;
+  height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.shot--video { aspect-ratio: auto !important; height: 338px; }
+
+@media (min-width: 768px) {
+  .gallery__row { flex-direction: row; align-items: center; justify-content: center; }
+  .shot { flex: 1 0 0; min-width: 1px; }
+  .shot--video { height: 300px; }
+}
+
+@media (min-width: 1000px) {
+  .gallery__inner { padding: 0 64px 64px; }
 }

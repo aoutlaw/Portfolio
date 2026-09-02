@@ -8,66 +8,89 @@ Redesign work happens after the migration itself is verified and DNS is cut over
 ## Layout
 
 ```
-content/site.json       Canonical content. Verbatim copy from the live site.
-research/raw/            Crawled Figma Sites scene graphs (one per page).
-research/build_content.py   Turns research/raw/*.json into content/site.json.
-research/download_images.py Downloads every image/video content/site.json references.
-design/tokens/            Design tokens + the generator that emits them.
-src/                       Site source: styles, scripts.
-public/images/             Downloaded imagery + manifest.json (ref hash -> file).
-build.py                   Static builder. Plain HTML out, no JS framework.
-dist/                      Build output (gitignored, built by CI on every push).
+content/site.json           Canonical content, extracted from the live pages.
+research/raw_html/          Saved copies of the six live pages.
+research/raw/               Figma Sites scene graphs (Experience descriptions).
+research/extract_live.py    Turns the saved pages into content/site.json.
+research/download_assets.py Downloads + re-encodes every asset it references.
+research/import_videos.py   Wires in the video clips Figma won't serve.
+design/apps-script/         Contact-form endpoint (Google Apps Script).
+src/                        Site source: styles, scripts.
+public/images/              Optimised imagery + manifest.json (live path -> file).
+build.py                    Static builder. Plain HTML out, no JS framework.
+dist/                       Build output (gitignored, built by CI on every push).
 ```
 
 ## Where the content comes from
 
-Same situation as firefighterpfister: the live site is built with Figma Sites, which
-serves its full scene graph as JSON at `/_json/<site-id>/<slug>.json`. `TEXT` nodes
-carry the exact string in `characters`. designoutlaw.com is a single scrolling page
-(About/Experience/Work/Contact are anchors, not routes) with five case-study pages
-reached by internal `NAVIGATE` interactions — `/spaceabet`, `/y-conference`,
+The live site is built with Figma Sites, which server-renders **every breakpoint**
+into the HTML and ships the resolved styles alongside as a `#container .css-xxx {…}`
+block. That's richer than the scene-graph JSON Figma also exposes: it gives the
+rendered geometry — gallery grouping, image alt text, per-breakpoint type sizes and
+crops — not just the copy. So the extractor reads the rendered pages.
+
+designoutlaw.com is a single scrolling page (About/Experience/Work/Contact are
+anchors, not routes) plus five case-study pages: `/spaceabet`, `/y-conference`,
 `/firefighter-pfister`, `/travelcover`, `/generalitravelinsurance`.
 
-Rebuild the content and image files with:
+Rebuild content and assets with:
 
 ```bash
-python3 research/build_content.py
-python3 research/download_images.py
+python3 research/extract_live.py     # research/raw_html/*.html -> content/site.json
+python3 research/download_assets.py  # needs Pillow
 ```
 
-`research/build_content.py` does **not** re-fetch from the live site — it reads the
-snapshots already committed in `research/raw/`. To refresh those snapshots from a
-live edit in Figma, fetch `https://www.designoutlaw.com/_json/2075e7b5-06d4-494b-beab-69ce6a3a4949/<slug>.json`
-for `_index` (home) and each of the five project slugs above, and overwrite the
-matching file in `research/raw/`.
+Neither re-fetches on its own — refresh `research/raw_html/` first:
 
-**Resolved gap:** short process/demo videos embedded in the Spaceabet, Y Conference,
-and Generali Travel Insurance pages are uploaded Figma video assets, not served from
-the same static `/_assets/v11/<hash>.<ext>` path as images — fetching them 404s.
-`download_images.py` skips them and falls back to the poster frame where one
-downloaded, otherwise nothing.
+```bash
+for s in "" spaceabet y-conference firefighter-pfister travelcover \
+         generalitravelinsurance; do
+  curl -sL "https://www.designoutlaw.com/$s" -o "research/raw_html/${s:-home}.html"
+done
+```
 
-All five clips were recovered by having Angelo supply the original files directly;
-`research/import_videos.py` wires them in — copies each into `public/images/` (an
-`.mp4` source as-is; a `.mov` source re-encoded to `.mp4` with PyAV/libx264, since
-QuickTime's B-frame edit lists don't survive a packet-copy remux into plain MP4),
-extracts a poster frame, and adds both to `manifest.json` under the ref hashes
-`content/site.json` already points at, so `build.py` needed no changes.
+Two things aren't in the rendered HTML and come from elsewhere:
+
+- **Experience descriptions.** The live page ships only the first four rows
+  collapsed, fetching the rest (and every description) through Figma's runtime.
+  Those live in the scene graph, so `extract_live.py` merges them in from
+  `research/raw/home.json` and records how many the live page shows collapsed.
+- **Videos.** The process/demo clips on Spaceabet, Y Conference and Generali are
+  uploaded Figma video assets, not served from the static `/_assets/v11/` path that
+  images use — fetching them 404s. Angelo supplied the originals;
+  `research/import_videos.py` wires them in (an `.mp4` source as-is; a `.mov`
+  re-encoded with PyAV/libx264, since QuickTime's B-frame edit lists don't survive a
+  packet-copy remux into plain MP4) and extracts a poster frame for each.
+
+## Matching the live build
+
+The rebuild is verified against the live site rather than eyeballed. Save the live
+pages, point a local server at them, and compare rendered geometry at each of the
+three breakpoints the live site uses (mobile <768, tablet 768–999, desktop ≥1000).
+As of the last pass, section positions, type sizes, card dimensions and total page
+height all match to within a few pixels at 375 / 768 / 1000 / 1440.
+
+A few live-build quirks are reproduced deliberately rather than "corrected", and are
+commented where they appear: the Work heading jumps to 96px from tablet up while its
+siblings step 48 → 64 → 96; the About paragraph's closing lemon clause keeps its
+desktop size at mobile; and the Y21 work card is pinned to a fixed height below
+desktop, cropping its image, where every other card takes its image's own ratio.
 
 ## Design tokens
 
-`design/tokens/tokens.css` is generated — edit the tables in
-`design/tokens/generate_tokens.py` instead:
+Tokens live at the top of `src/styles/base.css` — the palette (Kingfisher navy,
+Desert Cream, Shallow Lagoon teal, Salmon, Zesty Lemon) plus the per-breakpoint
+padding and gap scale.
 
-```bash
-python3 design/tokens/generate_tokens.py
-```
+An earlier pass generated these from the Figma variables, interpolating fluidly
+between a mobile and a desktop anchor. That was the wrong model: the live site does
+not interpolate — it renders three discrete breakpoints and switches between them at
+768px and 1000px. The generator has been removed and the values written directly, so
+the stylesheet says what the site actually does.
 
-Figma pins three discrete breakpoint stops; the tokens interpolate fluidly between
-the mobile (375px) and desktop (1440px) anchors. Colors and their semantic aliases
-(e.g. `--text-h1` = Kingfisher navy, `--accent` = Salmon) were resolved by matching
-each Figma variable alias to the primitive color it points at — see the comments in
-`generate_tokens.py`.
+Figma Sites also sets no root font-size, which means its "unsized" text (nav links,
+job rows, the See More button) renders at the browser default 16px. `base.css` keeps
+that deliberately.
 
 ## Building
 
