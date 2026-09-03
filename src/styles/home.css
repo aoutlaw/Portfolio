@@ -259,28 +259,38 @@
   display: block;
   overflow: hidden;
   background: var(--cream);
-  aspect-ratio: var(--ar-mobile, var(--ar));
+  aspect-ratio: var(--ar);
 }
 
-@media (min-width: 768px)  { .work__card { aspect-ratio: var(--ar-tablet, var(--ar)); } }
-@media (min-width: 1000px) { .work__card { aspect-ratio: var(--ar); } }
+@media (min-width: 768px)  { .work__card { aspect-ratio: var(--ar-t); } }
+@media (min-width: 1000px) { .work__card { aspect-ratio: var(--ar-d); } }
 
-.work__card > img {
+/* Where Figma cropped a tall source into a card, the image is scaled past
+   the card and nudged up; --ch/--ct carry that per breakpoint. Cards
+   without a crop set height/top inline instead and simply cover. The rule
+   is on .work__photo, not on every img in the card, so it leaves the
+   Firefighter Pfister wordmark alone. */
+.work__photo {
   position: absolute;
   left: 0;
   width: 100%;
   max-width: none;
-  transition: transform .3s ease;
+  height: var(--ch);
+  top: var(--ct);
 }
 
-.work__card:hover > img { transform: scale(1.03); }
+@media (min-width: 768px)  { .work__photo { height: var(--ch-t); top: var(--ct-t); } }
+@media (min-width: 1000px) { .work__photo { height: var(--ch-d); top: var(--ct-d); } }
+
 
 /* Firefighter Pfister's card darkens toward the base so its wordmark
    stays legible over the photograph. */
 .work__card--ffp .work__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgb(0 0 0 / 0) 48%, rgb(0 0 0 / 60%) 100%);
+  /* Stops read off the live card's SVG gradient, which fades in from
+     46.2% down the card and reaches full strength at 90.4%. */
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0) 46.2%, rgb(0 0 0 / 60%) 90.4%);
 }
 /* The wordmark sits in the card's middle band (26.51% in from top and
    bottom on the live site). Expressed as a width percentage of the card
@@ -288,11 +298,11 @@
    an aspect-ratio'd parent and lets the SVG escape the card. */
 .work__wordmark {
   position: absolute;
-  left: 11.65%;
+  left: 11.71%;
   top: 26.51%;
-  width: 76.7%;
-  height: auto;
-  object-fit: contain;
+  width: 76.71%;
+  height: 46.98%;
+  object-fit: fill;
 }
 
 

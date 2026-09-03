@@ -13,7 +13,6 @@ Run after research/extract_live.py. Needs Pillow.
 """
 
 import json
-import re
 import urllib.request
 from pathlib import Path
 
@@ -33,23 +32,29 @@ CHROME = {
     "/_assets/v11/adf4b875ecf5ed87b05f9196440ea6def7b9910d.svg": "ffp-wordmark",
 }
 
-# Longest edge by role; SVGs and the favicon pass through untouched.
-MAX_DIM = {"hero-photo": 1400, "work-": 1200, "social-card": 1200}
-DEFAULT_MAX_DIM = 1600
+# Every image on the site is laid out width-first: gallery boxes and work
+# cards both fill their column and let the height fall out of the aspect
+# ratio, and several sources are tall screenshots. Capping the *longest*
+# edge therefore crushed those to a couple of hundred pixels wide, so the
+# cap is on width, with a total-pixel ceiling to keep the tallest ones from
+# turning into multi-megabyte files.
+MAX_WIDTH = 1600
+MAX_PIXELS = 6_000_000
 QUALITY = 82
+
+
+def downscale(im):
+    """Fit the image under both ceilings, preserving its proportions."""
+    ratio = min(1.0, MAX_WIDTH / im.width, (MAX_PIXELS / (im.width * im.height)) ** 0.5)
+    if ratio >= 1.0:
+        return im
+    return im.resize((round(im.width * ratio), round(im.height * ratio)), Image.LANCZOS)
 
 
 def fetch(path):
     req = urllib.request.Request(BASE + path, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=60) as r:
         return r.read()
-
-
-def cap_for(stem):
-    for prefix, dim in MAX_DIM.items():
-        if stem.startswith(prefix):
-            return dim
-    return DEFAULT_MAX_DIM
 
 
 def main():
@@ -81,17 +86,14 @@ def main():
         else:
             tmp = OUT / f".{stem}.orig"
             tmp.write_bytes(data)
-            im = Image.open(tmp)
-            cap = cap_for(stem)
-            if max(im.size) > cap:
-                r = cap / max(im.size)
-                im = im.resize((round(im.width * r), round(im.height * r)), Image.LANCZOS)
+            im = downscale(Image.open(tmp))
             dest = OUT / f"{stem}.webp"
             im.save(dest, "WEBP", quality=QUALITY, method=6)
             tmp.unlink()
 
         manifest[path] = dest.name
-        print(f"  {path.split('/')[-1][:14]}… -> {dest.name} ({dest.stat().st_size:,}B)")
+        size = Image.open(dest).size if dest.suffix == ".webp" else ""
+        print(f"  {path.split('/')[-1][:14]}… -> {dest.name} {size} ({dest.stat().st_size:,}B)")
 
     # Videos were supplied by hand (Figma's video CDN isn't publicly
     # reachable); research/import_videos.py puts them here and they are

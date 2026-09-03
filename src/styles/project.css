@@ -5,22 +5,32 @@
 .case__head-inner {
   max-width: calc(var(--container) + 2 * var(--pad-x));
   margin: 0 auto;
-  padding: var(--pad-y) var(--pad-x);
+  padding: var(--head-pad);
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: var(--head-gap);
 }
 
-.case__intro { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.case__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--intro-gap);
+}
+/* The paragraphs are one rich-text block on the live page: they stay 16px
+   apart while the heading sits --intro-gap away from the block as a whole. */
+.case__intro-text { display: flex; flex-direction: column; gap: 16px; }
 .case__intro p { font-size: 18px; line-height: 28px; color: var(--cream); }
 
 @media (min-width: 768px) {
-  .case__head-inner { padding: 32px; gap: 48px; }
+  .case__head-inner { padding: var(--head-pad-t); gap: var(--head-gap-t); }
+  .case__intro { gap: var(--intro-gap-t); }
   .case__intro p { font-size: 20px; line-height: 28px; }
 }
 
 @media (min-width: 1000px) {
-  .case__head-inner { padding: 32px 64px; gap: 64px; }
+  .case__head-inner { padding: var(--head-pad-d); gap: var(--head-gap-d); }
+  .case__intro { gap: var(--intro-gap-d); }
   .case__intro p { font-size: 24px; line-height: 36px; }
 }
 
@@ -31,13 +41,15 @@
 .case__body-inner {
   max-width: calc(var(--container) + 2 * var(--pad-x));
   margin: 0 auto;
-  padding: var(--pad-y) var(--pad-x);
+  padding: var(--body-pad);
   display: flex;
   flex-direction: column;
   gap: var(--gap);
 }
 
-.case__section { display: flex; flex-direction: column; gap: 16px; }
+/* The heading sits close to its paragraph -- 4px at mobile, widening with
+   the breakpoint -- while whole sections are --gap apart. */
+.case__section { display: flex; flex-direction: column; gap: 4px; }
 
 .case__section h2 {
   font-family: var(--font-body);
@@ -50,13 +62,15 @@
 .case__section p { font-size: 16px; line-height: 24px; color: var(--navy); }
 
 @media (min-width: 768px) {
-  .case__body-inner { padding: 32px; }
+  .case__body-inner { padding: var(--body-pad-t); }
+  .case__section { gap: 8px; }
   .case__section h2 { font-size: 28px; line-height: 28px; }
   .case__section p { font-size: 18px; line-height: 24px; }
 }
 
 @media (min-width: 1000px) {
-  .case__body-inner { padding: 32px 64px; gap: 32px; }
+  .case__body-inner { padding: var(--body-pad-d); gap: 32px; }
+  .case__section { gap: 16px; }
   .case__section h2 { font-size: 36px; line-height: 36px; }
   .case__section p { font-size: 20px; line-height: 26px; }
 }
@@ -68,19 +82,65 @@
 .gallery__inner {
   max-width: calc(var(--container) + 2 * var(--pad-x));
   margin: 0 auto;
-  padding: 0 var(--pad-x) var(--pad-y);
+  padding: var(--gal-pad);
   display: flex;
   flex-direction: column;
   gap: var(--gap);
 }
 
-.gallery__row { display: flex; flex-direction: column; gap: var(--gap); }
+/* row > cell > box > media, as the live page nests it.
+   The cell has a fixed height and clips; the box inside is width-driven
+   from its own ratio, so a tall photograph overflows the cell and the cell
+   centre-crops it. That overflow is what gives the gallery its rhythm --
+   without it every row would collapse to the shortest image. Direction,
+   height and ratio all come in per breakpoint as custom properties. */
+/* Travel Cover labels its rows ("Before", "Wireframes", "After"). A label
+   and its row read as one block, so they sit closer together than two
+   groups do. */
+.gallery__group { display: flex; flex-direction: column; gap: var(--gap); }
+.gallery__group:has(.gallery__label) + .gallery__group,
+.gallery__group + .gallery__group:has(.gallery__label) { margin-top: var(--gap); }
 
-/* Photographs keep their source proportions (aspect-ratio set inline from
-   the live page). Video cells don't: the live build gives them a fixed
-   height and crops the clip to fill it, which is what keeps a row of
-   portrait phone clips from towering over the rest of the page. */
-.shot { position: relative; width: 100%; overflow: hidden; }
+.gallery__label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--teal);
+}
+
+@media (min-width: 768px)  { .gallery__label { font-size: 28px; line-height: 28px; } }
+@media (min-width: 1000px) { .gallery__label { font-size: 36px; line-height: 36px; } }
+
+.gallery__row {
+  display: flex;
+  flex-direction: var(--dir);
+  align-items: var(--al);
+  gap: var(--gap);
+}
+
+.shot {
+  display: flex;
+  flex-direction: var(--cdir);
+  align-items: var(--cal);
+  justify-content: var(--cjust);
+  overflow: clip;
+  height: var(--h);
+  flex: var(--f);
+  min-width: 0;
+}
+
+/* min-*: 0 matters. The box is a flex item, so its automatic minimum
+   size would otherwise be the image's intrinsic height, which overrides
+   the ratio on the taller shots. */
+.shot__box {
+  width: var(--bw);
+  height: var(--bh);
+  aspect-ratio: var(--ar);
+  min-width: 0;
+  min-height: 0;
+}
+
 .shot img, .shot video {
   width: 100%;
   height: 100%;
@@ -88,14 +148,41 @@
   display: block;
 }
 
-.shot--video { aspect-ratio: auto !important; height: 338px; }
+/* A few images carry a crop baked into the fill rather than filling their
+   box: they are scaled and offset inside it, and the cell clips the rest. */
+.shot__box--crop { position: relative; }
+.shot__box--crop > img,
+.shot__box--crop > video {
+  position: absolute;
+  width: var(--iw);
+  height: var(--ih);
+  left: var(--ix);
+  top: var(--iy);
+  max-width: none;
+}
 
 @media (min-width: 768px) {
-  .gallery__row { flex-direction: row; align-items: center; justify-content: center; }
-  .shot { flex: 1 0 0; min-width: 1px; }
-  .shot--video { height: 300px; }
+  .gallery__inner { padding: var(--gal-pad-t); }
+  .gallery__row { flex-direction: var(--dir-t); align-items: var(--al-t); }
+  .shot {
+    height: var(--h-t);
+    flex: var(--f-t);
+    flex-direction: var(--cdir-t);
+    align-items: var(--cal-t);
+    justify-content: var(--cjust-t);
+  }
+  .shot__box { width: var(--bw-t); height: var(--bh-t); aspect-ratio: var(--ar-t); }
 }
 
 @media (min-width: 1000px) {
-  .gallery__inner { padding: 0 64px 64px; }
+  .gallery__inner { padding: var(--gal-pad-d); }
+  .gallery__row { flex-direction: var(--dir-d); align-items: var(--al-d); }
+  .shot {
+    height: var(--h-d);
+    flex: var(--f-d);
+    flex-direction: var(--cdir-d);
+    align-items: var(--cal-d);
+    justify-content: var(--cjust-d);
+  }
+  .shot__box { width: var(--bw-d); height: var(--bh-d); aspect-ratio: var(--ar-d); }
 }

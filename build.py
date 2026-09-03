@@ -38,14 +38,6 @@ MANIFEST = json.loads(
 
 NAV = ["About", "Experience", "Work", "Contact"]
 
-# Work cards normally take their image's own ratio at every breakpoint. The
-# Y21 card is the exception: the live build pins it to a fixed height below
-# desktop and clips the image inside, so it needs a ratio per breakpoint.
-# Measured off the live build at 375 / 768 / 1000.
-CARD_BOX = {
-    "y-conference": {"mobile": "343/250", "tablet": "704/471.795"},
-}
-
 # Video slots, in the order research/extract_live.py finds them per project.
 VIDEOS = {
     "spaceabet": ["spaceabet-video-1", "spaceabet-video-2", "spaceabet-video-3"],
@@ -86,7 +78,7 @@ def site_nav(*, wordmark=False):
     <button class="nav__toggle" id="nav-toggle" aria-label="Menu"
             aria-expanded="false" aria-controls="nav-menu">
       <svg viewBox="0 0 26 26" aria-hidden="true" focusable="false">
-        <path d="M3 7h20M3 13h20M3 19h20" stroke="#1f3a5f" stroke-width="2"
+        <path d="M4 7H22M4 13H22M4 19H22" stroke="#df6951" stroke-width="2"
               stroke-linecap="round" fill="none"/>
       </svg>
     </button>
@@ -187,22 +179,20 @@ def render_home():
         src = asset(item["src"])
         if not src:
             return None
-        box = (item.get("box") or "1/1").replace("/", " / ")
-        per_bp = CARD_BOX.get(item.get("slug"), {})
-        crop = item.get("crop")
-        style = (
-            f'height:{crop["height"]};top:{crop["top"]}'
-            if crop
-            else "height:100%;top:0;object-fit:cover"
-        )
-        ratios = f"--ar:{box}"
-        for name in ("mobile", "tablet"):
-            if per_bp.get(name):
-                ratios += f";--ar-{name}:{per_bp[name].replace('/', ' / ')}"
+        crop = item.get("crop") or {}
+        style = "" if crop else "height:100%;top:0;object-fit:cover"
+        ratios = []
+        for bp, sfx in BP_SUFFIX.items():
+            if item["box"].get(bp):
+                ratios.append(f"--ar{sfx}:{item['box'][bp]}")
+            if crop.get(bp):
+                ratios.append(f"--ch{sfx}:{crop[bp]['height']}")
+                ratios.append(f"--ct{sfx}:{crop[bp]['top']}")
+        ratios = ";".join(ratios)
         return (
             f' style="{ratios}">'
-            f'<img src="{esc(src)}" alt="{esc(item["alt"])}" loading="lazy"'
-            f' style="{style}">'
+            f'<img class="work__photo" src="{esc(src)}" alt="{esc(item["alt"])}"'
+            f' loading="lazy" style="{style}">'
         )
 
     def card(item, extra=""):
@@ -318,37 +308,136 @@ def render_home():
         body,
         path="/",
         styles=("home.css",),
-        scripts=("nav.js", "experience.js", "contact-form.js"),
+        scripts=("motion.js", "nav.js", "anchors.js", "experience.js",
+                 "contact-form.js"),
     )
 
 
+BP_SUFFIX = {"mobile": "", "tablet": "-t", "desktop": "-d"}
+
+
+def head_vars(head):
+    """The navy header's own spacing. Its gap is set per page as well as per
+    breakpoint -- 32px at tablet on some case studies, 64px on others -- so
+    it travels with the content rather than living in the stylesheet."""
+    out = []
+    for bp, sfx in BP_SUFFIX.items():
+        out.append(f"--head-gap{sfx}:{head[bp]['gap']}")
+        out.append(f"--intro-gap{sfx}:{head[bp]['introGap']}")
+        out.append(f"--head-pad{sfx}:{head[bp]['padding']}")
+    return ";".join(out)
+
+
+def block_vars(blocks):
+    """The cream body block's and the gallery's padding, which the live
+    build also varies per page -- one case study pads its body 64px all
+    round at desktop where the others use 32px top and bottom."""
+    out = []
+    for bp, sfx in BP_SUFFIX.items():
+        for name, key in (("body", "body"), ("gal", "gallery")):
+            pad = (blocks[bp].get(key) or {}).get("padding")
+            if pad:
+                out.append(f"--{name}-pad{sfx}:{pad}")
+    return ";".join(out)
+
+
+def row_vars(row):
+    """--dir and --al per breakpoint: rows stack into a column at narrow
+    widths (and a few stay stacked at tablet), and most centre their
+    overflowing cells while a couple align them to the top."""
+    out = []
+    for bp, sfx in BP_SUFFIX.items():
+        row_axis = row["direction"][bp] == "row"
+        out.append(f"--dir{sfx}:{row['direction'][bp]}")
+        # In a stacked row the cross axis is horizontal, where the live
+        # cells span the full width; only a side-by-side row's alignment
+        # says anything about how the overflow sits.
+        out.append(f"--al{sfx}:{row['align'][bp] if row_axis else 'stretch'}")
+    return ";".join(out)
+
+
+def cell_vars(item, row):
+    """--h (the cell's fixed height), --f, and the three properties that
+    place the box inside it. A cell laid out in a row shares the width with
+    its siblings; a stacked one sizes to --h."""
+    out = []
+    for bp, sfx in BP_SUFFIX.items():
+        cdir, cal, cjust = item["place"][bp]
+        out.append(f"--h{sfx}:{item['cell'][bp]}")
+        out.append(f"--f{sfx}:{'1 0 0' if row['direction'][bp] == 'row' else '0 0 auto'}")
+        out.append(f"--cdir{sfx}:{cdir}")
+        out.append(f"--cal{sfx}:{cal}")
+        out.append(f"--cjust{sfx}:{cjust}")
+    return ";".join(out)
+
+
+BOX_FIT = {
+    # width, height
+    "cover": ("100%", "auto"),    # box spans the cell and overflows it
+    "contain": ("auto", "100%"),  # box spans the cell's height instead
+    "fill": ("100%", "100%"),     # no ratio of its own; takes the cell's
+}
+
+
+def box_vars(item):
+    """--ar/--bw/--bh per breakpoint: the box's ratio and which of the
+    cell's dimensions it spans. A fit that isn't one of the three named
+    modes is a literal width the box holds however wide the cell gets.
+    --iw/--ih/--ix/--iy carry a baked-in image crop where there is one."""
+    out = []
+    for bp, sfx in BP_SUFFIX.items():
+        fit = item["fit"][bp]
+        w, h = BOX_FIT.get(fit, (fit, "auto"))
+        out.append(f"--ar{sfx}:{item['aspect'][bp]}")
+        out.append(f"--bw{sfx}:{w}")
+        out.append(f"--bh{sfx}:{h}")
+    if item["crop"]:
+        names = ("--iw", "--ih", "--ix", "--iy")
+        out += [f"{n}:{v:g}%" for n, v in zip(names, item["crop"])]
+    return ";".join(out)
+
+
 def render_project(p):
+    """Case-study page.
+
+    The gallery mirrors the live nesting -- row > cell > aspect box > media.
+    The cell has a fixed pixel height and clips; the box inside is
+    width-driven, so a tall image overflows the cell and gets centre-cropped
+    by it. Direction, gap, cell height and box ratio all change per
+    breakpoint, so each is passed through as a custom property and picked up
+    by the media queries in project.css.
+    """
     videos = list(VIDEOS.get(p["slug"], []))
     rows = []
     for row in p["gallery"]:
-        items = []
+        cells = []
         for it in row["items"]:
-            ar = (it.get("aspect") or "1/1").replace("/", " / ")
             if it["type"] == "video":
                 stem = videos.pop(0) if videos else None
                 if not stem:
                     continue
-                poster = f"/images/{stem}-poster.webp"
-                items.append(
-                    f'<div class="shot shot--video">'
-                    f'<video src="/images/{stem}.mp4" poster="{poster}"'
-                    f" autoplay muted loop playsinline></video></div>"
-                )
+                media = (f'<video src="/images/{stem}.mp4"'
+                         f' poster="/images/{stem}-poster.webp"'
+                         f" autoplay muted loop playsinline></video>")
             else:
                 src = asset(it["src"])
                 if not src:
                     continue
-                items.append(
-                    f'<div class="shot" style="aspect-ratio:{ar}">'
-                    f'<img src="{esc(src)}" alt="{esc(it["alt"])}" loading="lazy"></div>'
-                )
-        if items:
-            rows.append(f'<div class="gallery__row">{"".join(items)}</div>')
+                media = (f'<img src="{esc(src)}" alt="{esc(it["alt"])}"'
+                         f" loading=\"lazy\">")
+            cells.append(
+                f'<div class="shot" style="{esc(cell_vars(it, row))}">'
+                f'<div class="shot__box{" shot__box--crop" if it["crop"] else ""}"'
+                f' style="{esc(box_vars(it))}">{media}</div></div>'
+            )
+        if cells:
+            label = (f'<h2 class="gallery__label">{esc(row["label"])}</h2>'
+                     if row["label"] else "")
+            rows.append(
+                f'<div class="gallery__group">{label}'
+                f'<div class="gallery__row" style="{esc(row_vars(row))}">'
+                f'{"".join(cells)}</div></div>'
+            )
 
     sections = "".join(
         f'<section class="case__section"><h2>{esc(s["heading"])}</h2>'
@@ -367,7 +456,7 @@ def render_project(p):
     body = f"""{site_nav(wordmark=True)}
 <main>
   <section class="case__head">
-    <div class="case__head-inner">
+    <div class="case__head-inner" style="{esc(head_vars(p["head"]))}">
       <a class="textbutton textbutton--back" href="/#work">
         <svg class="textbutton__arrow" viewBox="0 0 20 20" aria-hidden="true"
              focusable="false"><path d="M16 10H4M9.5 4.5L4 10l5.5 5.5"
@@ -375,36 +464,45 @@ def render_project(p):
              stroke-linejoin="round" fill="none"/></svg>Back to Work</a>
       <div class="case__intro">
         <h1 class="heading heading--teal">{esc(p["heading"])}</h1>
-        <p>{esc(p["intro"])}</p>
-        {cta}
+        <div class="case__intro-text">
+          {"".join(f"<p>{esc(t)}</p>" for t in p["intro"])}
+        </div>
       </div>
+      {cta}
     </div>
   </section>
 
   <section class="case__body">
-    <div class="case__body-inner">{sections}</div>
+    <div class="case__body-inner" style="{esc(block_vars(p["blocks"]))}">{sections}</div>
   </section>
 
   <section class="gallery">
-    <div class="gallery__inner">{"".join(rows)}</div>
+    <div class="gallery__inner" style="{esc(block_vars(p["blocks"]))}">{"".join(rows)}</div>
   </section>
 </main>
 {footer()}"""
     return shell(
         f"{p['title']} — {SITE['home']['name']}",
-        p["intro"][:200] or SITE["meta"]["description"],
+        (p["intro"][0][:200] if p["intro"] else SITE["meta"]["description"]),
         body,
         path=f"/{p['slug']}/",
         styles=("project.css",),
-        scripts=("nav.js",),
+        scripts=("motion.js", "nav.js", "anchors.js"),
     )
+
+
+DEFAULT_HEAD = {bp: {"gap": gap, "introGap": intro} for bp, gap, intro in
+                (("mobile", "32px", "16px"), ("tablet", "32px", "24px"),
+                 ("desktop", "64px", "16px"))}
+for _bp, _pad in (("mobile", "32px 16px"), ("tablet", "32px"), ("desktop", "32px 64px")):
+    DEFAULT_HEAD[_bp]["padding"] = _pad
 
 
 def render_404():
     body = f"""{site_nav(wordmark=True)}
 <main>
   <section class="case__head">
-    <div class="case__head-inner">
+    <div class="case__head-inner" style="{esc(head_vars(DEFAULT_HEAD))}">
       <div class="case__intro">
         <h1 class="heading heading--teal">Page not found</h1>
         <p><a href="/" style="color:#df6951">Back home</a></p>
@@ -414,7 +512,7 @@ def render_404():
 </main>
 {footer()}"""
     return shell("Page not found", "Page not found.", body, path="/404.html",
-                 styles=("project.css",), scripts=("nav.js",))
+                 styles=("project.css",), scripts=("motion.js", "nav.js", "anchors.js"))
 
 
 def write(path, content):

@@ -79,41 +79,81 @@
         "slug": "firefighter-pfister",
         "src": "/_assets/v11/554f41fdbdb84968c55a3111803dc6729e7bf39e.png",
         "alt": "Firefighter Pfister",
-        "box": "1280/1117",
-        "crop": null
+        "box": {
+          "mobile": "343 / 299.312",
+          "tablet": "704 / 614.344",
+          "desktop": "420 / 366.516"
+        },
+        "crop": {}
       },
       {
         "slug": "y-conference",
         "src": "/_assets/v11/5f640fb125acb36b6265ac06b746c3d527c8a775.png",
         "alt": "Y21 Distill",
-        "box": "800/698",
+        "box": {
+          "mobile": "343 / 250",
+          "tablet": "704 / 471.781",
+          "desktop": "420 / 366.438"
+        },
         "crop": {
-          "height": "1031.81%",
-          "top": "-7.31%"
+          "mobile": {
+            "height": "1197%",
+            "top": "-8.475%"
+          },
+          "tablet": {
+            "height": "1343%",
+            "top": "-9.515%"
+          },
+          "desktop": {
+            "height": "1032%",
+            "top": "-7.309%"
+          }
         }
       },
       {
         "slug": "spaceabet",
         "src": "/_assets/v11/64c6d4154d6ebfdc38f4d5dc9d5d742a1b59f606.png",
         "alt": "Spaceabet",
-        "box": "811/600",
-        "crop": null
+        "box": {
+          "mobile": "343 / 253.859",
+          "tablet": "704 / 521.047",
+          "desktop": "269.328 / 199.984"
+        },
+        "crop": {}
       },
       {
         "slug": "generalitravelinsurance",
         "src": "/_assets/v11/7d76be65f157d202d38c18e7715b40b52bce1121.png",
         "alt": "Generalitravelinsurance Website",
-        "box": "2878/2382",
-        "crop": null
+        "box": {
+          "mobile": "343 / 283.875",
+          "tablet": "704 / 582.656",
+          "desktop": "269.328 / 222.906"
+        },
+        "crop": {}
       },
       {
         "slug": "travelcover",
         "src": "/_assets/v11/774c80de08300b712dadadcbad63c5669e0db2b8.png",
         "alt": "TravelCover Website",
-        "box": "624/639",
+        "box": {
+          "mobile": "343 / 351.234",
+          "tablet": "704 / 720.922",
+          "desktop": "269.328 / 275.797"
+        },
         "crop": {
-          "height": "324.41%",
-          "top": "0%"
+          "mobile": {
+            "height": "324.4%",
+            "top": "0%"
+          },
+          "tablet": {
+            "height": "324.4%",
+            "top": "0%"
+          },
+          "desktop": {
+            "height": "324.4%",
+            "top": "0%"
+          }
         }
       }
     ],
@@ -127,7 +167,9 @@
       "slug": "spaceabet",
       "title": "Spaceabet",
       "heading": "Spaceabet",
-      "intro": "This was a personal project that started when I sketched a single letter. A friend challenged me to do the entire alphabet, and Spaceabet was born. It evolved into an exercise in patience and passion, starting with hand-drawn illustrations in a dot-grid sketchbook to full vector art, poster, and then font. The pencil before pixels approach was a welcome return to the things that make me excited about design to begin with.",
+      "intro": [
+        "This was a personal project that started when I sketched a single letter. A friend challenged me to do the entire alphabet, and Spaceabet was born. It evolved into an exercise in patience and passion, starting with hand-drawn illustrations in a dot-grid sketchbook to full vector art, poster, and then font. The pencil before pixels approach was a welcome return to the things that make me excited about design to begin with."
+      ],
       "sections": [
         {
           "heading": "Challenge",
@@ -146,72 +188,475 @@
         "label": "See it on Etsy",
         "href": "https://www.etsy.com/listing/620736915/space-alphabet-poster"
       },
+      "head": {
+        "mobile": {
+          "gap": "32px",
+          "introGap": "16px",
+          "padding": "32px 16px"
+        },
+        "tablet": {
+          "gap": "32px",
+          "introGap": "24px",
+          "padding": "32px"
+        },
+        "desktop": {
+          "gap": "64px",
+          "introGap": "16px",
+          "padding": "32px 64px"
+        }
+      },
+      "blocks": {
+        "mobile": {
+          "body": {
+            "padding": "32px 16px 16px",
+            "gap": "normal",
+            "y": 676
+          },
+          "gallery": {
+            "padding": "16px",
+            "gap": "16px",
+            "y": 1252
+          }
+        },
+        "tablet": {
+          "body": {
+            "padding": "32px",
+            "gap": "normal",
+            "y": 593
+          },
+          "gallery": {
+            "padding": "32px",
+            "gap": "24px",
+            "y": 1045
+          }
+        },
+        "desktop": {
+          "body": {
+            "padding": "32px 64px",
+            "gap": "normal",
+            "y": 733
+          },
+          "gallery": {
+            "padding": "32px 64px 64px",
+            "gap": "32px",
+            "y": 1219
+          }
+        }
+      },
       "gallery": [
         {
-          "height": "300px",
+          "label": "",
+          "direction": {
+            "mobile": "column",
+            "tablet": "row",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "flex-start",
+            "tablet": "center",
+            "desktop": "center"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
           "items": [
             {
               "type": "video",
-              "aspect": "1080/1920"
+              "aspect": {
+                "mobile": "1080 / 1920",
+                "tablet": "1080 / 1920",
+                "desktop": "1080 / 1920"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "338.484px",
+                "tablet": "300px",
+                "desktop": "300px"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "tablet": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              }
             },
             {
               "type": "video",
-              "aspect": "1080/1920"
+              "aspect": {
+                "mobile": "1080 / 1920",
+                "tablet": "1080 / 1920",
+                "desktop": "1080 / 1920"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "338.484px",
+                "tablet": "300px",
+                "desktop": "300px"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "tablet": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              }
             },
             {
               "type": "video",
-              "aspect": "1080/1920"
+              "aspect": {
+                "mobile": "1080 / 1920",
+                "tablet": "1080 / 1920",
+                "desktop": "1080 / 1920"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "338.484px",
+                "tablet": "300px",
+                "desktop": "300px"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "tablet": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              }
             }
           ]
         },
         {
-          "height": "403.846px",
+          "label": "",
+          "direction": {
+            "mobile": "column",
+            "tablet": "row",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "center",
+            "tablet": "flex-start",
+            "desktop": "center"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
           "items": [
             {
               "type": "image",
+              "aspect": {
+                "mobile": "178.125 / 237.5",
+                "tablet": "3024 / 4032",
+                "desktop": "3024 / 4032"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "403.844px"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "center"
+                ],
+                "tablet": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/cb6744f97112b7690f6e7d04efd05b873e3cdf96.png",
-              "alt": "Hand sketched letter",
-              "aspect": "3024/4032"
+              "alt": "Hand sketched letter"
             },
             {
               "type": "image",
+              "aspect": {
+                "mobile": "178.125 / 237.5",
+                "tablet": "3024 / 4032",
+                "desktop": "3024 / 4032"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "403.844px"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "center"
+                ],
+                "tablet": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/976525f90205d023740a1796c3e52cfa4511dd35.png",
-              "alt": "Sketchbook page showing several hand drawn Spaceabet letters",
-              "aspect": "3024/4032"
+              "alt": "Sketchbook page showing several hand drawn Spaceabet letters"
             }
           ]
         },
         {
-          "height": "403.846px",
+          "label": "",
+          "direction": {
+            "mobile": "column",
+            "tablet": "row",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "center",
+            "tablet": "flex-start",
+            "desktop": "center"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
           "items": [
             {
               "type": "image",
+              "aspect": {
+                "mobile": "343 / 329.8",
+                "tablet": "3024 / 3024",
+                "desktop": "420 / 403.846"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "323.062px",
+                "desktop": "403.844px"
+              },
+              "fit": {
+                "mobile": "fill",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "tablet": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/2b6992776eb248a0b46163a2af7a24125129df28.png",
-              "alt": "Close-up of the letter A, Spaceabet style",
-              "aspect": "420/403.846160888672"
+              "alt": "Close-up of the letter A, Spaceabet style"
             },
             {
               "type": "image",
+              "aspect": {
+                "mobile": "155.021 / 237.5",
+                "tablet": "624 / 956",
+                "desktop": "624 / 956"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "323.062px",
+                "desktop": "403.844px"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "center"
+                ],
+                "tablet": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/99dd261f7955bbf963a45afab7787a2d4e15f3ae.png",
-              "alt": "Example of the vectorizing process",
-              "aspect": "624/956"
+              "alt": "Example of the vectorizing process"
             }
           ]
         },
         {
-          "height": "403.846px",
+          "label": "",
+          "direction": {
+            "mobile": "column",
+            "tablet": "row",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "center",
+            "tablet": "flex-start",
+            "desktop": "center"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
           "items": [
             {
               "type": "image",
+              "aspect": {
+                "mobile": "178.125 / 237.5",
+                "tablet": "624 / 832",
+                "desktop": "624 / 832"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "329.797px",
+                "tablet": "323.062px",
+                "desktop": "403.844px"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "center"
+                ],
+                "tablet": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/786d9f38e967f6480674603cad772cc0014468c2.png",
-              "alt": "Close-up of finished Spaceabet",
-              "aspect": "624/832"
+              "alt": "Close-up of finished Spaceabet"
             },
             {
               "type": "image",
+              "aspect": {
+                "mobile": "672 / 539.556",
+                "tablet": "336 / 323.077",
+                "desktop": "420 / 403.846"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "323.062px",
+                "desktop": "403.844px"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "336px",
+                "desktop": "420px"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "tablet": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/aa815e37c41124ce28339c9f1c27ca37f47fb847.png",
-              "alt": "Finished Spaceabet framed and mounted on a wall",
-              "aspect": "420/403.846160888672"
+              "alt": "Finished Spaceabet framed and mounted on a wall"
             }
           ]
         }
@@ -221,7 +666,9 @@
       "slug": "y-conference",
       "title": "Y Conference",
       "heading": "Y Conference",
-      "intro": "Each year until 2025, AIGA San Diego held one of the most respected design conferences in the southwestern US. The theme and visual identity of the conference change each time, with a few guidepost elements in place for consistency. Mainly, 7-foot tall Ys in serif and sans-serif font. Let me tell you, they were not easy to move. For 25 years, speakers from all corners of the creative industry, and sometimes others, came together with 350 attendees and challenged us to ask...why!",
+      "intro": [
+        "Each year until 2025, AIGA San Diego held one of the most respected design conferences in the southwestern US. The theme and visual identity of the conference change each time, with a few guidepost elements in place for consistency. Mainly, 7-foot tall Ys in serif and sans-serif font. Let me tell you, they were not easy to move. For 25 years, speakers from all corners of the creative industry, and sometimes others, came together with 350 attendees and challenged us to ask...why!"
+      ],
       "sections": [
         {
           "heading": "Challenge",
@@ -240,34 +687,269 @@
         "label": "See it Live",
         "href": "https://designoutlaw.com/portfolio/samples/y21/"
       },
+      "head": {
+        "mobile": {
+          "gap": "32px",
+          "introGap": "16px",
+          "padding": "32px 16px"
+        },
+        "tablet": {
+          "gap": "64px",
+          "introGap": "24px",
+          "padding": "32px"
+        },
+        "desktop": {
+          "gap": "64px",
+          "introGap": "16px",
+          "padding": "32px 64px"
+        }
+      },
+      "blocks": {
+        "mobile": {
+          "body": {
+            "padding": "32px 16px",
+            "gap": "normal",
+            "y": 704
+          },
+          "gallery": {
+            "padding": "16px",
+            "gap": "16px",
+            "y": 1464
+          }
+        },
+        "tablet": {
+          "body": {
+            "padding": "32px",
+            "gap": "normal",
+            "y": 685
+          },
+          "gallery": {
+            "padding": "24px 32px 32px",
+            "gap": "24px",
+            "y": 1233
+          }
+        },
+        "desktop": {
+          "body": {
+            "padding": "64px",
+            "gap": "normal",
+            "y": 801
+          },
+          "gallery": {
+            "padding": "32px 64px 64px",
+            "gap": "32px",
+            "y": 1423
+          }
+        }
+      },
       "gallery": [
         {
-          "height": null,
+          "label": "",
+          "direction": {
+            "mobile": "row",
+            "tablet": "row",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "center",
+            "tablet": "center",
+            "desktop": "center"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
           "items": [
             {
               "type": "video",
-              "aspect": "640/464"
-            },
-            {
-              "type": "image",
-              "src": "/_assets/v11/0dfc17124f6f056da9e0c956273f722696372b89.png",
-              "alt": "View of my sketchbook from an angle showing the UI sketches I made",
-              "aspect": "3264/2448"
+              "aspect": {
+                "mobile": "640 / 464",
+                "tablet": "640 / 464",
+                "desktop": "640 / 464"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "tablet": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              }
             }
           ]
         },
         {
-          "height": "1700px",
+          "label": "",
+          "direction": {
+            "mobile": "column",
+            "tablet": "column",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "center",
+            "tablet": "center",
+            "desktop": "center"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
           "items": [
             {
               "type": "image",
+              "aspect": {
+                "mobile": "247 / 185",
+                "tablet": "672 / 504",
+                "desktop": "3264 / 2448"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "600px"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "tablet": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "normal"
+                ]
+              },
+              "src": "/_assets/v11/0dfc17124f6f056da9e0c956273f722696372b89.png",
+              "alt": "View of my sketchbook from an angle showing the UI sketches I made"
+            }
+          ]
+        },
+        {
+          "label": "",
+          "direction": {
+            "mobile": "column",
+            "tablet": "column",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "flex-start",
+            "tablet": "flex-start",
+            "desktop": "flex-start"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
+          "items": [
+            {
+              "type": "image",
+              "aspect": {
+                "mobile": "247 / 684.387",
+                "tablet": "1178 / 3264",
+                "desktop": "1178 / 3264"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "1700px"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "flex-start",
+                  "normal"
+                ],
+                "tablet": [
+                  "row",
+                  "flex-start",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "flex-start",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/f9ec528b4da4fb83c73296d49262bc7cdd63e9d3.png",
-              "alt": "Zoomed view of one of the page sketches I made",
-              "aspect": "1178/3264"
+              "alt": "Zoomed view of one of the page sketches I made"
             },
             {
-              "type": "video",
-              "aspect": "653/4096"
+              "type": "image",
+              "aspect": {
+                "mobile": "247 / 1549.33",
+                "tablet": "653 / 4096",
+                "desktop": "653 / 4096"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "1700px"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "flex-start",
+                  "normal"
+                ],
+                "tablet": [
+                  "row",
+                  "flex-start",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "flex-start",
+                  "center"
+                ]
+              },
+              "src": "/_assets/v11/d84b65ccd7beacc065aa9b6a82a8f55bd55b3077.png",
+              "alt": "Low fidelity mockup of the Y Conference site"
             }
           ]
         }
@@ -277,7 +959,9 @@
       "slug": "firefighter-pfister",
       "title": "Firefighter Pfister",
       "heading": "Firefighter Pfister",
-      "intro": "I had an idea to preserve and share audio recordings from my father-in-law about his time serving as a Captain on the San Diego Fire Department. They ranged from heart-breaking personal tragedies and accidents to hilarious and silly moments. I have always admired the ability of firefighters to operate within the crossroads of human experience with such humility and compassion. His stories are a reflection of that.",
+      "intro": [
+        "I had an idea to preserve and share audio recordings from my father-in-law about his time serving as a Captain on the San Diego Fire Department. They ranged from heart-breaking personal tragedies and accidents to hilarious and silly moments. I have always admired the ability of firefighters to operate within the crossroads of human experience with such humility and compassion. His stories are a reflection of that."
+      ],
       "sections": [
         {
           "heading": "Challenge",
@@ -296,27 +980,213 @@
         "label": "See it Live",
         "href": "https://www.firefighterpfister.com"
       },
+      "head": {
+        "mobile": {
+          "gap": "32px",
+          "introGap": "16px",
+          "padding": "32px 16px"
+        },
+        "tablet": {
+          "gap": "64px",
+          "introGap": "24px",
+          "padding": "32px"
+        },
+        "desktop": {
+          "gap": "64px",
+          "introGap": "16px",
+          "padding": "64px 64px 32px"
+        }
+      },
+      "blocks": {
+        "mobile": {
+          "body": {
+            "padding": "32px 16px",
+            "gap": "normal",
+            "y": 724
+          },
+          "gallery": {
+            "padding": "16px",
+            "gap": "16px",
+            "y": 1316
+          }
+        },
+        "tablet": {
+          "body": {
+            "padding": "32px",
+            "gap": "normal",
+            "y": 657
+          },
+          "gallery": {
+            "padding": "32px",
+            "gap": "24px",
+            "y": 1085
+          }
+        },
+        "desktop": {
+          "body": {
+            "padding": "32px 64px",
+            "gap": "normal",
+            "y": 765
+          },
+          "gallery": {
+            "padding": "32px 64px 64px",
+            "gap": "32px",
+            "y": 1251
+          }
+        }
+      },
       "gallery": [
         {
-          "height": null,
+          "label": "",
+          "direction": {
+            "mobile": "column",
+            "tablet": "column",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "center",
+            "tablet": "center",
+            "desktop": "center"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
           "items": [
             {
               "type": "image",
+              "aspect": {
+                "mobile": "343 / 329.808",
+                "tablet": "624 / 600",
+                "desktop": "624 / 600"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "center"
+                ],
+                "tablet": [
+                  "column",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/6a7ce3fba6cc82499fa52579db1c77d8f0793f6f.png",
-              "alt": "Screenshot of the home page of the Firefighter Pfister site",
-              "aspect": "624/600"
+              "alt": "Screenshot of the home page of the Firefighter Pfister site"
             },
             {
               "type": "image",
+              "aspect": {
+                "mobile": "640 / 596.5",
+                "tablet": "640 / 596.5",
+                "desktop": "1280 / 1193"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "flex-start",
+                  "normal"
+                ],
+                "tablet": [
+                  "column",
+                  "flex-start",
+                  "normal"
+                ],
+                "desktop": [
+                  "row",
+                  "flex-start",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/609f988feb9d6760cac0fad8ee8be1e6a4e498e4.png",
-              "alt": "Screenshot of the about page of the Firefighter Pfister site",
-              "aspect": "1280/1193"
-            },
+              "alt": "Screenshot of the about page of the Firefighter Pfister site"
+            }
+          ]
+        },
+        {
+          "label": "",
+          "direction": {
+            "mobile": "column",
+            "tablet": "column",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "center",
+            "tablet": "center",
+            "desktop": "center"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
+          "items": [
             {
               "type": "image",
+              "aspect": {
+                "mobile": "247 / 327",
+                "tablet": "704 / 898",
+                "desktop": "1280 / 1695"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "tablet": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "normal"
+                ]
+              },
               "src": "/_assets/v11/0d86ab53aa82f7ef86b3dc9874851b72a927778e.png",
-              "alt": "Screenshot of one of the story pages from the Firefighter Pfister site",
-              "aspect": "1280/1695"
+              "alt": "Screenshot of one of the story pages from the Firefighter Pfister site"
             }
           ]
         }
@@ -326,7 +1196,11 @@
       "slug": "travelcover",
       "title": "Travel Cover",
       "heading": "Travel Cover",
-      "intro": "",
+      "intro": [
+        "Our team’s task for this project was to replace a partner-facing legacy site that had been declining in effectiveness for years, and was becoming a liability. It was never brand-correct to begin with, and had become multi-branded with many of the features no longer working. Naturally, there was a lot of anticipation once the project finally had the support needed to move forward.",
+        "My role was to understand the challenge and ensure that the solution was successfully deployed, with oversight of the design, UX/UI, and partner experience as the site was developed.",
+        "Visual designs by Enia Amlashi"
+      ],
       "sections": [
         {
           "heading": "Challenge",
@@ -339,48 +1213,287 @@
         {
           "heading": "Results",
           "body": "The new site is faster, better looking, aligned with the brand, faster and purpose-built. Our clients were happier and more invested in working together. Removing the legacy site also relieved another team from having to maintain it due to their “tribal knowledge” of the old legacy site."
-        },
-        {
-          "heading": "After",
-          "body": "© Angelo Outlaw 2026"
         }
       ],
       "cta": {
         "label": "See it Live",
         "href": "https://www.generalipartner.com/travelcover"
       },
+      "head": {
+        "mobile": {
+          "gap": "32px",
+          "introGap": "16px",
+          "padding": "32px 16px"
+        },
+        "tablet": {
+          "gap": "32px",
+          "introGap": "24px",
+          "padding": "32px"
+        },
+        "desktop": {
+          "gap": "64px",
+          "introGap": "16px",
+          "padding": "32px 64px"
+        }
+      },
+      "blocks": {
+        "mobile": {
+          "body": {
+            "padding": "32px 16px",
+            "gap": "normal",
+            "y": 848
+          },
+          "gallery": {
+            "padding": "16px 16px 32px",
+            "gap": "16px",
+            "y": 1488
+          }
+        },
+        "tablet": {
+          "body": {
+            "padding": "32px",
+            "gap": "normal",
+            "y": 709
+          },
+          "gallery": {
+            "padding": "24px 32px 32px",
+            "gap": "24px",
+            "y": 1161
+          }
+        },
+        "desktop": {
+          "body": {
+            "padding": "32px 64px",
+            "gap": "normal",
+            "y": 873
+          },
+          "gallery": {
+            "padding": "32px 64px 64px",
+            "gap": "32px",
+            "y": 1385
+          }
+        }
+      },
       "gallery": [
         {
-          "height": null,
+          "label": "Before",
+          "direction": {
+            "mobile": "column",
+            "tablet": "column",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "center",
+            "tablet": "center",
+            "desktop": "center"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
           "items": [
             {
               "type": "image",
+              "aspect": {
+                "mobile": "247 / 212",
+                "tablet": "672 / 577.188",
+                "desktop": "808 / 694"
+              },
+              "crop": [
+                178.25,
+                134.15,
+                -39.12,
+                -19.16
+              ],
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "tablet": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/681c1643133c2352c8e03ca45f436b9ee9aae586.png",
-              "alt": "Example of what the site looked like before. Off-brand green and yellow colors with confusing brand marks",
-              "aspect": "808/694"
+              "alt": "Example of what the site looked like before. Off-brand green and yellow colors with confusing brand marks"
             }
           ]
         },
         {
-          "height": null,
+          "label": "Wireframes",
+          "direction": {
+            "mobile": "column",
+            "tablet": "column",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "center",
+            "tablet": "center",
+            "desktop": "center"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
           "items": [
             {
               "type": "image",
+              "aspect": {
+                "mobile": "247 / 175.644",
+                "tablet": "1440 / 1024",
+                "desktop": "1440 / 1024"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "tablet": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/32320eb00a60762509ec8d05ed8abe7a61ef5884.png",
-              "alt": "Wireframe showing the policy details page",
-              "aspect": "1440/1024"
+              "alt": "Wireframe showing the policy details page"
             },
             {
               "type": "image",
+              "aspect": {
+                "mobile": "247 / 175.644",
+                "tablet": "1440 / 1024",
+                "desktop": "1440 / 1024"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "tablet": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/dc392e451e6cd4582bde1f89b1ae89c90458e01c.png",
-              "alt": "Wireframe showing the purchase success page",
-              "aspect": "1440/1024"
-            },
+              "alt": "Wireframe showing the purchase success page"
+            }
+          ]
+        },
+        {
+          "label": "After",
+          "direction": {
+            "mobile": "column",
+            "tablet": "column",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "center",
+            "tablet": "center",
+            "desktop": "center"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
+          "items": [
             {
               "type": "image",
+              "aspect": {
+                "mobile": "247 / 212",
+                "tablet": "672 / 576.975",
+                "desktop": "1280 / 1099"
+              },
+              "crop": [
+                100.0,
+                386.91,
+                0.0,
+                -0.01
+              ],
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "tablet": [
+                  "column",
+                  "center",
+                  "normal"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              },
               "src": "/_assets/v11/774c80de08300b712dadadcbad63c5669e0db2b8.png",
-              "alt": "Results image which shows the correct use of brand elements, colors, and updated layout",
-              "aspect": "1280/1099"
+              "alt": "Results image which shows the correct use of brand elements, colors, and updated layout"
             }
           ]
         }
@@ -390,7 +1503,11 @@
       "slug": "generalitravelinsurance",
       "title": "Generali Travel Insurance",
       "heading": "Generali Travel Insurance",
-      "intro": "",
+      "intro": [
+        "Generali Travel Insurance (GTI) is a big-revenue site ($30M+ annually) where even small changes in conversion rate can positively or negatively impact revenue by millions of dollars. Our team was tasked with updating the design, accessibility, and speed of the site without disrupting that revenue.",
+        "My role within this context was to provide direction at a leadership level and remove obstacles so that the rest of the team can work smoothly.",
+        "Visual designs by Enia Amlashi"
+      ],
       "sections": [
         {
           "heading": "Challenge",
@@ -409,13 +1526,115 @@
         "label": "See it Live",
         "href": "https://www.generalitravelinsurance.com"
       },
+      "head": {
+        "mobile": {
+          "gap": "32px",
+          "introGap": "16px",
+          "padding": "32px 16px"
+        },
+        "tablet": {
+          "gap": "32px",
+          "introGap": "24px",
+          "padding": "32px"
+        },
+        "desktop": {
+          "gap": "64px",
+          "introGap": "16px",
+          "padding": "32px 64px"
+        }
+      },
+      "blocks": {
+        "mobile": {
+          "body": {
+            "padding": "32px 16px",
+            "gap": "normal",
+            "y": 812
+          },
+          "gallery": {
+            "padding": "16px",
+            "gap": "normal",
+            "y": 1332
+          }
+        },
+        "tablet": {
+          "body": {
+            "padding": "32px",
+            "gap": "normal",
+            "y": 717
+          },
+          "gallery": {
+            "padding": "24px 32px 32px",
+            "gap": "normal",
+            "y": 1097
+          }
+        },
+        "desktop": {
+          "body": {
+            "padding": "32px 64px",
+            "gap": "normal",
+            "y": 897
+          },
+          "gallery": {
+            "padding": "32px 64px 64px",
+            "gap": "normal",
+            "y": 1357
+          }
+        }
+      },
       "gallery": [
         {
-          "height": null,
+          "label": "",
+          "direction": {
+            "mobile": "row",
+            "tablet": "row",
+            "desktop": "row"
+          },
+          "align": {
+            "mobile": "center",
+            "tablet": "center",
+            "desktop": "center"
+          },
+          "gap": {
+            "mobile": "16px",
+            "tablet": "24px",
+            "desktop": "32px"
+          },
           "items": [
             {
               "type": "video",
-              "aspect": "640/552"
+              "aspect": {
+                "mobile": "640 / 552",
+                "tablet": "640 / 552",
+                "desktop": "640 / 552"
+              },
+              "crop": null,
+              "cell": {
+                "mobile": "auto",
+                "tablet": "auto",
+                "desktop": "auto"
+              },
+              "fit": {
+                "mobile": "cover",
+                "tablet": "cover",
+                "desktop": "cover"
+              },
+              "place": {
+                "mobile": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "tablet": [
+                  "row",
+                  "center",
+                  "center"
+                ],
+                "desktop": [
+                  "row",
+                  "center",
+                  "center"
+                ]
+              }
             }
           ]
         }

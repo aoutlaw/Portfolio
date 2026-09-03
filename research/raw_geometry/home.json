@@ -1,0 +1,536 @@
+{
+  "mobile": {
+    "cards": [
+      {
+        "src": "/images/work-firefighter-pfister.webp",
+        "aspect": "343 / 250",
+        "card": [
+          343,
+          299.3125
+        ],
+        "media": [
+          343,
+          299.3125
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/work-y-conference.webp",
+        "aspect": "auto",
+        "card": [
+          343,
+          250
+        ],
+        "media": [
+          343,
+          2992.234375
+        ],
+        "at": [
+          0,
+          -21.1875
+        ],
+        "fit": "fill"
+      },
+      {
+        "src": "/images/work-spaceabet.webp",
+        "aspect": "343 / 253.865",
+        "card": [
+          343,
+          253.859375
+        ],
+        "media": [
+          343,
+          253.75
+        ],
+        "at": [
+          0,
+          0.046875
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/work-generalitravelinsurance.webp",
+        "aspect": "343 / 253.865",
+        "card": [
+          343,
+          283.875
+        ],
+        "media": [
+          343,
+          283.875
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/travelcover-4.webp",
+        "aspect": "343 / 253.865",
+        "card": [
+          343,
+          351.234375
+        ],
+        "media": [
+          343,
+          1139.4375
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "fill"
+      }
+    ]
+  },
+  "mobileWide": {
+    "cards": [
+      {
+        "src": "/images/work-firefighter-pfister.webp",
+        "aspect": "343 / 250",
+        "card": [
+          468,
+          408.390625
+        ],
+        "media": [
+          468,
+          408.390625
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/work-y-conference.webp",
+        "aspect": "auto",
+        "card": [
+          468,
+          250
+        ],
+        "media": [
+          468,
+          4082.578125
+        ],
+        "at": [
+          0,
+          -28.921875
+        ],
+        "fit": "fill"
+      },
+      {
+        "src": "/images/work-spaceabet.webp",
+        "aspect": "343 / 253.865",
+        "card": [
+          468,
+          346.375
+        ],
+        "media": [
+          468,
+          346.234375
+        ],
+        "at": [
+          0,
+          0.0625
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/work-generalitravelinsurance.webp",
+        "aspect": "343 / 253.865",
+        "card": [
+          468,
+          387.34375
+        ],
+        "media": [
+          468,
+          387.34375
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/travelcover-4.webp",
+        "aspect": "343 / 253.865",
+        "card": [
+          468,
+          479.25
+        ],
+        "media": [
+          468,
+          1554.734375
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "fill"
+      }
+    ]
+  },
+  "tablet": {
+    "cards": [
+      {
+        "src": "/images/work-firefighter-pfister.webp",
+        "aspect": "704 / 471.795",
+        "card": [
+          704,
+          614.34375
+        ],
+        "media": [
+          704,
+          614.34375
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/work-y-conference.webp",
+        "aspect": "auto",
+        "card": [
+          704,
+          471.78125
+        ],
+        "media": [
+          704,
+          6337.71875
+        ],
+        "at": [
+          0,
+          -44.890625
+        ],
+        "fit": "fill"
+      },
+      {
+        "src": "/images/work-spaceabet.webp",
+        "aspect": "704 / 521.053",
+        "card": [
+          704,
+          521.046875
+        ],
+        "media": [
+          704,
+          520.828125
+        ],
+        "at": [
+          0,
+          0.109375
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/work-generalitravelinsurance.webp",
+        "aspect": "704 / 544.737",
+        "card": [
+          704,
+          582.65625
+        ],
+        "media": [
+          704,
+          582.65625
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/travelcover-4.webp",
+        "aspect": "704 / 544.737",
+        "card": [
+          704,
+          720.921875
+        ],
+        "media": [
+          704,
+          2338.734375
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "fill"
+      }
+    ]
+  },
+  "tabletWide": {
+    "cards": [
+      {
+        "src": "/images/work-firefighter-pfister.webp",
+        "aspect": "704 / 471.795",
+        "card": [
+          836,
+          729.53125
+        ],
+        "media": [
+          836,
+          729.53125
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/work-y-conference.webp",
+        "aspect": "auto",
+        "card": [
+          836,
+          471.78125
+        ],
+        "media": [
+          836,
+          7526.078125
+        ],
+        "at": [
+          0,
+          -53.3125
+        ],
+        "fit": "fill"
+      },
+      {
+        "src": "/images/work-spaceabet.webp",
+        "aspect": "704 / 521.053",
+        "card": [
+          836,
+          618.75
+        ],
+        "media": [
+          836,
+          618.484375
+        ],
+        "at": [
+          0,
+          0.125
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/work-generalitravelinsurance.webp",
+        "aspect": "704 / 544.737",
+        "card": [
+          836,
+          691.921875
+        ],
+        "media": [
+          836,
+          691.921875
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/travelcover-4.webp",
+        "aspect": "704 / 544.737",
+        "card": [
+          836,
+          856.09375
+        ],
+        "media": [
+          836,
+          2777.25
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "fill"
+      }
+    ]
+  },
+  "desktop": {
+    "cards": [
+      {
+        "src": "/images/work-firefighter-pfister.webp",
+        "aspect": "420 / 300",
+        "card": [
+          420,
+          366.515625
+        ],
+        "media": [
+          420,
+          366.515625
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/work-y-conference.webp",
+        "aspect": "420 / 300",
+        "card": [
+          420,
+          366.4375
+        ],
+        "media": [
+          420,
+          3780.9375
+        ],
+        "at": [
+          0,
+          -26.78125
+        ],
+        "fit": "fill"
+      },
+      {
+        "src": "/images/work-spaceabet.webp",
+        "aspect": "269.333 / 200",
+        "card": [
+          269.328125,
+          199.984375
+        ],
+        "media": [
+          269.328125,
+          199.25
+        ],
+        "at": [
+          0,
+          0.359375
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/work-generalitravelinsurance.webp",
+        "aspect": "269.333 / 200",
+        "card": [
+          269.328125,
+          222.90625
+        ],
+        "media": [
+          269.328125,
+          222.90625
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/travelcover-4.webp",
+        "aspect": "269.333 / 200",
+        "card": [
+          269.328125,
+          275.796875
+        ],
+        "media": [
+          269.328125,
+          894.703125
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "fill"
+      }
+    ]
+  },
+  "desktopWide": {
+    "cards": [
+      {
+        "src": "/images/work-firefighter-pfister.webp",
+        "aspect": "420 / 300",
+        "card": [
+          624,
+          544.53125
+        ],
+        "media": [
+          624,
+          544.53125
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/work-y-conference.webp",
+        "aspect": "420 / 300",
+        "card": [
+          624,
+          544.4375
+        ],
+        "media": [
+          624,
+          5617.546875
+        ],
+        "at": [
+          0,
+          -39.796875
+        ],
+        "fit": "fill"
+      },
+      {
+        "src": "/images/work-spaceabet.webp",
+        "aspect": "269.333 / 200",
+        "card": [
+          405.328125,
+          300.984375
+        ],
+        "media": [
+          405.328125,
+          299.859375
+        ],
+        "at": [
+          0,
+          0.5625
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/work-generalitravelinsurance.webp",
+        "aspect": "269.333 / 200",
+        "card": [
+          405.328125,
+          335.46875
+        ],
+        "media": [
+          405.328125,
+          335.46875
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "cover"
+      },
+      {
+        "src": "/images/travelcover-4.webp",
+        "aspect": "269.333 / 200",
+        "card": [
+          405.328125,
+          415.0625
+        ],
+        "media": [
+          405.328125,
+          1346.5
+        ],
+        "at": [
+          0,
+          0
+        ],
+        "fit": "fill"
+      }
+    ]
+  }
+}

@@ -1,0 +1,710 @@
+{
+  "mobile": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "16px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-1.webp",
+            "alt": "Screenshot of the home page of the Firefighter Pfister site",
+            "height": "329.797px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "343 / 329.808",
+            "cellBox": [
+              343,
+              329.796875
+            ],
+            "shotBox": [
+              343,
+              329.796875
+            ],
+            "mediaBox": [
+              343,
+              329.796875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-2.webp",
+            "alt": "Screenshot of the about page of the Firefighter Pfister site",
+            "height": "319.672px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "flex-start",
+            "cellJustify": "normal",
+            "aspect": "640 / 596.5",
+            "cellBox": [
+              343,
+              319.671875
+            ],
+            "shotBox": [
+              343,
+              319.671875
+            ],
+            "mediaBox": [
+              343,
+              319.671875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-3.webp",
+            "alt": "Screenshot of one of the story pages from the Firefighter Pfister site",
+            "height": "454.078px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "247 / 327",
+            "cellBox": [
+              343,
+              454.078125
+            ],
+            "shotBox": [
+              343,
+              454.078125
+            ],
+            "mediaBox": [
+              343,
+              454.078125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "16px",
+      "padding": "32px 16px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 16px",
+        "gap": "normal",
+        "y": 724
+      },
+      "gallery": {
+        "padding": "16px",
+        "gap": "16px",
+        "y": 1316
+      }
+    }
+  },
+  "mobileWide": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "16px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-1.webp",
+            "alt": "Screenshot of the home page of the Firefighter Pfister site",
+            "height": "450px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "343 / 329.808",
+            "cellBox": [
+              468,
+              450
+            ],
+            "shotBox": [
+              468,
+              450
+            ],
+            "mediaBox": [
+              468,
+              450
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-2.webp",
+            "alt": "Screenshot of the about page of the Firefighter Pfister site",
+            "height": "436.188px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "flex-start",
+            "cellJustify": "normal",
+            "aspect": "640 / 596.5",
+            "cellBox": [
+              468,
+              436.1875
+            ],
+            "shotBox": [
+              468,
+              436.1875
+            ],
+            "mediaBox": [
+              468,
+              436.1875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-3.webp",
+            "alt": "Screenshot of one of the story pages from the Firefighter Pfister site",
+            "height": "619.578px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "247 / 327",
+            "cellBox": [
+              468,
+              619.578125
+            ],
+            "shotBox": [
+              468,
+              619.578125
+            ],
+            "mediaBox": [
+              468,
+              619.578125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "16px",
+      "padding": "32px 16px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 16px",
+        "gap": "normal",
+        "y": 592
+      },
+      "gallery": {
+        "padding": "16px",
+        "gap": "16px",
+        "y": 1088
+      }
+    }
+  },
+  "tablet": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "24px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-1.webp",
+            "alt": "Screenshot of the home page of the Firefighter Pfister site",
+            "height": "676.922px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "624 / 600",
+            "cellBox": [
+              704,
+              676.921875
+            ],
+            "shotBox": [
+              704,
+              676.921875
+            ],
+            "mediaBox": [
+              704,
+              676.921875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-2.webp",
+            "alt": "Screenshot of the about page of the Firefighter Pfister site",
+            "height": "656.141px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "flex-start",
+            "cellJustify": "normal",
+            "aspect": "640 / 596.5",
+            "cellBox": [
+              704,
+              656.140625
+            ],
+            "shotBox": [
+              704,
+              656.140625
+            ],
+            "mediaBox": [
+              704,
+              656.140625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-3.webp",
+            "alt": "Screenshot of one of the story pages from the Firefighter Pfister site",
+            "height": "898px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "704 / 898",
+            "cellBox": [
+              704,
+              898
+            ],
+            "shotBox": [
+              704,
+              898
+            ],
+            "mediaBox": [
+              704,
+              898
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "24px",
+      "padding": "32px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px",
+        "gap": "normal",
+        "y": 657
+      },
+      "gallery": {
+        "padding": "32px",
+        "gap": "24px",
+        "y": 1085
+      }
+    }
+  },
+  "tabletWide": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "24px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-1.webp",
+            "alt": "Screenshot of the home page of the Firefighter Pfister site",
+            "height": "803.844px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "624 / 600",
+            "cellBox": [
+              836,
+              803.84375
+            ],
+            "shotBox": [
+              836,
+              803.84375
+            ],
+            "mediaBox": [
+              836,
+              803.84375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-2.webp",
+            "alt": "Screenshot of the about page of the Firefighter Pfister site",
+            "height": "779.172px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "flex-start",
+            "cellJustify": "normal",
+            "aspect": "640 / 596.5",
+            "cellBox": [
+              836,
+              779.171875
+            ],
+            "shotBox": [
+              836,
+              779.171875
+            ],
+            "mediaBox": [
+              836,
+              779.171875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-3.webp",
+            "alt": "Screenshot of one of the story pages from the Firefighter Pfister site",
+            "height": "1066.38px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "704 / 898",
+            "cellBox": [
+              836,
+              1066.375
+            ],
+            "shotBox": [
+              836,
+              1066.375
+            ],
+            "mediaBox": [
+              836,
+              1066.375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "24px",
+      "padding": "32px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px",
+        "gap": "normal",
+        "y": 629
+      },
+      "gallery": {
+        "padding": "32px",
+        "gap": "24px",
+        "y": 1033
+      }
+    }
+  },
+  "desktop": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "32px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-1.webp",
+            "alt": "Screenshot of the home page of the Firefighter Pfister site",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "624 / 600",
+            "cellBox": [
+              420,
+              403.84375
+            ],
+            "shotBox": [
+              420,
+              403.84375
+            ],
+            "mediaBox": [
+              420,
+              403.84375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-2.webp",
+            "alt": "Screenshot of the about page of the Firefighter Pfister site",
+            "height": "391.453px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "flex-start",
+            "cellJustify": "center",
+            "aspect": "1280 / 1193",
+            "cellBox": [
+              420,
+              391.453125
+            ],
+            "shotBox": [
+              420,
+              391.453125
+            ],
+            "mediaBox": [
+              420,
+              391.453125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-3.webp",
+            "alt": "Screenshot of one of the story pages from the Firefighter Pfister site",
+            "height": "1154.72px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "1280 / 1695",
+            "cellBox": [
+              872,
+              1154.71875
+            ],
+            "shotBox": [
+              872,
+              1154.71875
+            ],
+            "mediaBox": [
+              872,
+              1154.71875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "16px",
+      "padding": "64px 64px 32px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 64px",
+        "gap": "normal",
+        "y": 765
+      },
+      "gallery": {
+        "padding": "32px 64px 64px",
+        "gap": "32px",
+        "y": 1251
+      }
+    }
+  },
+  "desktopWide": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "32px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-1.webp",
+            "alt": "Screenshot of the home page of the Firefighter Pfister site",
+            "height": "600px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "624 / 600",
+            "cellBox": [
+              624,
+              600
+            ],
+            "shotBox": [
+              624,
+              600
+            ],
+            "mediaBox": [
+              624,
+              600
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-2.webp",
+            "alt": "Screenshot of the about page of the Firefighter Pfister site",
+            "height": "581.578px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "flex-start",
+            "cellJustify": "center",
+            "aspect": "1280 / 1193",
+            "cellBox": [
+              624,
+              581.578125
+            ],
+            "shotBox": [
+              624,
+              581.578125
+            ],
+            "mediaBox": [
+              624,
+              581.578125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/firefighter-pfister-3.webp",
+            "alt": "Screenshot of one of the story pages from the Firefighter Pfister site",
+            "height": "1695px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "1280 / 1695",
+            "cellBox": [
+              1280,
+              1695
+            ],
+            "shotBox": [
+              1280,
+              1695
+            ],
+            "mediaBox": [
+              1280,
+              1695
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "16px",
+      "padding": "64px 64px 32px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 64px",
+        "gap": "normal",
+        "y": 693
+      },
+      "gallery": {
+        "padding": "32px 64px 64px",
+        "gap": "32px",
+        "y": 1127
+      }
+    }
+  }
+}

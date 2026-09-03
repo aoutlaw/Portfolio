@@ -93,11 +93,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .nav {
   position: relative;
   z-index: 6;
-  height: 68px;
   background: var(--cream);
 }
 
-@media (min-width: 1000px) { .nav { height: auto; } }
+/* The bar sizes to its contents everywhere except the home page below
+   1000px, where the live build pins it to 68px so the lone hamburger
+   doesn't shrink it. The project bar has the wordmark to fill it out, so
+   it grows to 84px at tablet. */
+@media (max-width: 999px) { .nav:not(.nav--split) { height: 68px; } }
 
 .nav__inner {
   max-width: calc(var(--container) + 2 * var(--pad-x));
@@ -116,8 +119,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 .nav__wordmark {
   font-family: var(--font-script);
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 36px;
+  line-height: 36px;
   color: var(--teal);
 }
 
@@ -168,7 +171,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 @media (min-width: 768px) {
   .nav__menu { display: none !important; }
-  .nav__wordmark { font-size: 36px; line-height: 36px; }
 }
 
 /* ---------- Text button (See More / Back to Work) ---------- */
@@ -222,6 +224,19 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (max-width: 767px) {
   .button { width: 100%; height: 56px; padding: 16px 32px; }
 }
+
+/* The case-study CTA is typeset a step down from the contact button, steps
+   back up with the breakpoint, and always sizes to its label -- it never
+   goes full width the way the contact button does on a phone. */
+.button--cta {
+  width: auto;
+  height: auto;
+  gap: 0;
+  font-size: 16px;
+  padding: 16px;
+}
+@media (min-width: 768px)  { .button--cta { font-size: 18px; padding: 24px; } }
+@media (min-width: 1000px) { .button--cta { font-size: 20px; padding: 16px 32px; } }
 
 /* ---------- Footer ---------- */
 

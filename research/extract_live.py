@@ -90,121 +90,204 @@ def breakpoints(doc):
     return sorted(found, key=lambda x: x[1])
 
 
-def scoped(doc, which="widest"):
-    """Lines of one breakpoint's subtree, plus the page's resolved rules."""
+def scoped(doc):
+    """Lines of the widest breakpoint's subtree, plus the page's resolved
+    rules. Copy is identical across the server-rendered copies, and the
+    layout that isn't comes from the measured geometry instead."""
     rules = ssr_rules(doc)
     lines = body_lines(doc)
-    bps = breakpoints(doc)
-    bp = (bps[0] if which == "narrowest" else bps[-1])[0]
-    start = next(i for i, l in enumerate(lines) if bp in l)
+    start = next(i for i, l in enumerate(lines) if breakpoints(doc)[-1][0] in l)
     ends = [i for i, l in enumerate(lines) if "data-breakpoint-id" in l and i > start]
     return lines[start : (ends[0] if ends else len(lines))], rules
 
 
-def images(lines, rules):
-    """Every <img> in reading order with alt text and its wrapper aspect ratio."""
-    out = []
-    for i, l in enumerate(lines):
-        m = re.match(r"<img[^>]*>", l)
-        if not m:
+GEOMETRY = ROOT / "research" / "raw_geometry"
+BREAKPOINTS = ("mobile", "tablet", "desktop")
+# Each breakpoint's second, wider sample. Comparing the two tells a value
+# Figma pinned in pixels from one that tracks the viewport.
+WIDER = {bp: bp + "Wide" for bp in BREAKPOINTS}
+DEFAULT_GAP = {"mobile": "16px", "tablet": "24px", "desktop": "32px"}
+
+
+def box_fit(item, wide):
+    """How the aspect box is sized inside its cell.
+
+    "cover" is the common case: the box spans the cell's width, overflows
+    its fixed height and gets cropped by it. A few cells size the box to
+    their *height* instead ("contain"), so it sits inside them with room
+    either side; one carries no ratio at all and just takes the cell's box
+    ("fill"). And one holds a fixed pixel width, which only shows up in the
+    wider sample -- at its own breakpoint's narrow edge it looks exactly
+    like a box that fills its cell.
+
+    All of it is read back from the measured boxes rather than guessed."""
+    if item["aspect"] == "auto":
+        return "fill"
+    (cw, ch), (bw, bh) = item["cellBox"], item["shotBox"]
+    if abs(wide["shotBox"][0] - bw) < 1.5 and wide["cellBox"][0] - bw > 1.5:
+        return f"{bw:.0f}px"
+    if abs(bw - cw) < 1.5:
+        return "cover"
+    return "contain" if abs(bh - ch) < 1.5 else "cover"
+
+
+def media_crop(twins):
+    """The image's placement inside its box, as percentages.
+
+    Figma bakes a fill's crop into the <img>: it is sized and offset
+    relative to its box rather than filling it, and the cell clips what
+    hangs out. The percentages are the same at every breakpoint, so one set
+    is emitted; None means the image simply fills its box."""
+    crops = set()
+    for t in twins.values():
+        bw, bh = t["shotBox"]
+        mw, mh = t["mediaBox"]
+        mx, my = t["mediaAt"]
+        if not bw or not bh:
             continue
-        src = re.search(r'src="([^"]*)"', l)
-        alt = re.search(r'alt="([^"]*)"', l)
-        if not src:
-            continue
-        ar = None
-        for j in range(i - 1, max(0, i - 5), -1):
-            p = props(lines[j], rules)
-            if "aspect-ratio" in p:
-                ar = p["aspect-ratio"]
-                break
-        out.append(
-            {
-                "src": src.group(1),
-                "alt": htmllib.unescape(alt.group(1)) if alt else "",
-                "aspect": ar,
-            }
-        )
-    return out
+        crops.add(tuple(round(v, 2) for v in
+                        (mw / bw * 100, mh / bh * 100, mx / bw * 100, my / bh * 100)))
+    if not crops:
+        return None
+    if len(crops) > 1:
+        print(f"  !! crop differs across breakpoints: {crops}")
+    crop = max(crops)
+    return None if crop == (100.0, 100.0, 0.0, 0.0) else list(crop)
 
 
-def project_gallery(lines, rules, after=0):
-    """Gallery rows: each row is a flex line of items sharing a fixed height.
+def cell_ratio(item):
+    """The box's own ratio where it has one, else the ratio its cell is
+    holding -- a couple of boxes carry no ratio and take the cell's."""
+    if item["aspect"] != "auto":
+        return item["aspect"]
+    w, h = item["cellBox"]
+    return f"{w:.4g} / {h:.4g}"
 
-    The live markup nests row > item > aspect-box > img. Rows are the divs
-    carrying both `gap:32px` and `max-width:1280px`; items carry a `height`
-    in px, which is what makes each row's images line up.
 
-    An aspect-box with no <img> under it is a video: Figma uploads those as
-    VIDEO fills that its client runtime mounts after hydration, so they are
-    absent from the server-rendered HTML. They are emitted here as typed
-    placeholders and matched to the real files by build.py.
+def cell_height(item, wide):
+    """The cell's height: a pixel value it holds whatever the viewport
+    does, or `auto` where it just follows the shot inside it."""
+    if abs(wide["cellBox"][1] - item["cellBox"][1]) > 1.5:
+        return "auto"
+    return item["height"]
+
+
+def project_gallery(slug):
+    """Gallery rows for one project, read from the harvested geometry.
+
+    The live markup nests row > cell > aspect-box > img. The row is a flex
+    line capped at the 1280px content width; the cell has a *fixed* pixel
+    height and `overflow: clip` and centres its contents; the aspect box
+    inside is width-driven, so a tall image overflows its cell and is
+    centre-cropped by it. Every one of those values -- the row's direction
+    and gap, the cell's height, the box's ratio -- is set per breakpoint
+    with no derivable rule, so all three are carried per item.
+
+    The values come from research/raw_geometry/*.json rather than from the
+    `ssr-css` block, because Figma reuses class names across breakpoints
+    and the resolved cascade is what actually matters. Refresh them with
+    research/harvest_geometry.js.
+
+    Videos have no <img>: Figma uploads them as VIDEO fills that its client
+    runtime mounts after hydration, so they are typed placeholders here and
+    matched to the real files by build.py.
     """
-    rows, current, current_h = [], [], None
+    path = GEOMETRY / f"{slug}.json"
+    if not path.exists():
+        raise SystemExit(f"missing geometry for {slug}; run research/harvest_geometry.js")
+    doc = json.loads(path.read_text(encoding="utf-8"))
+    head = {bp: doc[bp]["head"] for bp in BREAKPOINTS}
+    blocks = {bp: doc[bp]["blocks"] for bp in BREAKPOINTS}
+    per_bp = {bp: v["rows"] for bp, v in doc.items()}
+    local_to_live = {v: k for k, v in
+                     json.loads((ROOT / "public" / "images" / "manifest.json")
+                                .read_text(encoding="utf-8")).items()}
 
-    def flush():
-        nonlocal current, current_h
-        if current:
-            rows.append({"height": current_h, "items": current})
-        current, current_h = [], None
+    counts = {bp: sum(len(r["items"]) for r in rows) for bp, rows in per_bp.items()}
+    if len(set(counts.values())) != 1:
+        raise SystemExit(f"{slug}: gallery item counts differ across breakpoints: {counts}")
 
-    for i, l in enumerate(lines):
-        if i < after:
-            continue
-        p = props(l, rules)
-        if p.get("gap") == "32px" and p.get("max-width") == "1280px":
-            flush()
-        if re.match(r"^[0-9.]+px$", p.get("height", "")) and p.get("flex") == "1 0 0":
-            current_h = p["height"]
-        if "aspect-ratio" in p:
-            # Look ahead for the <img> this aspect box wraps. SVGs are the
-            # page's own chrome icons (back arrow, CTA arrow), never gallery
-            # content, so they don't count as filling the box.
-            src = alt = None
-            for j in range(i, min(len(lines), i + 4)):
-                if re.match(r"<img[^>]*>", lines[j]) and "/_assets/" in lines[j]:
-                    cand = re.search(r'src="([^"]*)"', lines[j]).group(1)
-                    if cand.endswith(".svg"):
-                        break
-                    src = cand
-                    a = re.search(r'alt="([^"]*)"', lines[j])
-                    alt = htmllib.unescape(a.group(1)) if a else ""
-                    break
-                if "aspect-ratio" in props(lines[j], rules) and j > i:
-                    break
-            if src:
-                current.append({"type": "image", "src": src, "alt": alt, "aspect": p["aspect-ratio"]})
-            else:
-                current.append({"type": "video", "aspect": p["aspect-ratio"]})
-    flush()
-    return [r for r in rows if r["items"]]
+    rows = []
+    for i, row in enumerate(per_bp["desktop"]):
+        out_items = []
+        for j, item in enumerate(row["items"]):
+            twins = {bp: per_bp[bp][i]["items"][j] for bp in BREAKPOINTS}
+            wider = {bp: per_bp[WIDER[bp]][i]["items"][j] for bp in BREAKPOINTS}
+            entry = {
+                "type": item["type"],
+                "aspect": {bp: cell_ratio(t) for bp, t in twins.items()},
+                "crop": media_crop(twins),
+                "cell": {bp: cell_height(t, wider[bp]) for bp, t in twins.items()},
+                "fit": {bp: box_fit(t, wider[bp]) for bp, t in twins.items()},
+                # How the cell places the box: which axis it lays out on,
+                # and where the overflow hangs.
+                "place": {bp: [t["cellDirection"], t["cellAlign"], t["cellJustify"]]
+                          for bp, t in twins.items()},
+            }
+            if item["type"] == "image":
+                local = item["src"].rsplit("/", 1)[-1]
+                entry["src"] = local_to_live.get(local, item["src"])
+                entry["alt"] = item["alt"] or ""
+            out_items.append(entry)
+        rows.append({
+            "label": per_bp["desktop"][i]["label"],
+            "direction": {bp: per_bp[bp][i]["direction"] for bp in BREAKPOINTS},
+            "align": {bp: per_bp[bp][i]["align"] for bp in BREAKPOINTS},
+            "gap": {bp: (per_bp[bp][i]["gap"] if per_bp[bp][i]["gap"].endswith("px")
+                         else DEFAULT_GAP[bp]) for bp in BREAKPOINTS},
+            "items": out_items,
+        })
+    return {"head": head, "blocks": blocks, "rows": rows}
+
+
+def paragraphs_after(lines, start):
+    """The <p> children of the rich-text block opening at `start`."""
+    out, depth = [], 0
+    for l in lines[start:]:
+        if l.startswith("<div"):
+            depth += 1
+        elif l.startswith("</div"):
+            depth -= 1
+            if depth <= 0:
+                break
+        t = text_of(l)
+        if t and l.startswith("<p"):
+            out.append(t)
+    return out
 
 
 def build_project(slug, title):
     doc = load(slug)
     lines, rules = scoped(doc)
 
-    heading = intro = None
+    gallery = project_gallery(slug)
+    labels = {r["label"] for r in gallery["rows"] if r["label"]}
+
+    heading = None
+    intro = []
     sections, cta = [], None
     pending_h2 = None
-    last_section_line = 0  # noqa: F841 (kept for reference)
 
     for i, l in enumerate(lines):
         t = text_of(l)
-        if not t:
-            continue
         p = props(l, rules)
         fs, fam = p.get("font-size"), p.get("font-family", "")
+        # The intro can be a single paragraph or a rich-text block of
+        # several. In the latter the type is declared on the wrapper, which
+        # carries no text of its own, so this runs before the text filter.
+        if fs == "24px" and "Poppins" in fam and not intro and heading:
+            intro = [t] if t else paragraphs_after(lines, i)
+            continue
+        if not t:
+            continue
         if fs == "96px" and heading is None:
             heading = t
-        elif fs == "24px" and "Poppins" in fam and intro is None and heading:
-            intro = t
         elif fs == "36px" and "SemiBold" in fam:
             pending_h2 = t
         elif fs == "20px" and "Regular" in fam and pending_h2:
-            sections.append({"heading": pending_h2, "body": t})
+            if pending_h2 not in labels:
+                sections.append({"heading": pending_h2, "body": t})
             pending_h2 = None
-            last_section_line = i
 
     # The CTA is the one external link on the page; its label is the
     # uppercase SemiBold text a few nodes below the anchor.
@@ -232,20 +315,53 @@ def build_project(slug, title):
         "slug": slug,
         "title": title,
         "heading": heading or title,
-        "intro": intro or "",
+        "intro": intro,
         "sections": sections,
         "cta": cta,
         # TravelCover interleaves its Before/Wireframes/After imagery between
         # the text sections rather than gathering it all at the end, so the
         # gallery scan can't start after the last section -- it takes the
         # whole subtree, with SVG chrome icons filtered out inside.
-        "gallery": project_gallery(lines, rules),
+        "head": gallery["head"],
+        "blocks": gallery["blocks"],
+        "gallery": gallery["rows"],
     }
+
+
+def card_geometry():
+    """Each work card's box ratio per breakpoint and its image's crop.
+
+    The card is a box at a fixed ratio; the image either covers it or --
+    where Figma cropped a tall source -- is scaled past it and nudged up.
+    The ratio changes between breakpoints (Y Conference's card is squarer
+    on a phone than it is anywhere else), so it is measured rather than
+    taken from the one server-rendered copy.
+    """
+    path = GEOMETRY / "home.json"
+    if not path.exists():
+        raise SystemExit("missing home geometry; run research/harvest_geometry.js")
+    per_bp = json.loads(path.read_text(encoding="utf-8"))
+    out = {}
+    for bp in BREAKPOINTS:
+        for card in per_bp[bp]["cards"]:
+            local = card["src"].rsplit("/", 1)[-1]
+            entry = out.setdefault(local, {"box": {}, "crop": {}})
+            cw, ch = card["card"]
+            mw, mh = card["media"]
+            _, my = card["at"]
+            entry["box"][bp] = f"{cw:.6g} / {ch:.6g}"
+            if abs(mh - ch) > 1.5 or abs(my) > 1.5:
+                entry["crop"][bp] = {"height": f"{mh / ch * 100:.4g}%",
+                                     "top": f"{my / ch * 100:.4g}%"}
+    return out
 
 
 def work_cards(lines, rules, by_image):
     """Work cards in DOM order: destination, image, alt, box ratio and crop."""
     cards, seen = [], set()
+    geometry = card_geometry()
+    local_names = json.loads((ROOT / "public" / "images" / "manifest.json")
+                             .read_text(encoding="utf-8"))
     for i, l in enumerate(lines):
         m = re.search(r'<a[^>]*href="(/[a-z-]+)"', l)
         if not (m or 'role="link"' in l or "aspect-ratio" in props(l, rules)):
@@ -259,27 +375,16 @@ def work_cards(lines, rules, by_image):
                 digest = src.rsplit("/", 1)[-1].rsplit(".", 1)[0]
                 alt = re.search(r'alt="([^"]*)"', lines[j])
 
-                # A card is a box at some aspect ratio, with the image either
-                # covering it or -- where Figma cropped a tall source --
-                # scaled past it and nudged with a top offset.
-                box = None
-                for k in range(j - 1, max(0, j - 7), -1):
-                    q = props(lines[k], rules)
-                    if "aspect-ratio" in q:
-                        box = q["aspect-ratio"]
-                        break
-                ip = props(lines[j], rules)
-                crop = None
-                if ip.get("height", "").endswith("%") and ip["height"] != "100%":
-                    crop = {"height": ip["height"], "top": ip.get("top", "0%")}
-
+                geom = geometry.get(local_names.get(src, ""), {})
+                if not geom:
+                    print(f"  !! no measured geometry for {src}")
                 cards.append(
                     {
                         "slug": by_image.get(digest, m.group(1).lstrip("/") if m else None),
                         "src": src,
                         "alt": htmllib.unescape(alt.group(1)) if alt else "",
-                        "box": box,
-                        "crop": crop,
+                        "box": geom.get("box", {}),
+                        "crop": geom.get("crop"),
                     }
                 )
                 break
@@ -343,6 +448,16 @@ def build_home():
     }
 
     work = work_cards(lines, rules, BY_IMAGE)
+
+    # The rendered HTML only carries the rows that are visible before "See
+    # More"; the scene graph has all ten, plus each row's description.
+    visible = len(jobs)
+    full = scene_graph_jobs()
+    if full:
+        for i, j in enumerate(full[:visible]):
+            if j["company"] != jobs[i]["company"]:
+                print(f"  !! row {i} differs: {j['company']!r} vs {jobs[i]['company']!r}")
+        jobs = full
 
     return {
         "name": "Angelo Outlaw",

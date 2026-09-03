@@ -8,7 +8,8 @@
   if (!button || !menu) return;
 
   function setOpen(open) {
-    menu.hidden = !open;
+    window.Motion.resize(menu, function () { menu.hidden = !open; },
+                         256, window.Motion.EASE.gentleSpring);
     button.setAttribute("aria-expanded", String(open));
   }
 

@@ -1,0 +1,920 @@
+{
+  "mobile": {
+    "rows": [
+      {
+        "label": "Before",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-1.webp",
+            "alt": "Example of what the site looked like before. Off-brand green and yellow colors with confusing brand marks",
+            "height": "294.391px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "247 / 212",
+            "cellBox": [
+              343,
+              294.390625
+            ],
+            "shotBox": [
+              343,
+              294.390625
+            ],
+            "mediaBox": [
+              611.390625,
+              394.921875
+            ],
+            "mediaAt": [
+              -134.171875,
+              -56.390625
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Wireframes",
+        "direction": "column",
+        "gap": "16px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-2.webp",
+            "alt": "Wireframe showing the policy details page",
+            "height": "243.906px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "247 / 175.644",
+            "cellBox": [
+              343,
+              243.90625
+            ],
+            "shotBox": [
+              343,
+              243.90625
+            ],
+            "mediaBox": [
+              343,
+              243.90625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/travelcover-3.webp",
+            "alt": "Wireframe showing the purchase success page",
+            "height": "243.906px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "247 / 175.644",
+            "cellBox": [
+              343,
+              243.90625
+            ],
+            "shotBox": [
+              343,
+              243.90625
+            ],
+            "mediaBox": [
+              343,
+              243.90625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "After",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-4.webp",
+            "alt": "Results image which shows the correct use of brand elements, colors, and updated layout",
+            "height": "294.391px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "247 / 212",
+            "cellBox": [
+              343,
+              294.390625
+            ],
+            "shotBox": [
+              343,
+              294.390625
+            ],
+            "mediaBox": [
+              343,
+              1139.015625
+            ],
+            "mediaAt": [
+              0,
+              -0.015625
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "16px",
+      "padding": "32px 16px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 16px",
+        "gap": "normal",
+        "y": 848
+      },
+      "gallery": {
+        "padding": "16px 16px 32px",
+        "gap": "16px",
+        "y": 1488
+      }
+    }
+  },
+  "mobileWide": {
+    "rows": [
+      {
+        "label": "Before",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-1.webp",
+            "alt": "Example of what the site looked like before. Off-brand green and yellow colors with confusing brand marks",
+            "height": "401.672px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "247 / 212",
+            "cellBox": [
+              468,
+              401.671875
+            ],
+            "shotBox": [
+              468,
+              401.671875
+            ],
+            "mediaBox": [
+              834.203125,
+              538.828125
+            ],
+            "mediaAt": [
+              -183.078125,
+              -76.953125
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Wireframes",
+        "direction": "column",
+        "gap": "16px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-2.webp",
+            "alt": "Wireframe showing the policy details page",
+            "height": "332.797px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "247 / 175.644",
+            "cellBox": [
+              468,
+              332.796875
+            ],
+            "shotBox": [
+              468,
+              332.796875
+            ],
+            "mediaBox": [
+              468,
+              332.796875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/travelcover-3.webp",
+            "alt": "Wireframe showing the purchase success page",
+            "height": "332.797px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "247 / 175.644",
+            "cellBox": [
+              468,
+              332.796875
+            ],
+            "shotBox": [
+              468,
+              332.796875
+            ],
+            "mediaBox": [
+              468,
+              332.796875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "After",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-4.webp",
+            "alt": "Results image which shows the correct use of brand elements, colors, and updated layout",
+            "height": "401.672px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "247 / 212",
+            "cellBox": [
+              468,
+              401.671875
+            ],
+            "shotBox": [
+              468,
+              401.671875
+            ],
+            "mediaBox": [
+              468,
+              1554.09375
+            ],
+            "mediaAt": [
+              0,
+              -0.03125
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "16px",
+      "padding": "32px 16px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 16px",
+        "gap": "normal",
+        "y": 736
+      },
+      "gallery": {
+        "padding": "16px 16px 32px",
+        "gap": "16px",
+        "y": 1256
+      }
+    }
+  },
+  "tablet": {
+    "rows": [
+      {
+        "label": "Before",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-1.webp",
+            "alt": "Example of what the site looked like before. Off-brand green and yellow colors with confusing brand marks",
+            "height": "604.672px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "672 / 577.188",
+            "cellBox": [
+              704,
+              604.671875
+            ],
+            "shotBox": [
+              704,
+              604.671875
+            ],
+            "mediaBox": [
+              1254.875,
+              811.15625
+            ],
+            "mediaAt": [
+              -275.390625,
+              -115.84375
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Wireframes",
+        "direction": "column",
+        "gap": "24px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-2.webp",
+            "alt": "Wireframe showing the policy details page",
+            "height": "500.609px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1440 / 1024",
+            "cellBox": [
+              704,
+              500.609375
+            ],
+            "shotBox": [
+              704,
+              500.609375
+            ],
+            "mediaBox": [
+              704,
+              500.609375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/travelcover-3.webp",
+            "alt": "Wireframe showing the purchase success page",
+            "height": "500.609px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1440 / 1024",
+            "cellBox": [
+              704,
+              500.609375
+            ],
+            "shotBox": [
+              704,
+              500.609375
+            ],
+            "mediaBox": [
+              704,
+              500.609375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "After",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-4.webp",
+            "alt": "Results image which shows the correct use of brand elements, colors, and updated layout",
+            "height": "604.438px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "672 / 576.975",
+            "cellBox": [
+              704,
+              604.4375
+            ],
+            "shotBox": [
+              704,
+              604.4375
+            ],
+            "mediaBox": [
+              704,
+              2338.625
+            ],
+            "mediaAt": [
+              0,
+              -0.046875
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "24px",
+      "padding": "32px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px",
+        "gap": "normal",
+        "y": 709
+      },
+      "gallery": {
+        "padding": "24px 32px 32px",
+        "gap": "24px",
+        "y": 1161
+      }
+    }
+  },
+  "tabletWide": {
+    "rows": [
+      {
+        "label": "Before",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-1.webp",
+            "alt": "Example of what the site looked like before. Off-brand green and yellow colors with confusing brand marks",
+            "height": "718.047px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "672 / 577.188",
+            "cellBox": [
+              836,
+              718.046875
+            ],
+            "shotBox": [
+              836,
+              718.046875
+            ],
+            "mediaBox": [
+              1490.15625,
+              963.25
+            ],
+            "mediaAt": [
+              -327.03125,
+              -137.5625
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Wireframes",
+        "direction": "column",
+        "gap": "24px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-2.webp",
+            "alt": "Wireframe showing the policy details page",
+            "height": "594.484px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1440 / 1024",
+            "cellBox": [
+              836,
+              594.484375
+            ],
+            "shotBox": [
+              836,
+              594.484375
+            ],
+            "mediaBox": [
+              836,
+              594.484375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/travelcover-3.webp",
+            "alt": "Wireframe showing the purchase success page",
+            "height": "594.484px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1440 / 1024",
+            "cellBox": [
+              836,
+              594.484375
+            ],
+            "shotBox": [
+              836,
+              594.484375
+            ],
+            "mediaBox": [
+              836,
+              594.484375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "After",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-4.webp",
+            "alt": "Results image which shows the correct use of brand elements, colors, and updated layout",
+            "height": "717.781px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "672 / 576.975",
+            "cellBox": [
+              836,
+              717.78125
+            ],
+            "shotBox": [
+              836,
+              717.78125
+            ],
+            "mediaBox": [
+              836,
+              2777.15625
+            ],
+            "mediaAt": [
+              0,
+              -0.0625
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "24px",
+      "padding": "32px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px",
+        "gap": "normal",
+        "y": 709
+      },
+      "gallery": {
+        "padding": "24px 32px 32px",
+        "gap": "24px",
+        "y": 1113
+      }
+    }
+  },
+  "desktop": {
+    "rows": [
+      {
+        "label": "Before",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-1.webp",
+            "alt": "Example of what the site looked like before. Off-brand green and yellow colors with confusing brand marks",
+            "height": "748.969px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "808 / 694",
+            "cellBox": [
+              872,
+              748.96875
+            ],
+            "shotBox": [
+              872,
+              748.96875
+            ],
+            "mediaBox": [
+              1554.328125,
+              1004.734375
+            ],
+            "mediaAt": [
+              -341.125,
+              -143.5
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Wireframes",
+        "direction": "row",
+        "gap": "32px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-2.webp",
+            "alt": "Wireframe showing the policy details page",
+            "height": "298.656px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1440 / 1024",
+            "cellBox": [
+              420,
+              298.65625
+            ],
+            "shotBox": [
+              420,
+              298.65625
+            ],
+            "mediaBox": [
+              420,
+              298.65625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/travelcover-3.webp",
+            "alt": "Wireframe showing the purchase success page",
+            "height": "298.656px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1440 / 1024",
+            "cellBox": [
+              420,
+              298.65625
+            ],
+            "shotBox": [
+              420,
+              298.65625
+            ],
+            "mediaBox": [
+              420,
+              298.65625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "After",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-4.webp",
+            "alt": "Results image which shows the correct use of brand elements, colors, and updated layout",
+            "height": "748.688px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1280 / 1099",
+            "cellBox": [
+              872,
+              748.6875
+            ],
+            "shotBox": [
+              872,
+              748.6875
+            ],
+            "mediaBox": [
+              872,
+              2896.734375
+            ],
+            "mediaAt": [
+              0,
+              -0.0625
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "16px",
+      "padding": "32px 64px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 64px",
+        "gap": "normal",
+        "y": 873
+      },
+      "gallery": {
+        "padding": "32px 64px 64px",
+        "gap": "32px",
+        "y": 1385
+      }
+    }
+  },
+  "desktopWide": {
+    "rows": [
+      {
+        "label": "Before",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-1.webp",
+            "alt": "Example of what the site looked like before. Off-brand green and yellow colors with confusing brand marks",
+            "height": "1099.39px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "808 / 694",
+            "cellBox": [
+              1280,
+              1099.390625
+            ],
+            "shotBox": [
+              1280,
+              1099.390625
+            ],
+            "mediaBox": [
+              2281.59375,
+              1474.828125
+            ],
+            "mediaAt": [
+              -500.734375,
+              -210.640625
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Wireframes",
+        "direction": "row",
+        "gap": "32px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-2.webp",
+            "alt": "Wireframe showing the policy details page",
+            "height": "443.719px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1440 / 1024",
+            "cellBox": [
+              624,
+              443.71875
+            ],
+            "shotBox": [
+              624,
+              443.71875
+            ],
+            "mediaBox": [
+              624,
+              443.71875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/travelcover-3.webp",
+            "alt": "Wireframe showing the purchase success page",
+            "height": "443.719px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1440 / 1024",
+            "cellBox": [
+              624,
+              443.71875
+            ],
+            "shotBox": [
+              624,
+              443.71875
+            ],
+            "mediaBox": [
+              624,
+              443.71875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "After",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/travelcover-4.webp",
+            "alt": "Results image which shows the correct use of brand elements, colors, and updated layout",
+            "height": "1099px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1280 / 1099",
+            "cellBox": [
+              1280,
+              1099
+            ],
+            "shotBox": [
+              1280,
+              1099
+            ],
+            "mediaBox": [
+              1280,
+              4252.140625
+            ],
+            "mediaAt": [
+              0,
+              -0.109375
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "16px",
+      "padding": "32px 64px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 64px",
+        "gap": "normal",
+        "y": 801
+      },
+      "gallery": {
+        "padding": "32px 64px 64px",
+        "gap": "32px",
+        "y": 1235
+      }
+    }
+  }
+}

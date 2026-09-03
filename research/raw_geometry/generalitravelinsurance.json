@@ -1,0 +1,338 @@
+{
+  "mobile": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "295.828px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "640 / 552",
+            "cellBox": [
+              343,
+              295.828125
+            ],
+            "shotBox": [
+              343,
+              295.828125
+            ],
+            "mediaBox": [
+              343,
+              295.828125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "16px",
+      "padding": "32px 16px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 16px",
+        "gap": "normal",
+        "y": 812
+      },
+      "gallery": {
+        "padding": "16px",
+        "gap": "normal",
+        "y": 1332
+      }
+    }
+  },
+  "mobileWide": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "403.641px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "640 / 552",
+            "cellBox": [
+              468,
+              403.640625
+            ],
+            "shotBox": [
+              468,
+              403.640625
+            ],
+            "mediaBox": [
+              468,
+              403.640625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "16px",
+      "padding": "32px 16px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 16px",
+        "gap": "normal",
+        "y": 728
+      },
+      "gallery": {
+        "padding": "16px",
+        "gap": "normal",
+        "y": 1152
+      }
+    }
+  },
+  "tablet": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "607.188px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "640 / 552",
+            "cellBox": [
+              704,
+              607.1875
+            ],
+            "shotBox": [
+              704,
+              607.1875
+            ],
+            "mediaBox": [
+              704,
+              607.1875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "24px",
+      "padding": "32px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px",
+        "gap": "normal",
+        "y": 717
+      },
+      "gallery": {
+        "padding": "24px 32px 32px",
+        "gap": "normal",
+        "y": 1097
+      }
+    }
+  },
+  "tabletWide": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "721.047px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "640 / 552",
+            "cellBox": [
+              836,
+              721.046875
+            ],
+            "shotBox": [
+              836,
+              721.046875
+            ],
+            "mediaBox": [
+              836,
+              721.046875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "24px",
+      "padding": "32px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px",
+        "gap": "normal",
+        "y": 653
+      },
+      "gallery": {
+        "padding": "24px 32px 32px",
+        "gap": "normal",
+        "y": 1009
+      }
+    }
+  },
+  "desktop": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "752.094px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "640 / 552",
+            "cellBox": [
+              872,
+              752.09375
+            ],
+            "shotBox": [
+              872,
+              752.09375
+            ],
+            "mediaBox": [
+              872,
+              752.09375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "16px",
+      "padding": "32px 64px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 64px",
+        "gap": "normal",
+        "y": 897
+      },
+      "gallery": {
+        "padding": "32px 64px 64px",
+        "gap": "normal",
+        "y": 1357
+      }
+    }
+  },
+  "desktopWide": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "1104px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "640 / 552",
+            "cellBox": [
+              1280,
+              1104
+            ],
+            "shotBox": [
+              1280,
+              1104
+            ],
+            "mediaBox": [
+              1280,
+              1104
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "16px",
+      "padding": "32px 64px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 64px",
+        "gap": "normal",
+        "y": 765
+      },
+      "gallery": {
+        "padding": "32px 64px 64px",
+        "gap": "normal",
+        "y": 1173
+      }
+    }
+  }
+}

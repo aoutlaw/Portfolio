@@ -1,0 +1,920 @@
+{
+  "mobile": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "248.672px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "640 / 464",
+            "cellBox": [
+              343,
+              248.671875
+            ],
+            "shotBox": [
+              343,
+              248.671875
+            ],
+            "mediaBox": [
+              343,
+              248.671875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/y-conference-1.webp",
+            "alt": "View of my sketchbook from an angle showing the UI sketches I made",
+            "height": "256.891px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "247 / 185",
+            "cellBox": [
+              343,
+              256.890625
+            ],
+            "shotBox": [
+              343,
+              256.890625
+            ],
+            "mediaBox": [
+              343,
+              256.890625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "16px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/y-conference-2.webp",
+            "alt": "Zoomed view of one of the page sketches I made",
+            "height": "950.375px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "flex-start",
+            "cellJustify": "normal",
+            "aspect": "247 / 684.387",
+            "cellBox": [
+              343,
+              950.375
+            ],
+            "shotBox": [
+              343,
+              950.375
+            ],
+            "mediaBox": [
+              343,
+              950.375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/_assets/v11/d84b65ccd7beacc065aa9b6a82a8f55bd55b3077.png",
+            "alt": "Low fidelity mockup of the Y Conference site",
+            "height": "2151.48px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "flex-start",
+            "cellJustify": "normal",
+            "aspect": "247 / 1549.33",
+            "cellBox": [
+              343,
+              2151.484375
+            ],
+            "shotBox": [
+              343,
+              2151.484375
+            ],
+            "mediaBox": [
+              343,
+              2151.484375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "16px",
+      "padding": "32px 16px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 16px",
+        "gap": "normal",
+        "y": 704
+      },
+      "gallery": {
+        "padding": "16px",
+        "gap": "16px",
+        "y": 1464
+      }
+    }
+  },
+  "mobileWide": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "339.297px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "640 / 464",
+            "cellBox": [
+              468,
+              339.296875
+            ],
+            "shotBox": [
+              468,
+              339.296875
+            ],
+            "mediaBox": [
+              468,
+              339.296875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/y-conference-1.webp",
+            "alt": "View of my sketchbook from an angle showing the UI sketches I made",
+            "height": "350.516px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "247 / 185",
+            "cellBox": [
+              468,
+              350.515625
+            ],
+            "shotBox": [
+              468,
+              350.515625
+            ],
+            "mediaBox": [
+              468,
+              350.515625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "16px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/y-conference-2.webp",
+            "alt": "Zoomed view of one of the page sketches I made",
+            "height": "1296.72px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "flex-start",
+            "cellJustify": "normal",
+            "aspect": "247 / 684.387",
+            "cellBox": [
+              468,
+              1296.71875
+            ],
+            "shotBox": [
+              468,
+              1296.71875
+            ],
+            "mediaBox": [
+              468,
+              1296.71875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/_assets/v11/d84b65ccd7beacc065aa9b6a82a8f55bd55b3077.png",
+            "alt": "Low fidelity mockup of the Y Conference site",
+            "height": "2935.56px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "flex-start",
+            "cellJustify": "normal",
+            "aspect": "247 / 1549.33",
+            "cellBox": [
+              468,
+              2935.5625
+            ],
+            "shotBox": [
+              468,
+              2935.5625
+            ],
+            "mediaBox": [
+              468,
+              2935.5625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "16px",
+      "padding": "32px 16px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 16px",
+        "gap": "normal",
+        "y": 620
+      },
+      "gallery": {
+        "padding": "16px",
+        "gap": "16px",
+        "y": 1212
+      }
+    }
+  },
+  "tablet": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "510.391px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "640 / 464",
+            "cellBox": [
+              704,
+              510.390625
+            ],
+            "shotBox": [
+              704,
+              510.390625
+            ],
+            "mediaBox": [
+              704,
+              510.390625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/y-conference-1.webp",
+            "alt": "View of my sketchbook from an angle showing the UI sketches I made",
+            "height": "528px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "672 / 504",
+            "cellBox": [
+              704,
+              528
+            ],
+            "shotBox": [
+              704,
+              528
+            ],
+            "mediaBox": [
+              704,
+              528
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "24px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/y-conference-2.webp",
+            "alt": "Zoomed view of one of the page sketches I made",
+            "height": "1950.64px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "flex-start",
+            "cellJustify": "center",
+            "aspect": "1178 / 3264",
+            "cellBox": [
+              704,
+              1950.640625
+            ],
+            "shotBox": [
+              704,
+              1950.640625
+            ],
+            "mediaBox": [
+              704,
+              1950.640625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/_assets/v11/d84b65ccd7beacc065aa9b6a82a8f55bd55b3077.png",
+            "alt": "Low fidelity mockup of the Y Conference site",
+            "height": "4415.89px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "flex-start",
+            "cellJustify": "center",
+            "aspect": "653 / 4096",
+            "cellBox": [
+              704,
+              4415.890625
+            ],
+            "shotBox": [
+              704,
+              4415.890625
+            ],
+            "mediaBox": [
+              704,
+              4415.890625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "24px",
+      "padding": "32px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px",
+        "gap": "normal",
+        "y": 685
+      },
+      "gallery": {
+        "padding": "24px 32px 32px",
+        "gap": "24px",
+        "y": 1233
+      }
+    }
+  },
+  "tabletWide": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "606.094px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "640 / 464",
+            "cellBox": [
+              836,
+              606.09375
+            ],
+            "shotBox": [
+              836,
+              606.09375
+            ],
+            "mediaBox": [
+              836,
+              606.09375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/y-conference-1.webp",
+            "alt": "View of my sketchbook from an angle showing the UI sketches I made",
+            "height": "600px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "672 / 504",
+            "cellBox": [
+              836,
+              600
+            ],
+            "shotBox": [
+              836,
+              627
+            ],
+            "mediaBox": [
+              836,
+              627
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "24px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/y-conference-2.webp",
+            "alt": "Zoomed view of one of the page sketches I made",
+            "height": "2316.38px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "flex-start",
+            "cellJustify": "center",
+            "aspect": "1178 / 3264",
+            "cellBox": [
+              836,
+              2316.375
+            ],
+            "shotBox": [
+              836,
+              2316.375
+            ],
+            "mediaBox": [
+              836,
+              2316.375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/_assets/v11/d84b65ccd7beacc065aa9b6a82a8f55bd55b3077.png",
+            "alt": "Low fidelity mockup of the Y Conference site",
+            "height": "5243.88px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "flex-start",
+            "cellJustify": "center",
+            "aspect": "653 / 4096",
+            "cellBox": [
+              836,
+              5243.875
+            ],
+            "shotBox": [
+              836,
+              5243.875
+            ],
+            "mediaBox": [
+              836,
+              5243.875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "24px",
+      "padding": "32px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px",
+        "gap": "normal",
+        "y": 657
+      },
+      "gallery": {
+        "padding": "24px 32px 32px",
+        "gap": "24px",
+        "y": 1133
+      }
+    }
+  },
+  "desktop": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "632.188px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "640 / 464",
+            "cellBox": [
+              872,
+              632.1875
+            ],
+            "shotBox": [
+              872,
+              632.1875
+            ],
+            "mediaBox": [
+              872,
+              632.1875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/y-conference-1.webp",
+            "alt": "View of my sketchbook from an angle showing the UI sketches I made",
+            "height": "600px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "3264 / 2448",
+            "cellBox": [
+              872,
+              600
+            ],
+            "shotBox": [
+              872,
+              654
+            ],
+            "mediaBox": [
+              872,
+              654
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "32px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/y-conference-2.webp",
+            "alt": "Zoomed view of one of the page sketches I made",
+            "height": "1700px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "flex-start",
+            "cellJustify": "center",
+            "aspect": "1178 / 3264",
+            "cellBox": [
+              420,
+              1700
+            ],
+            "shotBox": [
+              420,
+              1163.734375
+            ],
+            "mediaBox": [
+              420,
+              1163.734375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/_assets/v11/d84b65ccd7beacc065aa9b6a82a8f55bd55b3077.png",
+            "alt": "Low fidelity mockup of the Y Conference site",
+            "height": "1700px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "flex-start",
+            "cellJustify": "center",
+            "aspect": "653 / 4096",
+            "cellBox": [
+              420,
+              1700
+            ],
+            "shotBox": [
+              420,
+              2634.484375
+            ],
+            "mediaBox": [
+              420,
+              2634.484375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "16px",
+      "padding": "32px 64px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "64px",
+        "gap": "normal",
+        "y": 801
+      },
+      "gallery": {
+        "padding": "32px 64px 64px",
+        "gap": "32px",
+        "y": 1423
+      }
+    }
+  },
+  "desktopWide": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "928px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "640 / 464",
+            "cellBox": [
+              1280,
+              928
+            ],
+            "shotBox": [
+              1280,
+              928
+            ],
+            "mediaBox": [
+              1280,
+              928
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "normal",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/y-conference-1.webp",
+            "alt": "View of my sketchbook from an angle showing the UI sketches I made",
+            "height": "600px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "3264 / 2448",
+            "cellBox": [
+              1280,
+              600
+            ],
+            "shotBox": [
+              1280,
+              960
+            ],
+            "mediaBox": [
+              1280,
+              960
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "32px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/y-conference-2.webp",
+            "alt": "Zoomed view of one of the page sketches I made",
+            "height": "1700px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "flex-start",
+            "cellJustify": "center",
+            "aspect": "1178 / 3264",
+            "cellBox": [
+              624,
+              1700
+            ],
+            "shotBox": [
+              624,
+              1728.96875
+            ],
+            "mediaBox": [
+              624,
+              1728.96875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/_assets/v11/d84b65ccd7beacc065aa9b6a82a8f55bd55b3077.png",
+            "alt": "Low fidelity mockup of the Y Conference site",
+            "height": "1700px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "flex-start",
+            "cellJustify": "center",
+            "aspect": "653 / 4096",
+            "cellBox": [
+              624,
+              1700
+            ],
+            "shotBox": [
+              624,
+              3914.09375
+            ],
+            "mediaBox": [
+              624,
+              3914.09375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "16px",
+      "padding": "32px 64px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "64px",
+        "gap": "normal",
+        "y": 729
+      },
+      "gallery": {
+        "padding": "32px 64px 64px",
+        "gap": "32px",
+        "y": 1247
+      }
+    }
+  }
+}

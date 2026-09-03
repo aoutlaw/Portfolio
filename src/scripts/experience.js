@@ -9,6 +9,9 @@
  * fetching the rest through Figma's runtime. Here every row is in the HTML
  * and CSS hides the extras, so the page works without JavaScript and the
  * copy stays indexable.
+ *
+ * Both expansions are timed rather than instant, at the durations the Figma
+ * interactions record (see src/scripts/motion.js).
  */
 (function () {
   var list = document.getElementById("experience-list");
@@ -19,11 +22,13 @@
     var less = toggle.querySelector("[data-label-less]");
     toggle.addEventListener("click", function () {
       var open = list.hasAttribute("data-expanded");
-      if (open) {
-        list.removeAttribute("data-expanded");
-      } else {
-        list.setAttribute("data-expanded", "");
-      }
+      window.Motion.resize(list, function () {
+        if (open) {
+          list.removeAttribute("data-expanded");
+        } else {
+          list.setAttribute("data-expanded", "");
+        }
+      }, 383, window.Motion.EASE.gentleSpring);
       toggle.setAttribute("aria-expanded", String(!open));
       more.hidden = !open;
       less.hidden = open;
@@ -36,12 +41,14 @@
       var job = head.closest(".job");
       var body = job.querySelector(".job__body");
       var open = job.hasAttribute("data-open");
-      if (open) {
-        job.removeAttribute("data-open");
-      } else {
-        job.setAttribute("data-open", "");
-      }
-      body.hidden = open;
+      window.Motion.resize(job, function () {
+        if (open) {
+          job.removeAttribute("data-open");
+        } else {
+          job.setAttribute("data-open", "");
+        }
+        body.hidden = open;
+      }, 200, window.Motion.EASE.outCubic);
       head.setAttribute("aria-expanded", String(!open));
     });
   });

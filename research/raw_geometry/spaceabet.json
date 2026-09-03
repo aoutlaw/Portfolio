@@ -1,0 +1,1778 @@
+{
+  "mobile": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "16px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "338.484px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              343,
+              338.484375
+            ],
+            "shotBox": [
+              343,
+              609.765625
+            ],
+            "mediaBox": [
+              343,
+              609.765625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "338.484px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              343,
+              338.484375
+            ],
+            "shotBox": [
+              343,
+              609.765625
+            ],
+            "mediaBox": [
+              343,
+              609.765625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "338.484px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              343,
+              338.484375
+            ],
+            "shotBox": [
+              343,
+              609.765625
+            ],
+            "mediaBox": [
+              343,
+              609.765625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "16px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-1.webp",
+            "alt": "Several hand drawn letters in various staes of completion on a sketchbook page",
+            "height": "457.328px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "178.125 / 237.5",
+            "cellBox": [
+              343,
+              457.328125
+            ],
+            "shotBox": [
+              343,
+              457.328125
+            ],
+            "mediaBox": [
+              343,
+              457.328125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-2.webp",
+            "alt": "Sketchbook page showing several hand drawn Spaceabet letters",
+            "height": "457.328px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "178.125 / 237.5",
+            "cellBox": [
+              343,
+              457.328125
+            ],
+            "shotBox": [
+              343,
+              457.328125
+            ],
+            "mediaBox": [
+              343,
+              457.328125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "16px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-3.webp",
+            "alt": "Closeup of the letter A, Spaceabet style",
+            "height": "329.797px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "auto",
+            "cellBox": [
+              343,
+              329.796875
+            ],
+            "shotBox": [
+              343,
+              329.796875
+            ],
+            "mediaBox": [
+              343,
+              329.796875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-4.webp",
+            "alt": "Example of the vectorizing process",
+            "height": "525.484px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "155.021 / 237.5",
+            "cellBox": [
+              343,
+              525.484375
+            ],
+            "shotBox": [
+              343,
+              525.484375
+            ],
+            "mediaBox": [
+              343,
+              525.484375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "16px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-5.webp",
+            "alt": "Close-up of finished Spaceabet",
+            "height": "329.797px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "178.125 / 237.5",
+            "cellBox": [
+              343,
+              329.796875
+            ],
+            "shotBox": [
+              343,
+              457.328125
+            ],
+            "mediaBox": [
+              343,
+              457.328125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-6.webp",
+            "alt": "Finished Spaceabet framed and mounted on a wall",
+            "height": "275.391px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "672 / 539.556",
+            "cellBox": [
+              343,
+              275.390625
+            ],
+            "shotBox": [
+              343,
+              275.390625
+            ],
+            "mediaBox": [
+              343,
+              275.390625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "16px",
+      "padding": "32px 16px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 16px 16px",
+        "gap": "normal",
+        "y": 676
+      },
+      "gallery": {
+        "padding": "16px",
+        "gap": "16px",
+        "y": 1252
+      }
+    }
+  },
+  "mobileWide": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "16px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "338.484px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              468,
+              338.484375
+            ],
+            "shotBox": [
+              468,
+              832
+            ],
+            "mediaBox": [
+              468,
+              832
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "338.484px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              468,
+              338.484375
+            ],
+            "shotBox": [
+              468,
+              832
+            ],
+            "mediaBox": [
+              468,
+              832
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "338.484px",
+            "flex": "0 0 auto",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              468,
+              338.484375
+            ],
+            "shotBox": [
+              468,
+              832
+            ],
+            "mediaBox": [
+              468,
+              832
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "16px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-1.webp",
+            "alt": "Several hand drawn letters in various staes of completion on a sketchbook page",
+            "height": "624px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "178.125 / 237.5",
+            "cellBox": [
+              468,
+              624
+            ],
+            "shotBox": [
+              468,
+              624
+            ],
+            "mediaBox": [
+              468,
+              624
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-2.webp",
+            "alt": "Sketchbook page showing several hand drawn Spaceabet letters",
+            "height": "624px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "178.125 / 237.5",
+            "cellBox": [
+              468,
+              624
+            ],
+            "shotBox": [
+              468,
+              624
+            ],
+            "mediaBox": [
+              468,
+              624
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "16px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-3.webp",
+            "alt": "Closeup of the letter A, Spaceabet style",
+            "height": "450px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "auto",
+            "cellBox": [
+              468,
+              450
+            ],
+            "shotBox": [
+              468,
+              450
+            ],
+            "mediaBox": [
+              468,
+              450
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-4.webp",
+            "alt": "Example of the vectorizing process",
+            "height": "717px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "155.021 / 237.5",
+            "cellBox": [
+              468,
+              717
+            ],
+            "shotBox": [
+              468,
+              717
+            ],
+            "mediaBox": [
+              468,
+              717
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "column",
+        "gap": "16px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-5.webp",
+            "alt": "Close-up of finished Spaceabet",
+            "height": "329.797px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "178.125 / 237.5",
+            "cellBox": [
+              468,
+              329.796875
+            ],
+            "shotBox": [
+              468,
+              624
+            ],
+            "mediaBox": [
+              468,
+              624
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-6.webp",
+            "alt": "Finished Spaceabet framed and mounted on a wall",
+            "height": "375.75px",
+            "flex": "0 0 auto",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "672 / 539.556",
+            "cellBox": [
+              468,
+              375.75
+            ],
+            "shotBox": [
+              468,
+              375.75
+            ],
+            "mediaBox": [
+              468,
+              375.75
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "16px",
+      "padding": "32px 16px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 16px 16px",
+        "gap": "normal",
+        "y": 592
+      },
+      "gallery": {
+        "padding": "16px",
+        "gap": "16px",
+        "y": 1072
+      }
+    }
+  },
+  "tablet": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "24px",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "300px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              218.671875,
+              300
+            ],
+            "shotBox": [
+              218.671875,
+              388.75
+            ],
+            "mediaBox": [
+              218.671875,
+              388.75
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "300px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              218.671875,
+              300
+            ],
+            "shotBox": [
+              218.671875,
+              388.75
+            ],
+            "mediaBox": [
+              218.671875,
+              388.75
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "300px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              218.671875,
+              300
+            ],
+            "shotBox": [
+              218.671875,
+              388.75
+            ],
+            "mediaBox": [
+              218.671875,
+              388.75
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "24px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-1.webp",
+            "alt": "Several hand drawn letters in various staes of completion on a sketchbook page",
+            "height": "453.328px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "3024 / 4032",
+            "cellBox": [
+              340,
+              453.328125
+            ],
+            "shotBox": [
+              340,
+              453.328125
+            ],
+            "mediaBox": [
+              340,
+              453.328125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-2.webp",
+            "alt": "Sketchbook page showing several hand drawn Spaceabet letters",
+            "height": "453.328px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "3024 / 4032",
+            "cellBox": [
+              340,
+              453.328125
+            ],
+            "shotBox": [
+              340,
+              453.328125
+            ],
+            "mediaBox": [
+              340,
+              453.328125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "24px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-3.webp",
+            "alt": "Closeup of the letter A, Spaceabet style",
+            "height": "323.062px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "3024 / 3024",
+            "cellBox": [
+              340,
+              323.0625
+            ],
+            "shotBox": [
+              340,
+              340
+            ],
+            "mediaBox": [
+              340,
+              340
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-4.webp",
+            "alt": "Example of the vectorizing process",
+            "height": "323.062px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "624 / 956",
+            "cellBox": [
+              340,
+              323.0625
+            ],
+            "shotBox": [
+              340,
+              520.890625
+            ],
+            "mediaBox": [
+              340,
+              520.890625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "24px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-5.webp",
+            "alt": "Close-up of finished Spaceabet",
+            "height": "323.062px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "624 / 832",
+            "cellBox": [
+              340,
+              323.0625
+            ],
+            "shotBox": [
+              340,
+              453.328125
+            ],
+            "mediaBox": [
+              340,
+              453.328125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-6.webp",
+            "alt": "Finished Spaceabet framed and mounted on a wall",
+            "height": "323.062px",
+            "flex": "1 0 0px",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "336 / 323.077",
+            "cellBox": [
+              340,
+              323.0625
+            ],
+            "shotBox": [
+              335.984375,
+              323.0625
+            ],
+            "mediaBox": [
+              335.984375,
+              323.0625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "24px",
+      "padding": "32px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px",
+        "gap": "normal",
+        "y": 593
+      },
+      "gallery": {
+        "padding": "32px",
+        "gap": "24px",
+        "y": 1045
+      }
+    }
+  },
+  "tabletWide": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "24px",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "300px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              262.671875,
+              300
+            ],
+            "shotBox": [
+              262.671875,
+              466.96875
+            ],
+            "mediaBox": [
+              262.671875,
+              466.96875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "300px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              262.671875,
+              300
+            ],
+            "shotBox": [
+              262.671875,
+              466.96875
+            ],
+            "mediaBox": [
+              262.671875,
+              466.96875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "300px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              262.671875,
+              300
+            ],
+            "shotBox": [
+              262.671875,
+              466.96875
+            ],
+            "mediaBox": [
+              262.671875,
+              466.96875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "24px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-1.webp",
+            "alt": "Several hand drawn letters in various staes of completion on a sketchbook page",
+            "height": "541.328px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "3024 / 4032",
+            "cellBox": [
+              406,
+              541.328125
+            ],
+            "shotBox": [
+              406,
+              541.328125
+            ],
+            "mediaBox": [
+              406,
+              541.328125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-2.webp",
+            "alt": "Sketchbook page showing several hand drawn Spaceabet letters",
+            "height": "541.328px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "3024 / 4032",
+            "cellBox": [
+              406,
+              541.328125
+            ],
+            "shotBox": [
+              406,
+              541.328125
+            ],
+            "mediaBox": [
+              406,
+              541.328125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "24px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-3.webp",
+            "alt": "Closeup of the letter A, Spaceabet style",
+            "height": "323.062px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "3024 / 3024",
+            "cellBox": [
+              406,
+              323.0625
+            ],
+            "shotBox": [
+              406,
+              406
+            ],
+            "mediaBox": [
+              406,
+              406
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-4.webp",
+            "alt": "Example of the vectorizing process",
+            "height": "323.062px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "624 / 956",
+            "cellBox": [
+              406,
+              323.0625
+            ],
+            "shotBox": [
+              406,
+              622
+            ],
+            "mediaBox": [
+              406,
+              622
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "24px",
+        "align": "flex-start",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-5.webp",
+            "alt": "Close-up of finished Spaceabet",
+            "height": "323.062px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "624 / 832",
+            "cellBox": [
+              406,
+              323.0625
+            ],
+            "shotBox": [
+              406,
+              541.328125
+            ],
+            "mediaBox": [
+              406,
+              541.328125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-6.webp",
+            "alt": "Finished Spaceabet framed and mounted on a wall",
+            "height": "323.062px",
+            "flex": "1 0 0px",
+            "cellDirection": "column",
+            "cellAlign": "center",
+            "cellJustify": "normal",
+            "aspect": "336 / 323.077",
+            "cellBox": [
+              406,
+              323.0625
+            ],
+            "shotBox": [
+              335.984375,
+              323.0625
+            ],
+            "mediaBox": [
+              335.984375,
+              323.0625
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "32px",
+      "introGap": "24px",
+      "padding": "32px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px",
+        "gap": "normal",
+        "y": 565
+      },
+      "gallery": {
+        "padding": "32px",
+        "gap": "24px",
+        "y": 969
+      }
+    }
+  },
+  "desktop": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "32px",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "300px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              269.328125,
+              300
+            ],
+            "shotBox": [
+              269.328125,
+              478.796875
+            ],
+            "mediaBox": [
+              269.328125,
+              478.796875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "300px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              269.328125,
+              300
+            ],
+            "shotBox": [
+              269.328125,
+              478.796875
+            ],
+            "mediaBox": [
+              269.328125,
+              478.796875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "300px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              269.328125,
+              300
+            ],
+            "shotBox": [
+              269.328125,
+              478.796875
+            ],
+            "mediaBox": [
+              269.328125,
+              478.796875
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "32px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-1.webp",
+            "alt": "Hand sketched letter",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "3024 / 4032",
+            "cellBox": [
+              420,
+              403.84375
+            ],
+            "shotBox": [
+              420,
+              560
+            ],
+            "mediaBox": [
+              420,
+              560
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-2.webp",
+            "alt": "Sketchbook page showing several hand drawn Spaceabet letters",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "3024 / 4032",
+            "cellBox": [
+              420,
+              403.84375
+            ],
+            "shotBox": [
+              420,
+              560
+            ],
+            "mediaBox": [
+              420,
+              560
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "32px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-3.webp",
+            "alt": "Close-up of the letter A, Spaceabet style",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "420 / 403.846",
+            "cellBox": [
+              420,
+              403.84375
+            ],
+            "shotBox": [
+              420,
+              403.84375
+            ],
+            "mediaBox": [
+              420,
+              403.84375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-4.webp",
+            "alt": "Example of the vectorizing process",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "624 / 956",
+            "cellBox": [
+              420,
+              403.84375
+            ],
+            "shotBox": [
+              420,
+              643.453125
+            ],
+            "mediaBox": [
+              420,
+              643.453125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "32px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-5.webp",
+            "alt": "Close-up of finished Spaceabet",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "624 / 832",
+            "cellBox": [
+              420,
+              403.84375
+            ],
+            "shotBox": [
+              420,
+              560
+            ],
+            "mediaBox": [
+              420,
+              560
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-6.webp",
+            "alt": "Finished Spaceabet framed and mounted on a wall",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "420 / 403.846",
+            "cellBox": [
+              420,
+              403.84375
+            ],
+            "shotBox": [
+              419.984375,
+              403.84375
+            ],
+            "mediaBox": [
+              419.984375,
+              403.84375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "16px",
+      "padding": "32px 64px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 64px",
+        "gap": "normal",
+        "y": 733
+      },
+      "gallery": {
+        "padding": "32px 64px 64px",
+        "gap": "32px",
+        "y": 1219
+      }
+    }
+  },
+  "desktopWide": {
+    "rows": [
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "32px",
+        "align": "center",
+        "items": [
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "300px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              405.328125,
+              300
+            ],
+            "shotBox": [
+              405.328125,
+              720.578125
+            ],
+            "mediaBox": [
+              405.328125,
+              720.578125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "300px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              405.328125,
+              300
+            ],
+            "shotBox": [
+              405.328125,
+              720.578125
+            ],
+            "mediaBox": [
+              405.328125,
+              720.578125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "video",
+            "src": null,
+            "alt": null,
+            "height": "300px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "1080 / 1920",
+            "cellBox": [
+              405.328125,
+              300
+            ],
+            "shotBox": [
+              405.328125,
+              720.578125
+            ],
+            "mediaBox": [
+              405.328125,
+              720.578125
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "32px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-1.webp",
+            "alt": "Hand sketched letter",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "3024 / 4032",
+            "cellBox": [
+              624,
+              403.84375
+            ],
+            "shotBox": [
+              624,
+              832
+            ],
+            "mediaBox": [
+              624,
+              832
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-2.webp",
+            "alt": "Sketchbook page showing several hand drawn Spaceabet letters",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "3024 / 4032",
+            "cellBox": [
+              624,
+              403.84375
+            ],
+            "shotBox": [
+              624,
+              832
+            ],
+            "mediaBox": [
+              624,
+              832
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "32px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-3.webp",
+            "alt": "Close-up of the letter A, Spaceabet style",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "420 / 403.846",
+            "cellBox": [
+              624,
+              403.84375
+            ],
+            "shotBox": [
+              624,
+              600
+            ],
+            "mediaBox": [
+              624,
+              600
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-4.webp",
+            "alt": "Example of the vectorizing process",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "624 / 956",
+            "cellBox": [
+              624,
+              403.84375
+            ],
+            "shotBox": [
+              624,
+              956
+            ],
+            "mediaBox": [
+              624,
+              956
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "label": "",
+        "direction": "row",
+        "gap": "32px",
+        "align": "center",
+        "items": [
+          {
+            "type": "image",
+            "src": "/images/spaceabet-5.webp",
+            "alt": "Close-up of finished Spaceabet",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "624 / 832",
+            "cellBox": [
+              624,
+              403.84375
+            ],
+            "shotBox": [
+              624,
+              832
+            ],
+            "mediaBox": [
+              624,
+              832
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "image",
+            "src": "/images/spaceabet-6.webp",
+            "alt": "Finished Spaceabet framed and mounted on a wall",
+            "height": "403.844px",
+            "flex": "1 0 0px",
+            "cellDirection": "row",
+            "cellAlign": "center",
+            "cellJustify": "center",
+            "aspect": "420 / 403.846",
+            "cellBox": [
+              624,
+              403.84375
+            ],
+            "shotBox": [
+              419.984375,
+              403.84375
+            ],
+            "mediaBox": [
+              419.984375,
+              403.84375
+            ],
+            "mediaAt": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "head": {
+      "gap": "64px",
+      "introGap": "16px",
+      "padding": "32px 64px"
+    },
+    "blocks": {
+      "body": {
+        "padding": "32px 64px",
+        "gap": "normal",
+        "y": 661
+      },
+      "gallery": {
+        "padding": "32px 64px 64px",
+        "gap": "32px",
+        "y": 1095
+      }
+    }
+  }
+}
