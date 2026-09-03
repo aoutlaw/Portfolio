@@ -104,10 +104,16 @@ def footer():
 def shell(title, description, body, *, path="/", styles=(), scripts=()):
     social = asset("/_assets/v11/b80fb14f673a87c88b326e80ed5e8ab3ebcfa4f6.png")
     favicon = asset("/_assets/v11/2c11be535154e2888ea69e34a9f039c562568f0d.png")
+    # The live site loads this before anything else in <head> -- including the
+    # viewport meta -- and sets Consent Mode defaults (denied until a visitor
+    # opts in) alongside it, so both travel together here.
     ga = (
-        f"""<script async src="https://www.googletagmanager.com/gtag/js?id={GA_MEASUREMENT_ID}"></script>
+        f"""<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA_MEASUREMENT_ID}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}
-gtag('js',new Date());gtag('config','{GA_MEASUREMENT_ID}');</script>"""
+gtag('js',new Date());
+gtag('config','{GA_MEASUREMENT_ID}');
+gtag('consent','default',{{'ad_storage':'denied','analytics_storage':'denied'}});</script>"""
         if GA_MEASUREMENT_ID
         else ""
     )
@@ -125,6 +131,7 @@ gtag('js',new Date());gtag('config','{GA_MEASUREMENT_ID}');</script>"""
 <html lang="{esc(SITE["meta"]["lang"])}">
 <head>
 <meta charset="utf-8">
+{ga}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
@@ -138,7 +145,6 @@ gtag('js',new Date());gtag('config','{GA_MEASUREMENT_ID}');</script>"""
 <meta name="twitter:card" content="summary_large_image">
 {preload}
 {css}
-{ga}
 </head>
 <body>
 {body}
