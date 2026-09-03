@@ -1,9 +1,18 @@
 # designoutlaw.com
 
 Rebuild of [www.designoutlaw.com](https://www.designoutlaw.com), moving it off Figma
-Sites hosting and onto GitHub Pages. This first pass is a **faithful port**: same
-content, same layout, same color and type system as the live Figma Sites version.
-Redesign work happens after the migration itself is verified and DNS is cut over.
+Sites hosting. This first pass is a **faithful port**: same content, same layout,
+same color and type system as the live Figma Sites version. Redesign work happens
+after the migration itself is verified and DNS is cut over.
+
+GitHub Pages was the first hosting target tried here, and it worked, but
+designoutlaw.com's own web root on Bluehost already hosts other things that were
+never part of this repo. A GitHub Pages custom domain claims the *entire* domain —
+every path that isn't in `dist/` 404s — so anything living outside this repo broke
+the moment DNS pointed there. This deploys the same way firefighterpfister.com does
+instead: GitHub for version control, `rsync` over SSH to Bluehost for serving,
+`designoutlaw.com`'s own web root left otherwise untouched. See `deploy.sh` for how
+that coexists safely with everything else already in that directory.
 
 ## Layout
 
@@ -100,7 +109,8 @@ python3 build.py
 
 Writes plain HTML/CSS/JS to `dist/`: one page per case study
 (`dist/spaceabet/index.html`, etc.) plus `dist/index.html` for the home page — clean
-URLs work natively on GitHub Pages this way, no `.htaccess` rewrite needed.
+URLs work natively this way (Apache serves a directory's `index.html` by default,
+same as GitHub Pages did), no `.htaccess` rewrite needed.
 
 Preview locally:
 
@@ -110,17 +120,64 @@ python3 build.py && python3 -m http.server -d dist 8000
 
 ## Deploying
 
-`.github/workflows/deploy.yml` builds and publishes to GitHub Pages automatically on
-every push to `main`. No manual deploy step, no server credentials to manage — this
-is the main practical difference from firefighterpfister's `rsync`-over-SSH pattern
-(see that repo's README for the tradeoffs that led to trying GitHub Pages here
-instead).
+```bash
+git pull            # start of a session
+./deploy.sh --live  # publish
+git push            # save the change
+```
 
-One-time repo setting: **Settings → Pages → Source → GitHub Actions**. `dist/CNAME`
-(written by `build.py`) points the custom domain at `www.designoutlaw.com`; update
-DNS at your registrar to GitHub Pages' target once a deploy has gone out successfully
-and you've checked it on the `*.github.io` URL first — same "confirm before cutting
-DNS" order firefighterpfister's README recommends.
+Nothing enforces that order — the deploy reads `dist/`, not git — so it is possible
+to publish something you never committed. Pushing after deploying keeps the repo
+honest about what is live.
+
+`deploy.sh` rsyncs `dist/` to designoutlaw.com's own web root over SSH. Unlike
+firefighterpfister.com's version of this script, it does **not** run a blanket
+`--delete` against the whole remote directory — that root is shared with a bunch of
+things that were never part of this repo, and a naive sync would erase them the
+first time this site's own file list changed shape. Instead it syncs each of
+`dist/`'s own top-level entries (`index.html`, `styles/`, `spaceabet/`, etc.) into
+its matching remote path individually, deletions scoped to that one subtree only.
+Nothing outside those specific names is ever read, listed, or touched — see the
+comment block in `deploy.sh` for the full reasoning, including the one real
+tradeoff (a page removed from a future build needs a manual cleanup pass on the
+server, since this script structurally can't tell "safe to delete" from "not ours").
+
+Dry run is the default — `./deploy.sh` alone lists every file it would add or change
+without uploading anything.
+
+### One-time setup
+
+Same Bluehost account firefighterpfister.com uses, so if that repo is already set up
+on this machine, `REMOTE_USER` and `REMOTE_HOST` are the same values — only
+`REMOTE_PATH` differs (designoutlaw.com's own root, not an addon-domain
+subdirectory). The SSH key can be shared too, or its own; either works.
+
+```bash
+cp .deploy.env.example .deploy.env
+# fill in REMOTE_USER, REMOTE_HOST, REMOTE_PATH, SSH_PORT
+
+ssh-keygen -t ed25519 -f ~/.ssh/designoutlaw_deploy -N "" -C "designoutlaw.com deploy"
+pbcopy < ~/.ssh/designoutlaw_deploy.pub
+```
+
+Import that public key in cPanel → **SSH Access** → **Manage SSH Keys** → **Import
+Key**, then **Manage → Authorize** it — importing alone does nothing. Confirm with:
+
+```bash
+ssh -i ~/.ssh/designoutlaw_deploy -p 22 youruser@your-bluehost-host
+```
+
+### Cutting over from GitHub Pages
+
+DNS currently points `www.designoutlaw.com` at GitHub Pages, which is live and
+working. To move back to Bluehost without an outage or an outright break:
+
+1. `./deploy.sh --live` to publish to Bluehost while DNS still points elsewhere.
+2. Check it through Bluehost's temporary URL or direct IP, not the domain — the
+   things this whole move was about: `/transfer` and anything else outside this
+   repo still resolve, alongside the site itself.
+3. Only then repoint DNS at Bluehost, and remove the custom domain from GitHub
+   Pages' settings so it stops trying to claim it.
 
 ## Contact form
 

@@ -533,7 +533,6 @@ def main():
     shutil.copytree(ROOT / "public" / "fonts", DIST / "fonts")
     shutil.copytree(ROOT / "src" / "styles", DIST / "styles")
     shutil.copytree(ROOT / "src" / "scripts", DIST / "scripts")
-    (DIST / "CNAME").write_text("www.designoutlaw.com\n", encoding="utf-8")
 
     print(f"wrote {2 + len(SITE['projects'])} pages to {DIST}")
 
