@@ -22,6 +22,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 DIST = ROOT / "dist"
 SITE_URL = "https://www.designoutlaw.com"
+PRELOAD_FONTS = (
+    "Poppins-Regular_6",
+    "Poppins-SemiBold_6",
+    "Poppins-Bold_6",
+    "Gelasio_wght__1",
+    "Yesteryear-Regular_1",
+)
 GA_MEASUREMENT_ID = "G-Q2X1WJ7ZW9"
 
 # Google Apps Script web app: appends to a Sheet and emails the message.
@@ -104,7 +111,15 @@ gtag('js',new Date());gtag('config','{GA_MEASUREMENT_ID}');</script>"""
         if GA_MEASUREMENT_ID
         else ""
     )
-    css = "\n".join(f'<link rel="stylesheet" href="/styles/{s}">' for s in ("base.css",) + tuple(styles))
+    css = "\n".join(f'<link rel="stylesheet" href="/styles/{s}">'
+                   for s in ("fonts.css", "base.css") + tuple(styles))
+    # The english subset covers every glyph the site actually uses, so preloading
+    # it keeps the first paint from flashing a fallback face.
+    preload = "\n".join(
+        f'<link rel="preload" href="/fonts/{stem}-english.woff2" as="font" '
+        f'type="font/woff2" crossorigin>'
+        for stem in PRELOAD_FONTS
+    )
     js = "\n".join(f'<script src="/scripts/{s}" defer></script>' for s in scripts)
     return f"""<!doctype html>
 <html lang="{esc(SITE["meta"]["lang"])}">
@@ -121,9 +136,7 @@ gtag('js',new Date());gtag('config','{GA_MEASUREMENT_ID}');</script>"""
 <meta property="og:type" content="website">
 {f'<meta property="og:image" content="{esc(SITE_URL + social)}">' if social else ""}
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400&amp;family=Poppins:wght@400;600;700&amp;family=Yesteryear&amp;display=swap" rel="stylesheet">
+{preload}
 {css}
 {ga}
 </head>
@@ -316,28 +329,15 @@ def render_home():
 BP_SUFFIX = {"mobile": "", "tablet": "-t", "desktop": "-d"}
 
 
-def head_vars(head):
-    """The navy header's own spacing. Its gap is set per page as well as per
-    breakpoint -- 32px at tablet on some case studies, 64px on others -- so
-    it travels with the content rather than living in the stylesheet."""
+def gallery_vars(blocks):
+    """The gallery block's padding, which the live build varies per page --
+    the header and body blocks are on one pinned scale (see project.css), but
+    the gallery still frames each set of shots on its own terms."""
     out = []
     for bp, sfx in BP_SUFFIX.items():
-        out.append(f"--head-gap{sfx}:{head[bp]['gap']}")
-        out.append(f"--intro-gap{sfx}:{head[bp]['introGap']}")
-        out.append(f"--head-pad{sfx}:{head[bp]['padding']}")
-    return ";".join(out)
-
-
-def block_vars(blocks):
-    """The cream body block's and the gallery's padding, which the live
-    build also varies per page -- one case study pads its body 64px all
-    round at desktop where the others use 32px top and bottom."""
-    out = []
-    for bp, sfx in BP_SUFFIX.items():
-        for name, key in (("body", "body"), ("gal", "gallery")):
-            pad = (blocks[bp].get(key) or {}).get("padding")
-            if pad:
-                out.append(f"--{name}-pad{sfx}:{pad}")
+        pad = (blocks[bp].get("gallery") or {}).get("padding")
+        if pad:
+            out.append(f"--gal-pad{sfx}:{pad}")
     return ";".join(out)
 
 
@@ -456,7 +456,7 @@ def render_project(p):
     body = f"""{site_nav(wordmark=True)}
 <main>
   <section class="case__head">
-    <div class="case__head-inner" style="{esc(head_vars(p["head"]))}">
+    <div class="case__head-inner">
       <a class="textbutton textbutton--back" href="/#work">
         <svg class="textbutton__arrow" viewBox="0 0 20 20" aria-hidden="true"
              focusable="false"><path d="M16 10H4M9.5 4.5L4 10l5.5 5.5"
@@ -473,11 +473,11 @@ def render_project(p):
   </section>
 
   <section class="case__body">
-    <div class="case__body-inner" style="{esc(block_vars(p["blocks"]))}">{sections}</div>
+    <div class="case__body-inner">{sections}</div>
   </section>
 
   <section class="gallery">
-    <div class="gallery__inner" style="{esc(block_vars(p["blocks"]))}">{"".join(rows)}</div>
+    <div class="gallery__inner" style="{esc(gallery_vars(p["blocks"]))}">{"".join(rows)}</div>
   </section>
 </main>
 {footer()}"""
@@ -491,18 +491,11 @@ def render_project(p):
     )
 
 
-DEFAULT_HEAD = {bp: {"gap": gap, "introGap": intro} for bp, gap, intro in
-                (("mobile", "32px", "16px"), ("tablet", "32px", "24px"),
-                 ("desktop", "64px", "16px"))}
-for _bp, _pad in (("mobile", "32px 16px"), ("tablet", "32px"), ("desktop", "32px 64px")):
-    DEFAULT_HEAD[_bp]["padding"] = _pad
-
-
 def render_404():
     body = f"""{site_nav(wordmark=True)}
 <main>
   <section class="case__head">
-    <div class="case__head-inner" style="{esc(head_vars(DEFAULT_HEAD))}">
+    <div class="case__head-inner">
       <div class="case__intro">
         <h1 class="heading heading--teal">Page not found</h1>
         <p><a href="/" style="color:#df6951">Back home</a></p>
@@ -531,6 +524,7 @@ def main():
     write(DIST / "404.html", render_404())
 
     shutil.copytree(ROOT / "public" / "images", DIST / "images")
+    shutil.copytree(ROOT / "public" / "fonts", DIST / "fonts")
     shutil.copytree(ROOT / "src" / "styles", DIST / "styles")
     shutil.copytree(ROOT / "src" / "scripts", DIST / "scripts")
     (DIST / "CNAME").write_text("www.designoutlaw.com\n", encoding="utf-8")

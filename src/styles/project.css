@@ -2,35 +2,37 @@
 
 .case__head { background: var(--navy); }
 
+/* One header scale for every case study. The published Figma Sites pages
+   drifted here -- Firefighter Pfister opened 32px lower than the rest at
+   desktop, and two pages used a 64px stack at tablet where three used 32px --
+   so these are pinned rather than carried per page. */
 .case__head-inner {
   max-width: calc(var(--container) + 2 * var(--pad-x));
   margin: 0 auto;
-  padding: var(--head-pad);
+  padding: 32px 16px;
   display: flex;
   flex-direction: column;
-  gap: var(--head-gap);
+  gap: 32px;
 }
 
 .case__intro {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--intro-gap);
+  gap: 16px;
 }
 /* The paragraphs are one rich-text block on the live page: they stay 16px
-   apart while the heading sits --intro-gap away from the block as a whole. */
+   apart while the heading sits 16px away from the block as a whole. */
 .case__intro-text { display: flex; flex-direction: column; gap: 16px; }
 .case__intro p { font-size: 18px; line-height: 28px; color: var(--cream); }
 
 @media (min-width: 768px) {
-  .case__head-inner { padding: var(--head-pad-t); gap: var(--head-gap-t); }
-  .case__intro { gap: var(--intro-gap-t); }
+  .case__head-inner { padding: 32px; }
   .case__intro p { font-size: 20px; line-height: 28px; }
 }
 
 @media (min-width: 1000px) {
-  .case__head-inner { padding: var(--head-pad-d); gap: var(--head-gap-d); }
-  .case__intro { gap: var(--intro-gap-d); }
+  .case__head-inner { padding: 32px 64px; gap: 64px; }
   .case__intro p { font-size: 24px; line-height: 36px; }
 }
 
@@ -41,7 +43,7 @@
 .case__body-inner {
   max-width: calc(var(--container) + 2 * var(--pad-x));
   margin: 0 auto;
-  padding: var(--body-pad);
+  padding: 32px 16px;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
@@ -62,14 +64,14 @@
 .case__section p { font-size: 16px; line-height: 24px; color: var(--navy); }
 
 @media (min-width: 768px) {
-  .case__body-inner { padding: var(--body-pad-t); }
+  .case__body-inner { padding: 32px; }
   .case__section { gap: 8px; }
   .case__section h2 { font-size: 28px; line-height: 28px; }
   .case__section p { font-size: 18px; line-height: 24px; }
 }
 
 @media (min-width: 1000px) {
-  .case__body-inner { padding: var(--body-pad-d); gap: 32px; }
+  .case__body-inner { padding: 32px 64px; gap: 32px; }
   .case__section { gap: 16px; }
   .case__section h2 { font-size: 36px; line-height: 36px; }
   .case__section p { font-size: 20px; line-height: 26px; }
