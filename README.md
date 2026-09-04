@@ -131,16 +131,20 @@ to publish something you never committed. Pushing after deploying keeps the repo
 honest about what is live.
 
 `deploy.sh` rsyncs `dist/` to designoutlaw.com's own web root over SSH. Unlike
-firefighterpfister.com's version of this script, it does **not** run a blanket
-`--delete` against the whole remote directory — that root is shared with a bunch of
-things that were never part of this repo, and a naive sync would erase them the
-first time this site's own file list changed shape. Instead it syncs each of
-`dist/`'s own top-level entries (`index.html`, `styles/`, `spaceabet/`, etc.) into
-its matching remote path individually, deletions scoped to that one subtree only.
-Nothing outside those specific names is ever read, listed, or touched — see the
-comment block in `deploy.sh` for the full reasoning, including the one real
-tradeoff (a page removed from a future build needs a manual cleanup pass on the
-server, since this script structurally can't tell "safe to delete" from "not ours").
+firefighterpfister.com's version of this script, it never runs `--delete` — not
+scoped, not at all. That root is shared with a bunch of things that were never
+part of this repo, and it turned out that included `images/` specifically: a
+first dry run here found 300+ unrelated files already in `public_html/images/`
+(old aquarium and car-project photo galleries going back over a decade), sharing
+a folder name this build also uses. Even `--delete` scoped to just that one
+subtree would have erased all of it. So every sync is purely additive — files get
+added or updated, nothing already on the server is ever removed by this script,
+regardless of what name it shares with something this build also owns. The real
+cost: a page or file permanently dropped from a future build leaves its old copy
+on the server forever, since safely cleaning it up would require knowing every
+remote name is safe to touch — which `images/` just proved isn't a safe
+assumption here. Removing something needs a manual pass on the server when that
+actually happens.
 
 Dry run is the default — `./deploy.sh` alone lists every file it would add or change
 without uploading anything.

@@ -50,23 +50,22 @@ echo "    $PAGES pages, $(du -sh dist | cut -f1) total"
 # ---------------------------------------------------------------------------
 # Unlike firefighterpfister.com, REMOTE_PATH here is designoutlaw.com's own
 # document root -- shared with a bunch of other things that were never part
-# of this GitHub repo (file drops, one-off tools, whatever else has
-# accumulated at designoutlaw.com/<path> over the years). A blanket
-# `rsync --delete` against that root would erase all of it the first time
-# this site's own file list changed shape.
+# of this GitHub repo. That turned out to include images/ specifically: a
+# first dry run here found 300+ unrelated files already sitting in
+# public_html/images/ (old aquarium and car-project photo galleries, going
+# back over a decade) -- a generic folder name this build also happens to
+# use. A per-directory `--delete`, even scoped to that one subtree, would
+# have wiped all of it the moment this site's own images synced over it.
 #
-# So this loops dist/'s own top-level entries one at a time and syncs each
-# into the matching remote path, with --delete scoped to *that* subtree only
-# (trailing slashes make rsync sync contents-into-contents, not the folder
-# itself). rsync never looks at, and therefore can never touch, anything at
-# REMOTE_PATH that isn't one of these names. /transfer, or anything else
-# living there, is simply outside every command this script runs.
-#
-# The cost: if a future build permanently drops a page or folder, its old
-# copy on the server is never cleaned up by this script -- deleting it
-# structurally requires knowing every remote name is safe to touch, which is
-# exactly what this script is built to avoid assuming. Removing a page needs
-# one manual cleanup pass on the server when that actually happens.
+# So there is no --delete anywhere in this script. Every sync is purely
+# additive: files get added or updated, nothing already on the server is
+# ever removed, no matter what name it shares with something this build
+# also owns. The cost is real -- a page or file permanently dropped from a
+# future build leaves its old copy on the server forever, since cleaning
+# it up safely would require knowing every remote name is safe to touch,
+# which public_html/images/ just proved is not a safe assumption here.
+# Removing something needs a manual pass on the server when that actually
+# happens.
 # ---------------------------------------------------------------------------
 RSYNC_OPTS="-az --stats --exclude .DS_Store"
 if ! rsync --version 2>/dev/null | grep -qi "openrsync"; then
@@ -85,7 +84,7 @@ fi
 for entry in dist/*; do
   name=$(basename "$entry")
   if [ -d "$entry" ]; then
-    rsync $RSYNC_OPTS --delete -e "$SSH_CMD" \
+    rsync $RSYNC_OPTS -e "$SSH_CMD" \
       "$entry/" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/$name/"
   else
     rsync $RSYNC_OPTS -e "$SSH_CMD" \
