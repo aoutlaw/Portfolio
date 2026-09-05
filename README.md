@@ -197,7 +197,29 @@ Sheet, notification email sent). If it's ever redeployed as a fresh deployment
 (rather than a new version of the same one), Apps Script issues a new `/exec` URL —
 update `CONTACT_FORM_ENDPOINT` to match.
 
+## Redesign (V2)
+
+The migration is done, so the redesign pass has started. It is being designed in
+Figma first and implemented here after, so the design file and the code stay in
+step rather than drifting:
+
+- **V2 design file** — [Portfolio-V2](https://www.figma.com/design/OnysPJ38D0DQLuFjBBD9CR/Portfolio-V2)
+- **V1 reference** — [Portfolio](https://www.figma.com/design/4LJYUONqHSulNvqshzZPa5/Portfolio),
+  the file the live Figma Sites build came from. Reference only; V2 is not a
+  revision of it.
+
+V2 keeps the palette (`Foundations` page in the design file lists each colour
+against its `base.css` variable name) and drops nearly everything else: the
+stacked full-width colour bands give way to a continuous cream ground, the hero
+leads with an oversized serif statement instead of a script logotype, Experience
+becomes a hairline-ruled index, and Work becomes a staggered two-column grid on
+navy. The Yesteryear script survives only as the nav wordmark.
+
+Nothing in `src/` implements V2 yet — the design file is ahead of the code on
+purpose. `build.py` and the stylesheets still produce the faithful port that is
+currently live.
+
 ## Open items
 
-- This is the faithful-port pass. Design/interaction refinement is deliberately
-  deferred to a follow-up pass once the migration itself is confirmed working.
+- V2 exists as a desktop home page only. Tablet and mobile breakpoints, the five
+  case-study page templates, and the component library are still to do.
