@@ -187,8 +187,13 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   color: var(--salmon);
 }
 .textbutton:hover { color: var(--teal); }
-.textbutton__arrow { width: 20px; height: 20px; flex: none; }
+.textbutton__arrow { width: 20px; height: 20px; flex: none; transition: transform .2s ease; }
 .textbutton:hover .textbutton__arrow path { stroke: var(--teal); }
+
+/* experience.js adds textbutton--up once the extra rows are showing. The arrow
+   is drawn pointing down, so a half turn is the whole of it. Same duration and
+   easing as the per-row chevron in home.css. */
+.textbutton--up .textbutton__arrow { transform: rotate(180deg); }
 
 @media (min-width: 1000px) { .textbutton { line-height: 26px; } }
 
