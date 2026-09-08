@@ -66,6 +66,15 @@ echo "    $PAGES pages, $(du -sh dist | cut -f1) total"
 # which public_html/images/ just proved is not a safe assumption here.
 # Removing something needs a manual pass on the server when that actually
 # happens.
+#
+# This used to run one rsync per top-level entry in dist/, which was how the
+# --delete above got scoped to a single directory at a time. With --delete
+# gone that loop bought nothing and cost a lot: eleven entries meant eleven
+# SSH logins per run, and a dry run immediately followed by a real one made
+# it twenty-two in a couple of minutes. Bluehost's brute-force protection
+# reads that as an attack and starts refusing connections mid-deploy. One
+# rsync of dist/ as a whole lands exactly the same files -- same additive
+# behaviour, same overwrite-by-name -- over a single connection.
 # ---------------------------------------------------------------------------
 RSYNC_OPTS="-az --stats --exclude .DS_Store"
 if ! rsync --version 2>/dev/null | grep -qi "openrsync"; then
@@ -81,16 +90,8 @@ else
 fi
 
 # shellcheck disable=SC2086
-for entry in dist/*; do
-  name=$(basename "$entry")
-  if [ -d "$entry" ]; then
-    rsync $RSYNC_OPTS -e "$SSH_CMD" \
-      "$entry/" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/$name/"
-  else
-    rsync $RSYNC_OPTS -e "$SSH_CMD" \
-      "$entry" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/$name"
-  fi
-done
+rsync $RSYNC_OPTS -e "$SSH_CMD" \
+  dist/ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"
 
 if [ "$LIVE" -eq 1 ]; then
   echo "\n==> done — https://www.designoutlaw.com"
