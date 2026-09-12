@@ -71,6 +71,33 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
+/* First focusable thing on every page, so a keyboard or screen-reader visitor
+   can jump the nav instead of tabbing it on all seven pages. Off-screen until
+   focused rather than display:none, which would drop it from the tab order and
+   defeat the point. Navy on cream is 10.88:1. */
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  transform: translateY(calc(-100% - 16px));
+  background: var(--navy);
+  color: var(--cream);
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+.skip-link:focus { transform: translateY(0); }
+
+/* Jump targets (main, and the section anchors.js focuses after a nav jump)
+   are only ever focused programmatically -- they're not tab stops, so no
+   focus ring is owed, and painting one around a whole section would just
+   look like a bug. */
+[tabindex="-1"]:focus { outline: none; }
+
 /* ---------- Section headings (Gelasio) ---------- */
 
 .heading {

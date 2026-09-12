@@ -147,6 +147,7 @@ gtag('consent','default',{{'ad_storage':'denied','analytics_storage':'denied'}})
 {css}
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 {body}
 {js}
 </body>
@@ -232,7 +233,7 @@ def render_home():
           </a>"""
 
     body = f"""{site_nav()}
-<main>
+<main id="main" tabindex="-1">
   <section class="hero">
     <div class="hero__inner">
       <h1 class="hero__wordmark">{esc(h["name"])}</h1>
@@ -460,7 +461,7 @@ def render_project(p):
             stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></a>"""
 
     body = f"""{site_nav(wordmark=True)}
-<main>
+<main id="main" tabindex="-1">
   <section class="case__head">
     <div class="case__head-inner">
       <a class="textbutton textbutton--back" href="/#work">
@@ -499,7 +500,7 @@ def render_project(p):
 
 def render_404():
     body = f"""{site_nav(wordmark=True)}
-<main>
+<main id="main" tabindex="-1">
   <section class="case__head">
     <div class="case__head-inner">
       <div class="case__intro">

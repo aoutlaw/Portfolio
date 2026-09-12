@@ -180,9 +180,16 @@
   row-gap: 4px;
 }
 
+/* The min-width is what makes .job__dates wrap to its own line: once the row
+   can't give the company/title column 300px, the dates drop below. A flat
+   300px can't shrink though, so below about a 356px viewport it pushed the
+   row wider than the page and the whole document scrolled sideways -- a
+   1.4.10 reflow failure at the 320px equivalent of 400% zoom. Capping it at
+   the container width keeps the 300px wrap threshold everywhere there's room
+   for it, and only gives way where it used to overflow. */
 .job__who {
   flex: 1 0 0;
-  min-width: 300px;
+  min-width: min(300px, 100%);
   display: flex;
   flex-direction: column;
   gap: 4px;

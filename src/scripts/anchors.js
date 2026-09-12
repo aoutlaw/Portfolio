@@ -27,6 +27,14 @@
     e.preventDefault();
     window.Motion.scrollTo(offsetOf(el), DURATION, window.Motion.outCubic);
     history.pushState(null, "", "#" + el.id);
+    // preventDefault above cancels the browser's own fragment navigation,
+    // and with it the focus move that normally comes with it -- so tabbing
+    // after following one of these carried on from the nav rather than from
+    // the section just jumped to, and the skip link skipped nothing. Move
+    // focus by hand instead. preventScroll keeps it from fighting the
+    // animation already underway.
+    if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "-1");
+    el.focus({ preventScroll: true });
   });
 
   // Arriving with a hash (from "Back to Work", say) should land on the
