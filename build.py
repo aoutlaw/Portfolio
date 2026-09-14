@@ -457,7 +457,7 @@ def render_project(p):
         cta = f"""<a class="button button--cta" href="{esc(p['cta']['href'])}"
              target="_blank" rel="noopener">{esc(p['cta']['label'])}
           <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path
-            d="M5 15L15 5M7 5h8v8" stroke="#fff" stroke-width="2"
+            d="M5 15L15 5M7 5h8v8" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></a>"""
 
     body = f"""{site_nav(wordmark=True)}
