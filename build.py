@@ -335,6 +335,26 @@ def render_home():
 
 BP_SUFFIX = {"mobile": "", "tablet": "-t", "desktop": "-d"}
 
+# Deliberate departures from the harvested gallery geometry, keyed by the live
+# asset path. The gallery otherwise reproduces the live build's cropping
+# exactly, including the crops that lose part of a picture -- these are the
+# ones where that was worth overriding rather than matching.
+#
+# Kept here rather than edited into content/site.json because that file is
+# generated: research/extract_live.py would write the live values straight
+# back over them.
+GALLERY_OVERRIDES = {
+    # Y Conference, the zoomed page sketch. The live build put it in a
+    # 1178/3264 box -- less than half the image's own 3:4 -- so object-fit:
+    # cover threw away most of its width. Given its own ratio and a cell that
+    # sizes to it, it shows whole. The row already aligns flex-start, so the
+    # much taller shot beside it simply runs on past the bottom of this one.
+    "/_assets/v11/f9ec528b4da4fb83c73296d49262bc7cdd63e9d3.png": {
+        "aspect": {bp: "1600 / 2133" for bp in BP_SUFFIX},
+        "cell": {bp: "auto" for bp in BP_SUFFIX},
+    },
+}
+
 
 def gallery_vars(blocks):
     """The gallery block's padding, which the live build varies per page --
@@ -419,6 +439,9 @@ def render_project(p):
     for row in p["gallery"]:
         cells = []
         for it in row["items"]:
+            override = GALLERY_OVERRIDES.get(it.get("src"))
+            if override:
+                it = {**it, **override}
             if it["type"] == "video":
                 stem = videos.pop(0) if videos else None
                 if not stem:
