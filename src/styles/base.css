@@ -112,6 +112,29 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
    look like a bug. */
 [tabindex="-1"]:focus { outline: none; }
 
+/* ---------- Keyboard focus ---------- */
+
+/* :focus-visible rather than :focus, so the ring answers the keyboard and
+   keeps out of the way of a mouse click. Dotted so it reads as a focus
+   affordance rather than a border the element always had, and offset so it
+   clears the element's own edge instead of tracing it.
+   Deliberately no border-radius here: an outline already follows the
+   element's own corners, so setting one would square off the button and the
+   form fields the moment they took focus. */
+:focus-visible {
+  outline: 2px dotted var(--navy);
+  outline-offset: 3px;
+}
+
+/* The navy grounds -- the work card grid, and everything in a case-study
+   header (Back to Work, See it Live, the 404 link). A navy ring is invisible
+   there; cream is the same 10.88:1 the other way round. */
+.about :focus-visible,
+.work :focus-visible,
+.case__head :focus-visible {
+  outline-color: var(--cream);
+}
+
 /* ---------- Section headings (Gelasio) ---------- */
 
 .heading {
@@ -263,7 +286,16 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 /* This one sits on navy, so it takes the light salmon rather than the dark
    one -- #cd4226 would be 2.41:1 there. Teal is already 6:1 on navy, so the
    hover needs no deepening the way the cream-ground ones do. */
-.textbutton--back { font-size: 16px; line-height: 24px; color: var(--salmon-light); }
+/* align-self matches what .button already does. .case__head-inner is a flex
+   column, so without it this link stretched the full width of the header --
+   its hit area has always been that wide, which only became visible once the
+   focus ring had something to trace. */
+.textbutton--back {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--salmon-light);
+  align-self: flex-start;
+}
 .textbutton--back:hover { color: var(--teal); }
 @media (min-width: 768px)  { .textbutton--back { font-size: 18px; line-height: 24px; } }
 @media (min-width: 1000px) { .textbutton--back { font-size: 20px; line-height: 26px; } }
