@@ -85,7 +85,7 @@ def site_nav(*, wordmark=False):
     <button class="nav__toggle" id="nav-toggle" aria-label="Menu"
             aria-expanded="false" aria-controls="nav-menu">
       <svg viewBox="0 0 26 26" aria-hidden="true" focusable="false">
-        <path d="M4 7H22M4 13H22M4 19H22" stroke="#df6951" stroke-width="2"
+        <path d="M4 7H22M4 13H22M4 19H22" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" fill="none"/>
       </svg>
     </button>
@@ -178,7 +178,7 @@ def render_home():
         <button class="job__head" aria-expanded="false">
           <span class="job__chevron" aria-hidden="true">
             <svg viewBox="0 0 8 14" focusable="false"><path d="M1 13L7 7L1 1"
-              stroke="#df6951" stroke-width="2" stroke-linecap="round"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" fill="none"/></svg>
           </span>
           <span class="job__text">
@@ -265,7 +265,7 @@ def render_home():
             <span data-label-less hidden>See Less Experience</span>
             <svg class="textbutton__arrow" viewBox="0 0 20 20" aria-hidden="true"
                  focusable="false"><path d="M10 4v12M4.5 10.5L10 16l5.5-5.5"
-                 stroke="#df6951" stroke-width="2" stroke-linecap="round"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" fill="none"/></svg>
           </button>
         </div>
@@ -329,7 +329,7 @@ def render_home():
         path="/",
         styles=("home.css",),
         scripts=("motion.js", "nav.js", "anchors.js", "experience.js",
-                 "contact-form.js"),
+                 "contact-form.js", "current-section.js"),
     )
 
 
@@ -467,7 +467,7 @@ def render_project(p):
       <a class="textbutton textbutton--back" href="/#work">
         <svg class="textbutton__arrow" viewBox="0 0 20 20" aria-hidden="true"
              focusable="false"><path d="M16 10H4M9.5 4.5L4 10l5.5 5.5"
-             stroke="#df6951" stroke-width="2" stroke-linecap="round"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
              stroke-linejoin="round" fill="none"/></svg>Back to Work</a>
       <div class="case__intro">
         <h1 class="heading heading--teal">{esc(p["heading"])}</h1>
@@ -505,7 +505,7 @@ def render_404():
     <div class="case__head-inner">
       <div class="case__intro">
         <h1 class="heading heading--teal">Page not found</h1>
-        <p><a href="/" style="color:#df6951">Back home</a></p>
+        <p><a class="textbutton textbutton--back" href="/">Back home</a></p>
       </div>
     </div>
   </section>

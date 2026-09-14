@@ -23,6 +23,20 @@
   --white: #fff;
   --black: #000;
 
+  /* Text-safe siblings of teal and salmon, for WCAG 2.1 AA contrast.
+     Salmon has to exist twice because no single value clears 4.5:1 on both
+     grounds: dark enough for cream (4.52) puts it at 2.41 on navy, so the
+     ground decides which one applies. Teal splits by SIZE rather than
+     ground -- --teal-ink clears the 3:1 large-text bar (3.05) for anything
+     24px and over, while smaller teal text needs the full 4.5 and gets
+     --teal-deep (4.79). The five originals above are untouched and still
+     used for fills, rules and hairlines, where contrast minimums don't
+     apply. */
+  --salmon-ink: #cd4226;    /* salmon text on cream; also the button fill */
+  --salmon-light: #f08a72;  /* salmon text on navy */
+  --teal-ink: #429e91;      /* teal text 24px and up, on cream */
+  --teal-deep: #327a70;     /* teal text below 24px, on cream */
+
   /* Fallbacks deliberately mirror the live build's (plain sans-serif), so
      layout stays put in the moment before the webfonts land. Gelasio is
      the exception: it's Georgia-metric, so Georgia is a far closer stand-in
@@ -107,6 +121,11 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   line-height: 48px;
   width: 100%;
 }
+/* Left as the original teal on purpose: every .heading--teal sits on navy
+   (About and Work on the home page, the case-study and 404 titles), where
+   plain teal is already 6:1. Swapping it for --teal-ink would have taken
+   that *down* to 3.57 -- still passing, but darker for no reason. The teal
+   that needed replacing was only ever the teal on cream. */
 .heading--teal { color: var(--teal); }
 .heading--navy { color: var(--navy); }
 
@@ -148,7 +167,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   font-family: var(--font-script);
   font-size: 36px;
   line-height: 36px;
-  color: var(--teal);
+  color: var(--teal-ink);
 }
 
 .nav__links { display: flex; align-items: center; gap: 32px; }
@@ -160,14 +179,32 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
-  color: var(--salmon);
+  color: var(--salmon-ink);
   white-space: nowrap;
   padding: 8px;
+  position: relative;
 }
 
-.nav__link:hover, .nav__menu a:hover { color: var(--teal); }
+/* Kingfisher rule marking the section currently in view. Drawn below the
+   link rather than as padding, so the bar's metrics don't move when it
+   appears. current-section.js sets aria-current as you scroll. */
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: -2px;
+  height: 3px;
+  background: var(--navy);
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+.nav__link[aria-current="true"]::after { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .nav__link::after { transition: none; } }
 
-.nav__toggle { display: none; width: 26px; height: 26px; }
+.nav__link:hover, .nav__menu a:hover { color: var(--teal-deep); }
+
+.nav__toggle { display: none; width: 26px; height: 26px; color: var(--salmon-ink); }
 .nav__toggle svg { width: 26px; height: 26px; }
 
 /* Mobile: hamburger opens a 261px panel pinned under the bar, its items
@@ -211,11 +248,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   font-size: 16px;
   line-height: 24px;
   text-transform: uppercase;
-  color: var(--salmon);
+  color: var(--salmon-ink);
 }
-.textbutton:hover { color: var(--teal); }
+.textbutton:hover { color: var(--teal-deep); }
 .textbutton__arrow { width: 20px; height: 20px; flex: none; transition: transform .2s ease; }
-.textbutton:hover .textbutton__arrow path { stroke: var(--teal); }
 
 /* experience.js adds textbutton--up once the extra rows are showing. The arrow
    is drawn pointing down, so a half turn is the whole of it. Same duration and
@@ -224,7 +260,11 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 @media (min-width: 1000px) { .textbutton { line-height: 26px; } }
 
-.textbutton--back { font-size: 16px; line-height: 24px; }
+/* This one sits on navy, so it takes the light salmon rather than the dark
+   one -- #cd4226 would be 2.41:1 there. Teal is already 6:1 on navy, so the
+   hover needs no deepening the way the cream-ground ones do. */
+.textbutton--back { font-size: 16px; line-height: 24px; color: var(--salmon-light); }
+.textbutton--back:hover { color: var(--teal); }
 @media (min-width: 768px)  { .textbutton--back { font-size: 18px; line-height: 24px; } }
 @media (min-width: 1000px) { .textbutton--back { font-size: 20px; line-height: 26px; } }
 
@@ -236,7 +276,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   justify-content: center;
   gap: 8px;
   align-self: flex-start;
-  background: var(--salmon);
+  background: var(--salmon-ink);
   color: var(--white);
   border-radius: 6px;
   padding: 16px 32px;
@@ -249,7 +289,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   filter: drop-shadow(0 0 17.5px rgb(0 0 0 / 15%));
   transition: background-color .15s ease;
 }
-.button:hover { background: var(--lemon); }
+.button:hover { background: var(--lemon); color: var(--navy); }
 .button:disabled { opacity: .5; }
 .button svg { width: 20px; height: 20px; flex: none; }
 

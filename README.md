@@ -101,6 +101,25 @@ Figma Sites also sets no root font-size, which means its "unsized" text (nav lin
 job rows, the See More button) renders at the browser default 16px. `base.css` keeps
 that deliberately.
 
+Alongside the five palette colours sit four text-safe variants, added to clear WCAG
+2.1 AA contrast without repainting the site. The originals are unchanged and still
+used for fills, rules and hairlines, where contrast minimums don't apply:
+
+| Token | Value | Used for |
+|---|---|---|
+| `--salmon-ink` | `#cd4226` | salmon text on cream, and the button fill (4.52 / 4.77) |
+| `--salmon-light` | `#f08a72` | salmon text on navy (4.69) |
+| `--teal-ink` | `#429e91` | teal text 24px and up, on cream (3.05) |
+| `--teal-deep` | `#327a70` | teal text below 24px, on cream — the hover states (4.79) |
+
+Salmon exists twice because no single value clears 4.5:1 on both grounds: dark
+enough for cream puts it at 2.41 on navy. Teal splits by size instead, since large
+text only owes 3:1. `--teal` itself is still correct on navy (6:1), which is where
+every `.heading--teal` actually sits.
+
+The site currently reports **zero axe-core violations** at WCAG 2.1 A/AA across all
+seven pages at three viewports, including the expanded and open interactive states.
+
 ## Building
 
 ```bash
